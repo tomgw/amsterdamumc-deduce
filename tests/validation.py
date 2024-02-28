@@ -35,9 +35,14 @@ def validation_test(
     print("Number of records read: ", len(record_list))
 
     mismatch_count = 0
-    record_count = 1;
+    record_count = 0;
     for record in record_list:
+        record_count += 1
         columns = record.split("\t")
+        if len(columns) != 6:
+            print("Missing column in row ", record_count)
+            continue
+
         expected_output = columns[5]
 
         person = Person(first_names=columns[0], initials=columns[1], surname=columns[2])
@@ -51,7 +56,6 @@ def validation_test(
             print("==> Mismatch at record ", record_count)
             print("Expected: >" + expected_output + "<")
             print("Actual:   >" + actual_output + "<")
-        record_count += 1
 
     print("Done")
     print("Number of mismatches: ", mismatch_count)
