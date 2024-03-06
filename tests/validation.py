@@ -5,10 +5,6 @@ My name is John Johnson and I live in Wisconsin.<TAB>My name is <PATIENT> and I 
 
 The failing comparisons are sent to standard-output and together with some summary statistics.
 """
-import json
-from typing import Optional
-
-from docdeid import Annotation, AnnotationSet
 
 from deduce import Deduce
 from deduce.person import Person
@@ -17,68 +13,77 @@ from deduce.person import Person
 def annotators_from_group(model: Deduce, group: str) -> set[str]:
     return {name for name, _ in model.processors[group]}.union({group})
 
-def validation_test(
-    examples_file: str
-):
-    deduce = Deduce()
-    known_failures = set()
 
-    record_list = list()
-    with open(examples_file, mode="r", encoding="utf-8") as file:
-        lines = file.readlines()
-        count = 0
-        for line in lines:
-            # skip lines starting with the comment character
-            if not line.strip().startswith(str("#")):
-                record_list.append(line.rstrip('\n'))
-            count += 1
-    print("Number of records read: ", len(record_list))
+class TestValidationFile:
+    def test_with_validation_file(self, model):
+        file_to_test = './regression/input-output-test.tsv'
 
-    mismatch_count = 0
-    record_count = 0;
-    for record in record_list:
-        record_count += 1
-        columns = record.split("\t")
-        if len(columns) != 6:
-            print("Missing column in row ", record_count)
-            continue
+        record_list = list()
+        with open(file_to_test, mode="r", encoding="utf-8") as file:
+            lines = file.readlines()
+            count = 0
+            for line in lines:
+                # skip lines starting with the comment character
+                if not line.strip().startswith(str("#")):
+                    record_list.append(line.rstrip('\n'))
+                count += 1
+        print("\nNumber of records read: ", len(record_list))
 
-        expected_output = columns[5]
+        mismatch_count = 0
+        expected_failure_count = 0
+        record_count = 0
+        failed = False
+        for record in record_list:
+            record_count += 1
+            columns = record.split("\t")
+            if len(columns) > 1:
+                record_id = columns[0]
+            else:
+                record_id = "missing record ID in line: ", record_count
 
-        person = Person(first_names=columns[0], initials=columns[1], surname=columns[2])
+            if len(columns) != 8:
+                print("Missing column in record with ID  ", record_id)
+                continue
 
-        result_document = deduce.deidentify(text=columns[4], metadata={"patient" : person})
-        actual_output = result_document.deidentified_text
-        # do not take case into account
-        matching = expected_output == actual_output
-        if not matching:
-            mismatch_count += 1
-            print("==> Mismatch at record ", record_count)
-            print("Expected: >" + expected_output + "<")
-            print("Actual:   >" + actual_output + "<")
+            identifiable_input = columns[6]
+            expected_output = columns[7]
 
-    print("Done")
-    print("Number of mismatches: ", mismatch_count)
-    failures = set()
+            failure_status = columns[1]
+            first_names = columns[2].strip().split()
+            initials = columns[3].strip()
+            surname = columns[4].strip()
 
-    #
-    # for example in examples:
-    #     trues = AnnotationSet(
-    #         Annotation(**annotation) for annotation in example["annotations"]
-    #     )
-    #     preds = model.deidentify(text=example["text"], enabled=enabled).annotations
-    #
-    #     try:
-    #         assert trues == preds
-    #     except AssertionError:
-    #         failures.add(example["id"])
+            patient = Person(first_names=first_names, initials=initials, surname=surname)
+            metadata = {"patient": patient}
 
-    assert failures == known_failures
+            result_document = model.deidentify(text=identifiable_input, metadata=metadata)
 
+            actual_output = result_document.deidentified_text
 
-def main():
-    file_to_test = './regression/input-output-test.tsv'
-    validation_test(file_to_test)
+            matching = expected_output == actual_output
+            if not matching:
+                if failure_status == 'F':
+                    expected_failure_count += 1
+                else:
+                    mismatch_count += 1
+                    failed = True
+                    print("\n==> Mismatch at record ", record_id)
+                    print("Expected: >" + expected_output + "<")
+                    print("Actual:   >" + actual_output + "<")
+        assert mismatch_count == 0
+        print("Done")
+        print("Number of mismatches: ", mismatch_count)
+        print("Expected mismatches: ", expected_failure_count)
+        # failures = set()
 
-if __name__ == "__main__":
-    main()
+        #
+        # for example in examples:
+        #     trues = AnnotationSet(
+        #         Annotation(**annotation) for annotation in example["annotations"]
+        #     )
+        #     predicates = model.deidentify(text=example["text"], enabled=enabled).annotations
+        #
+        #     try:
+        #         assert trues == predicates
+        #     except AssertionError:
+        #         failures.add(example["id"])

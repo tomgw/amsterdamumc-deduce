@@ -14,7 +14,7 @@ import docdeid as dd
 from deprecated import deprecated
 from frozendict import frozendict
 
-from deduce import utils
+from deduce.utils import overwrite_dict, class_for_name, initialize_class
 from deduce.annotation_processor import (
     CleanAnnotationTag,
     DeduceMergeAdjacentAnnotations,
@@ -41,7 +41,7 @@ warnings.simplefilter(action="default")
 
 class Deduce(dd.DocDeid):  # pylint: disable=R0903
     """
-    Main class for de-identifiation.
+    Main class for de-identification.
 
     Inherits from ``docdeid.DocDeid``, and as such, most information on deidentifying
     text with a Deduce object is available there.
@@ -55,7 +55,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             are overwritten, and other defaults are kept. When `load_base_config` is
             set to `False`, no defaults are loaded and only configuration from `config`
             is applied.
-        looup_data_path: The path to look for lookup data, by default included in
+        lookup_data_path: The path to look for lookup data, by default included in
             the package. If you want to make changes to source files, it's recommended
             to copy the source data and pointing deduce to this folder with this
             argument.
@@ -123,14 +123,14 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             with open(_BASE_CONFIG_FILE, "r", encoding="utf-8") as file:
                 base_config = json.load(file)
 
-            utils.overwrite_dict(config, base_config)
+            overwrite_dict(config, base_config)
 
         if user_config is not None:
             if isinstance(user_config, str):
                 with open(user_config, "r", encoding="utf-8") as file:
                     user_config = json.load(file)
 
-            utils.overwrite_dict(config, user_config)
+            overwrite_dict(config, user_config)
 
         return frozendict(config)
 
@@ -221,9 +221,9 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         pattern_args = args.pop("pattern")
         module = pattern_args.pop("module")
         cls = pattern_args.pop("class")
-        cls = utils.class_for_name(module, cls)
+        cls = class_for_name(module, cls)
 
-        pattern = utils.initialize_class(cls, args=pattern_args, extras=extras)
+        pattern = initialize_class(cls, args=pattern_args, extras=extras)
 
         return dd.process.TokenPatternAnnotator(pattern=pattern)
 
@@ -252,8 +252,8 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         module = args.pop("module")
         cls = args.pop("class")
 
-        cls = utils.class_for_name(module, cls)
-        return utils.initialize_class(cls, args=args, extras=extras)
+        cls = class_for_name(module, cls)
+        return initialize_class(cls, args=args, extras=extras)
 
     @staticmethod
     @deprecated(
@@ -278,9 +278,9 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         module_name = ".".join(elems[:-1])
         class_name = elems[-1]
 
-        cls = utils.class_for_name(module_name=module_name, class_name=class_name)
+        cls = class_for_name(module_name=module_name, class_name=class_name)
 
-        return utils.initialize_class(cls, args, extras)
+        return initialize_class(cls, args, extras)
 
     @staticmethod
     def _get_or_create_annotator_group(

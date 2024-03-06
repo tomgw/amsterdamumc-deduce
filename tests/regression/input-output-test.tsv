@@ -1,569 +1,576 @@
-# =============================================================================
-#
-# This file contains a large set of text fragments used to validate DEDUCE. It 
-# contains 6 tab-delimited columns:
-# 1) the first names of the patient            [Pat_Firstnames]
-# 2) the initials of the patient               [Pat_Initials]
-# 3) the surname of the patient                [Pat_Surname]
-# 4) the given name (roepnaam) of the patient  [Pat_Givenname]
-# 5) the input identifiable text fed to DEDUCE [Identifiable_input]
-# 6) the expected output                       [Expected_output]
-#
-# A special set of lookup-lists TODO finish the documentation once the code is
-# up and running
-#
-# This file was originally included in the HAG (dept. General Practice)
-# version of DEDUCE which was maintained by the KIK (dept. Clinical Informatics);
-# both departments are part of the AmsterdamUMC.
-#
-# Comment lines begin with a hash-sign
-#
-# =============================================================================
-# Pat_Firstnames	Pat_Initials	Pat_Surname Pat_Givenname	Identifiable_input	Expected_output
-Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1]
-A B	A	B	Ab	fys 40 jarige	fys [LEEFTIJD-1] jarige
-A B	A	B	Ab	wordt 33 jaar	wordt [LEEFTIJD-1] jaar
-A B	A	B	Ab	11-jarige patient	[LEEFTIJD-1]-jarige patient
-A B	A	B	Ab	vanaf 83 jaar	vanaf [LEEFTIJD-1] jaar
-A B	A	B	Ab	komende 3 jaar	komende [LEEFTIJD-1] jaar
-A B	A	B	Ab	na 15 jaar afwezig	na [LEEFTIJD-1] jaar afwezig
-A B	A	B	Ab	herhalen na 20 jaar	herhalen na [LEEFTIJD-1] jaar
-A B	A	B	Ab	sinds 28e	sinds 28e
-A B	A	B	Ab	seh amc	seh [INSTELLING-1]
-A B	A	B	Ab	gyn-amc	gyn-[INSTELLING-1]
-A B	A	B	Ab	amc ron	[INSTELLING-1] ron
-A B	A	B	Ab	vw amc chir	vw [INSTELLING-1] chir
-A B	A	B	Ab	olvg chir	[INSTELLING-1] chir
-A B	A	B	Ab	van het zonnehuis	van het [INSTELLING-1]
-A B	A	B	Ab	amc plastische chirurgie	[INSTELLING-1] plastische chirurgie
-A B	A	B	Ab	sdz 10mg/d	sdz 10mg/d
-A B	A	B	Ab	ketoconaz sdz	ketoconaz sdz
-A B	A	B	Ab	decubitus bovenbeen	[INSTELLING-1] bovenbeen
-A B	A	B	Ab	desloratadine sdz	desloratadine sdz
-A B	A	B	Ab	as woensdag 1/5 woord	as woensdag [DATUM-1] woord
-A B	A	B	Ab	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] woord erachter
-A B	A	B	Ab	begon 2-3dg geleden	begon 2-3dg geleden
-A B	A	B	Ab	card olvg van 01-01-2001 woord erachter	card [INSTELLING-1] van [DATUM-1] woord erachter
-A B	A	B	Ab	vanaf 05-12 ook	vanaf [DATUM-1] ook
-A B	A	B	Ab	zie 1/1/2001 pt	zie [DATUM-1] pt
-A B	A	B	Ab	temp 37 1	temp 37 1
-A B	A	B	Ab	temp 37 1 hoog	temp 3[DATUM-1] hoog
-A B	A	B	Ab	glucnuven 4.2	glucnuven 4.2
-A B	A	B	Ab	glucnuven 4.2 cholest	glucnuven 4.2 cholest
-A B	A	B	Ab	tablet 10 5mg	tablet 10 5mg
-A B	A	B	Ab	gewicht 73.2 quet/bmi 28 4 chol	gewicht 7[DATUM-1] quet/bmi [DATUM-2] chol
-A B	A	B	Ab	1/4 tablet	[DATUM-1] tablet
-A B	A	B	Ab	3-5d2dr	[DATUM-1] 2dr
-A B	A	B	Ab	vanaf 1-2 zakjes	vanaf [DATUM-1] zakjes
-A B	A	B	Ab	2 5ml	2 5ml
-A B	A	B	Ab	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol
-A B	A	B	Ab	via google.nl	via [URL-1]
-A B	A	B	Ab	scapula-stabilisatoren.behandeling	scapula-stabilisatoren.behandeling
-A B	A	B	Ab	scapula-stabilisatoren.be.	[URL-1].
-A B	A	B	Ab	ZOVIRAX 50MG/G CREME	ZOVIRAX 50MG/G CREME
-A B	A	B	Ab	zoon tjerk	zoon tjerk
-A B	A	B	Ab	trudy meer zorg thuis	trudy meer [INSTELLING-1]
-A B	A	B	Ab	dr van der luik faxnr 075-1234567	dr [PERSOON-1] faxnr [TELEFOONNUMMER-1]
-A B	A	B	Ab	06 123456876	[LANGNUMMER-1]
-A B	A	B	Ab	nu vier 4 jaar ziektevrij	nu vier [LEEFTIJD-1] jaar ziektevrij
-A B	A	B	Ab	gyn amc van 11-01 t/m 28-04-2009	gyn [INSTELLING-1] van [DATUM-1] t/m [DATUM-2]
-A B	A	B	Ab	heup operatie 12/05	heup operatie [DATUM-1]
-A B	A	B	Ab	dit is een 3-3-2019 datum	dit is een [DATUM-1] datum
-A B	A	B	Ab	9	9
-A B	A	B	Ab	G Creme	[PERSOON-1]
-A B	A	B	Ab	O.L.V.G. Oost: amoxicilline 2dd 500 mg	[PERSOON-1]
-A B	A	B	Ab	Si	Si
-A B	A	B	Ab	Tel (telefonisch)	[PERSOON-1] (telefonisch)
-A B	A	B	Ab	]	]
-A B	A	B	Ab	T-Save (is iud)	[PERSOON-1] (is iud)
-A B	A	B	Ab	Abd (abdomen)	Abd (abdomen)
-A B	A	B	Ab	Operatie	Operatie
-A B	A	B	Ab	Boek	Boek
-A B	A	B	Ab	Rust	
-A B	A	B	Ab	Elders	Elders
-A B	A	B	Ab	OD (oculus dexter, rechter oog)	OD (oculus dexter, rechter oog)
-A B	A	B	Ab	VT (vaginaal toucher)	VT (vaginaal toucher)
-A B	A	B	Ab	Mycose	Mycose
-A B	A	B	Ab	Enk/Arm	Enk/Arm
-A B	A	B	Ab	MST (mamma sparende therapie)	MST (mamma sparende therapie)
-A B	A	B	Ab	RFE	RFE
-A B	A	B	Ab	FRANSSEN	[PERSOON-1]
-A B	A	B	Ab	Winter-tenen	Winter-tenen
-A B	A	B	Ab	IM Slotervaart ZH  Cytologie, MEDVRI, Pap 1. Epitheelatrofie	IM [INSTELLING-1] ZH Cytologie, MEDVRI, [PERSOON-1] 1. Epitheelatrofie
-A B	A	B	Ab	klachten duren al 5 jaar	klachten duren [PERSOON-1] [LEEFTIJD-1] jaar
-A B	A	B	Ab	Azithromycine	Azithromycine
-A B	A	B	Ab	< kleiner dan	< kleiner dan
-A B	A	B	Ab	D1C PREGEBALINE CAPSULE	D1C PREGEBALINE CAPSULE
-A B	A	B	Ab	16 maal	16 maal
-A B	A	B	Ab	1,5,	1,5,
-A B	A	B	Ab	5 maanden	5 maanden
-A B	A	B	Ab	Rood oog	Rood oog
-A B	A	B	Ab	T 36,5. Milde drukpijn	T 36,5. Milde drukpijn	
-A B	A	B	Ab	[60 jaar	[[LEEFTIJD-1] jaar
-A B	A	B	Ab	10 jaarscore 2.4%   5 jaarscore 9-11% RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over 1 jaar	[LEEFTIJD-1] jaarscore 2.4% [LEEFTIJD-1] jaarscore [DATUM-1]  RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over [LEEFTIJD-1] jaar
-A B	A	B	Ab	Sinds 1 maand	Sinds 1 maand
-A B	A	B	Ab	Jasmin (oac)	[PERSOON-1] (oac)
-A B	A	B	Ab	Linker (schouder)	Linker (schouder)
-A B	A	B	Ab	Burn out	Burn out
-A B	A	B	Ab	IM OLVG: Dermatologie, MEDSPE, Conclusie Ad 1-4 Basaalcelcarcinomen Ad 5 Actinische keratose	[PERSOON-1] keratose
-A B	A	B	Ab	M. "Bowen"	M. "Bowen"
-A B	A	B	Ab	1-8. Radiologie afspraak	[DATUM-1]. Radiologie afspraak
-A B	A	B	Ab	1-8. Chirurgie afspraak	[DATUM-1]. Chirurgie afspraak
-A B	A	B	Ab	1-8. Plastische afspraak	[DATUM-1]. Plastische afspraak
-A B	A	B	Ab	Thakoer	[PERSOON-1]
-A B	A	B	Ab	Willibrordus	[PERSOON-1]
-A B	A	B	Ab	"van der Kraats"	[PERSOON-1]
-A B	A	B	Ab	hypercholelestorolemieosteoporose	hypercholelestorolemieosteoporose
-A B	A	B	Ab	"Verzorgingshuis huize het oosten"	[INSTELLING-1]
-A B	A	B	Ab	Turkmenistan	[LOCATIE-1]
-A B	A	B	Ab	090842375	[LANGNUMMER-1]
-A B	A	B	Ab	0908-42375	[LANGNUMMER-1]
-A B	A	B	Ab	09.08.42.375	[DATUM-1].375
-A B	A	B	Ab	020-25476098	[TELEFOONNUMMER-1]
-A B	A	B	Ab	07583	[LEEFTIJD-1]
-A B	A	B	Ab	7-5-83	[LEEFTIJD-1]
-A B	A	B	Ab	2/4/65	[LEEFTIJD-1]
-A B	A	B	Ab	23.12.7652	[LEEFTIJD-1]
-A B	A	B	Ab	06.43.53.74.98	[LEEFTIJD-1]
-A B	A	B	Ab	06-568937334	[LEEFTIJD-1]
-A B	A	B	Ab	2.4.65	[LEEFTIJD-1]
-A B	A	B	Ab	Geb 2 juni 1964	[LEEFTIJD-1]
-A B	A	B	Ab	Geb 2-6-64	Geb [DATUM-1]
-A B	A	B	Ab	Tel no 0283674939	[PERSOON-1] no [TELEFOONNUMMER-1]
-A B	A	B	Ab	Tel 06 24238605	[PERSOON-1] [LANGNUMMER-1]
-A B	A	B	Ab	Tel 020 42386050	[PERSOON-1] [TELEFOONNUMMER-1]0
-A B	A	B	Ab	Dat 2-3-54	Dat [DATUM-1]
-A B	A	B	Ab	Dat. 6487	[LEEFTIJD-1]
-A B	A	B	Ab	Dat 2 juni 2006	[LEEFTIJD-1]
-A B	A	B	Ab	BSN 354	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn: 638 678909	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn 576	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn 78690678	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn  365896790	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn  3 65896790	[NUMMERWOORD-1]
-A B	A	B	Ab	bsn 357689765	[NUMMERWOORD-1]
-A B	A	B	Ab	Meneer Zwart	[PERSOON-1]
-A B	A	B	Ab	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
-A B	A	B	Ab	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
-A B	A	B	Ab	Vrakking	[PERSOON-1]
-A B	A	B	Ab	Fletchina	[PERSOON-1]
-A B	A	B	Ab	MvAtten	[PERSOON-1]
-A B	A	B	Ab	M v Atten	[PERSOON-1]
-A B	A	B	Ab	venserpolder,J. Stroucken.	[LOCATIE-1],[PERSOON-1].
-A B	A	B	Ab	yhessing	[PERSOON-1]
-A B	A	B	Ab	y hessing	[PERSOON-1]
-A B	A	B	Ab	Overman	[PERSOON-1]
-A B	A	B	Ab	S. van Wilpe	[PERSOON-1]
-A B	A	B	Ab	B. Nizynska	[PERSOON-1]
-A B	A	B	Ab	M.S.A. Suttorp	[PERSOON-1]
-A B	A	B	Ab	S. van Wissen	[PERSOON-1]
-A B	A	B	Ab	Cogswell	[PERSOON-1]
-A B	A	B	Ab	Lioen	[PERSOON-1]
-A B	A	B	Ab	r.boot@amc.nl	[PERSOON-1]
-A B	A	B	Ab	Loenermark 188	[LOCATIE-1]
-A B	A	B	Ab	Oude Turfmarkt	[LOCATIE-1]
-A B	A	B	Ab	GAZO venserpolder	GAZO [LOCATIE-1]
-A B	A	B	Ab	Transvaal Apotheek	[INSTELLING-1]
-A B	A	B	Ab	Apotheek GC Reigersbos	[INSTELLING-1]
-A B	A	B	Ab	naar AMC kan	naar [INSTELLING-1] kan
-A B	A	B	Ab	Onze Lieve Vrouwe Gasthuis	[INSTELLING-1]
-A B	A	B	Ab	GC H'drecht	[INSTELLING-1]
-A B	A	B	Ab	A'dam	[LOCATIE-1]
-A B	A	B	Ab	Cordaan	[INSTELLING-1]
-A B	A	B	Ab	Pantar	[INSTELLING-1]
-A B	A	B	Ab	apo Gein	apo [INSTELLING-1]
-A B	A	B	Ab	GGZ JELLINEK	GGZ [INSTELLING-1]
-A B	A	B	Ab	Opname Flevo Dr. Korsten Chirurgie	Opname [LOCATIE-1] Dr. [PERSOON-1] Chirurgie
-A B	A	B	Ab	Van: Bronner	Van: [PERSOON-1]
-A B	A	B	Ab	Van: Blekkert,Neuroloog	Van: [PERSOON-1],Neuroloog
-A B	A	B	Ab	van : BOODT,Uroloog	van : [PERSOON-1],Uroloog
-A B	A	B	Ab	Overleg met dr Baas, longarts Avl	Overleg met dr [PERSOON-1], longarts Avl
-A B	A	B	Ab	Van: Ribbert, M.A.H.	Van: [PERSOON-1]
-A B	A	B	Ab	Aios M Binnema	[PERSOON-1]
-A B	A	B	Ab	Naar : [PERSOON-1] Driest (POH GGZ)	Naar : [PERSOON-1] [PERSOON-1] (POH GGZ)
-A B	A	B	Ab	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1], rontgen
-A B	A	B	Ab	Van : Eenhorst, oog c/cornea nu rustig	[PERSOON-1]
-A B	A	B	Ab	Van : KNOTTENBELT, pch c/fibroom kin	[PERSOON-1]
-A B	A	B	Ab	Regiearts Vanlerberghe tel: in gesprek	Regiearts [PERSOON-1] tel: in gesprek
-A B	A	B	Ab	Van: Blankevoort, SEH	Van: [PERSOON-1], SEH
-A B	A	B	Ab	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. S. [PERSOON-1]. Benauwd, hoest, bekend met
-A B	A	B	Ab	Van: Chirurgie Flevo	[INSTELLING-1]
-A B	A	B	Ab	Van: Linzel, longarts	Van: Linzel, longarts
-A B	A	B	Ab	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	[PERSOON-1]
-A B	A	B	Ab	Van : Craanen	Van : [PERSOON-1]
-A B	A	B	Ab	Opname Cardioloog blaricum	Opname Cardioloog [LOCATIE-1]
-A B	A	B	Ab	Van  : Cunningham [PERSOON-1],VZG	Van : [PERSOON-1] [PERSOON-1],VZG
-A B	A	B	Ab	Van: Kortz, Cardioloog	Van: [PERSOON-1], Cardioloog
-A B	A	B	Ab	naar Noorderdok voor echogeleide injectie	naar [INSTELLING-1] voor echogeleide injectie
-A B	A	B	Ab	Van : SPANK, VD, car	Van : [PERSOON-1], VD, car
-A B	A	B	Ab	Van : Houten	Van : [PERSOON-1]
-A B	A	B	Ab	De Hoogstraat	[INSTELLING-1]
-A B	A	B	Ab	Leids Cytologisch en Pathologisch lab	[INSTELLING-1]
-A B	A	B	Ab	AMC	[INSTELLING-1]
-A B	A	B	Ab	ATAL	[INSTELLING-1]
-A B	A	B	Ab	Atal Artsenlaboratorium	[INSTELLING-1]
-A B	A	B	Ab	Atal Medial	[INSTELLING-1]
-A B	A	B	Ab	Atal-Medial	[INSTELLING-1]
-A B	A	B	Ab	Bascule	[INSTELLING-1]
-A B	A	B	Ab	Bonga	[INSTELLING-1]
-A B	A	B	Ab	Buitenhof	[INSTELLING-1]
-A B	A	B	Ab	De Hoogstraat	[INSTELLING-1]
-A B	A	B	Ab	GGZ inGeest	[INSTELLING-1]
-A B	A	B	Ab	ggzingeest	[INSTELLING-1]
-A B	A	B	Ab	hoogstraat	[INSTELLING-1]
-A B	A	B	Ab	Hoogstraten	[PERSOON-1]
-A B	A	B	Ab	Leids universitair medisch centrum	[INSTELLING-1]
-A B	A	B	Ab	Marsepeintje kinderdagverblijf	[INSTELLING-1]
-A B	A	B	Ab	OLVG	[INSTELLING-1]
-A B	A	B	Ab	Pep Psychologen	[INSTELLING-1]
-A B	A	B	Ab	Pep,Psychologen	[INSTELLING-1]
-A B	A	B	Ab	Prezens GGZ Ingeest	[INSTELLING-1]
-A B	A	B	Ab	PSY - Q	[INSTELLING-1]
-A B	A	B	Ab	reade	[INSTELLING-1]
-A B	A	B	Ab	revalidatie Hoogstraat	revalidatie [INSTELLING-1]
-A B	A	B	Ab	Revalidatiecentrum De Hoogstraat	[INSTELLING-1]
-A B	A	B	Ab	Rijn apotheek	[INSTELLING-1]
-A B	A	B	Ab	"Rijn apotheek"	[INSTELLING-1]
-A B	A	B	Ab	SLAZ	[INSTELLING-1]
-A B	A	B	Ab	Symbiant	[INSTELLING-1]
-A B	A	B	Ab	Tel.Bonga	Tel.[INSTELLING-1]
-A B	A	B	Ab	Trappenberg	[INSTELLING-1]
-A B	A	B	Ab	VU	[PERSOON-1]
-A B	A	B	Ab	VUmc	[INSTELLING-1]
-A B	A	B	Ab	Zuyderland	[INSTELLING-1]
-A B	A	B	Ab	A Leloup	[PERSOON-1]
-A B	A	B	Ab	A. Lel oup	[PERSOON-1]
-A B	A	B	Ab	A. Leloup	[PERSOON-1]
-A B	A	B	Ab	A.Leloup	[PERSOON-1]
-A B	A	B	Ab	ABijlsma	[PERSOON-1]
-A B	A	B	Ab	Blickman	[PERSOON-1]
-A B	A	B	Ab	Fvos	[PERSOON-1]
-A B	A	B	Ab	GORZEMAN	[PERSOON-1]
-A B	A	B	Ab	kolle	[PERSOON-1]
-A B	A	B	Ab	Leloup	[PERSOON-1]
-A B	A	B	Ab	Mijnheere	[PERSOON-1]
-A B	A	B	Ab	nezihe	[PERSOON-1]
-A B	A	B	Ab	oude Raai	[PERSOON-1]
-A B	A	B	Ab	Render	[PERSOON-1]
-A B	A	B	Ab	Sarlui	[PERSOON-1]
-A B	A	B	Ab	shanta	[PERSOON-1]
-A B	A	B	Ab	Sharya	[PERSOON-1]
-A B	A	B	Ab	STEE	[PERSOON-1]
-A B	A	B	Ab	T/Charissaover	[PERSOON-1]
-A B	A	B	Ab	TC Stee	[PERSOON-1]
-A B	A	B	Ab	Teeuwes	[PERSOON-1]
-A B	A	B	Ab	tonjav	[PERSOON-1]
-A B	A	B	Ab	van Loon	[PERSOON-1]
-A B	A	B	Ab	VIETJE	[PERSOON-1]
-A B	A	B	Ab	Yurrian Bikker	[PERSOON-1]
-A B	A	B	Ab	A'dam	[LOCATIE-1]
-A B	A	B	Ab	amsteldijk	[LOCATIE-1]
-A B	A	B	Ab	AMSTERDAM	[LOCATIE-1]
-A B	A	B	Ab	Ardennen	[LOCATIE-1]
-A B	A	B	Ab	bijlmer	[LOCATIE-1]
-A B	A	B	Ab	brussel	[LOCATIE-1]
-A B	A	B	Ab	Caracao	[LOCATIE-1]
-A B	A	B	Ab	Curacau	[LOCATIE-1]
-A B	A	B	Ab	Gasthuiskwartier	[LOCATIE-1]
-A B	A	B	Ab	Kanaaleiland	[LOCATIE-1]
-A B	A	B	Ab	Leiden	[LOCATIE-1]
-A B	A	B	Ab	Oosterpark	[LOCATIE-1]
-A B	A	B	Ab	Oude turfmarkt	[LOCATIE-1]
-A B	A	B	Ab	Rhodos	[LOCATIE-1]
-A B	A	B	Ab	Rivierstaete	[LOCATIE-1]
-A B	A	B	Ab	Sri lanka	[LOCATIE-1]
-A B	A	B	Ab	U trecht	[LOCATIE-1]
-A B	A	B	Ab	ABN	[INSTELLING-1]
-A B	A	B	Ab	ABnAmro	[INSTELLING-1]
-A B	A	B	Ab	AFM	[INSTELLING-1]
-A B	A	B	Ab	Klaverblad verz	[INSTELLING-1]
-A B	A	B	Ab	Ouder Kind Team Kinderts	[INSTELLING-1]
-A B	A	B	Ab	Raad van Kinderbescherming	[INSTELLING-1]
-A B	A	B	Ab	de Marne	[INSTELLING-1]
-A B	A	B	Ab	Verslavingszorg Terwille	[INSTELLING-1]
-A B	A	B	Ab	12Hoven	[INSTELLING-1]
-A B	A	B	Ab	Bergman Clinics	[INSTELLING-1]
-A B	A	B	Ab	BETHESDA	[INSTELLING-1]
-A B	A	B	Ab	Bethesda	[INSTELLING-1]
-A B	A	B	Ab	DE ELBE	[INSTELLING-1]
-A B	A	B	Ab	DE FUNDATIE	[INSTELLING-1]
-A B	A	B	Ab	Huys ter Swaach	[INSTELLING-1]
-A B	A	B	Ab	Icare	[INSTELLING-1]
-A B	A	B	Ab	icare	[INSTELLING-1]
-A B	A	B	Ab	Ielanan	[INSTELLING-1]
-A B	A	B	Ab	Isala	[INSTELLING-1]
-A B	A	B	Ab	Leeuwerik	[INSTELLING-1]
-A B	A	B	Ab	MCL	[INSTELLING-1]
-A B	A	B	Ab	MZ	[INSTELLING-1]
-A B	A	B	Ab	Nijenhuis Voetencentrum	[INSTELLING-1]
-A B	A	B	Ab	Saxenburgh Groep	[INSTELLING-1]
-A B	A	B	Ab	Sloterdijk	[INSTELLING-1]
-A B	A	B	Ab	Treant Zorggroep	[INSTELLING-1]
-A B	A	B	Ab	UMCG	[INSTELLING-1]
-A B	A	B	Ab	Universitair Medisch Centrum Groningen	[INSTELLING-1]
-A B	A	B	Ab	Villa Pinedo	[INSTELLING-1]
-A B	A	B	Ab	Vital Health	[INSTELLING-1]
-A B	A	B	Ab	WEEZENLANDEN	[INSTELLING-1]
-A B	A	B	Ab	wza	[INSTELLING-1]
-A B	A	B	Ab	WZA	[INSTELLING-1]
-A B	A	B	Ab	Batting	[PERSOON-1]
-A B	A	B	Ab	Belt	[PERSOON-1]
-A B	A	B	Ab	BERGE VAN DEN	[PERSOON-1]
-A B	A	B	Ab	BOELSTRA	[PERSOON-1]
-A B	A	B	Ab	Dereksen	[PERSOON-1]
-A B	A	B	Ab	Erion	[PERSOON-1]
-A B	A	B	Ab	F. Harding	[PERSOON-1]
-A B	A	B	Ab	Flart	[PERSOON-1]
-A B	A	B	Ab	Germs	[PERSOON-1]
-A B	A	B	Ab	Govaert	[PERSOON-1]
-A B	A	B	Ab	hardieck	[PERSOON-1]
-A B	A	B	Ab	hilberdink	[PERSOON-1]
-A B	A	B	Ab	J Gelmers	[PERSOON-1]
-A B	A	B	Ab	Jaaike	[PERSOON-1]
-A B	A	B	Ab	Janike	[PERSOON-1]
-A B	A	B	Ab	Joostens	[PERSOON-1]
-A B	A	B	Ab	Korte J.H.	[PERSOON-1]
-A B	A	B	Ab	M.E. Bodegom	[PERSOON-1]
-A B	A	B	Ab	M.L.J. van der Wiel	[PERSOON-1]
-A B	A	B	Ab	MANSIER	[PERSOON-1]
-A B	A	B	Ab	NS CLEMENS	[PERSOON-1]
-A B	A	B	Ab	R.D. van den Hoed	[PERSOON-1]
-A B	A	B	Ab	Raber	[PERSOON-1]
-A B	A	B	Ab	REYNERS	[PERSOON-1]
-A B	A	B	Ab	STAAL	[PERSOON-1]
-A B	A	B	Ab	STIPKOVITZ	[PERSOON-1]
-A B	A	B	Ab	Swart & WZA	[PERSOON-1]
-A B	A	B	Ab	TJ SPE	[PERSOON-1]
-A B	A	B	Ab	Troost	[PERSOON-1]
-A B	A	B	Ab	VELUTHAMANINGAL	[PERSOON-1]
-A B	A	B	Ab	Winnock	[PERSOON-1]
-A B	A	B	Ab	Y Froolik	[PERSOON-1]
-A B	A	B	Ab	Y. Elkhaloufi	[PERSOON-1]
-A B	A	B	Ab	ANAE Plein	[LOCATIE-1]
-A B	A	B	Ab	Bernoiulliplein (moet zijn Bernouilliplein))	[LOCATIE-1](moet zijn [LOCATIE-2]))
-A B	A	B	Ab	Coev/Hardenber	[LOCATIE-1]
-A B	A	B	Ab	Friesland	[LOCATIE-1]
-A B	A	B	Ab	heerenveen	[LOCATIE-1]
-A B	A	B	Ab	Ijsselm	[LOCATIE-1]
-A B	A	B	Ab	Kenya	[LOCATIE-1]
-A B	A	B	Ab	Leeuwarden	[LOCATIE-1]
-A B	A	B	Ab	Nij	[LOCATIE-1]
-A B	A	B	Ab	Paddepoel	[LOCATIE-1]
-A B	A	B	Ab	rubenslaan	[LOCATIE-1]
-A B	A	B	Ab	WINSCH (is waarschijnlijk Winschoten)	[LOCATIE-1] (is waarschijnlijk [LOCATIE-2])
-A B	A	B	Ab	WINSUM	[LOCATIE-1]
-A B	A	B	Ab	DUO	[INSTELLING-1]
-A B	A	B	Ab	Interpolis	[INSTELLING-1]
-A B	A	B	Ab	OPD voor geven GV 2016/2017	[PERSOON-1]
-A B	A	B	Ab	OPD voor Geven GV 2016/2017	[PERSOON-1]
-A B	A	B	Ab	Last van pob	Last van pob
-A B	A	B	Ab	Pijn. Last van borst	Pijn. Last van borst
-A B	A	B	Ab	Pijn op borst bij Last	Pijn op borst bij [PERSOON-1]
-A B	A	B	Ab	Pijn op borst met last	Pijn op borst bij last
-A B	A	B	Ab	Mr van Oranje plek	Mr [PERSOON-1] plek
-A B	A	B	Ab	Oranje plek	Oranje plek
-A B	A	B	Ab	5 september	[DATUM-1]
-A B	A	B	Ab	108/7408/74
-A B	A	B	Ab	50/150	50/150
-A B	A	B	Ab	250/100	250/100
-A B	A	B	Ab	A80.00. gevallen	A80.00. gevallen
-A B	A	B	Ab	80.00	[LONGNUMBER-1]
-A B	A	B	Ab	A 80.00	A [LONGNUMBER-1]
-A B	A	B	Ab	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
-A B	A	B	Ab	De urine was schoon.	De urine was schoon.
-A B	A	B	Ab	QI/BMI (=):31,35	QI/BMI (=):31,35
-A B	A	B	Ab	even gebeld of alles goed gaat  bel haar wakker	even gebeld of alles goed gaat  bel haar wakker
-A B	A	B	Ab	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar ligt
-A B	A	B	Ab	het liever 7 nov ivm komende dagen feesten.	het liever 7 nov ivm komende dagen feesten.
-A B	A	B	Ab	rouw om verlies vader	rouw om verlies vader
-A B	A	B	Ab	99/99	99/99
-A B	A	B	Ab	2,92 (-3,5)	2,92 (-3,5)
-A B	A	B	Ab	239 (150-400)	239 (150-400)
-A B	A	B	Ab	T4 ] 100	T4 ] 100
-A B	A	B	Ab	6.2^([4.5)	6.2^([4.5)
-A B	A	B	Ab	55-56kg	55-56kg
-A B	A	B	Ab	L160,5	L160,5
-A B	A	B	Ab	110,510,5
-A B	A	B	Ab	100 (2-1T)00 (2-1T)
-A B	A	B	Ab	1D0,5-1TD0,5-1T
-A B	A	B	Ab	(=320/9UG)	(=320/9UG)
-A B	A	B	Ab	1.080 stuks)	1.080 stuks)
-A B	A	B	Ab	30 1-3D1I	30 1-3D1I
-A B	A	B	Ab	50 (3.1)	50 (3.1)
-A B	A	B	Ab	500/125MG	500/125MG
-A B	A	B	Ab	Syndroom van Gilbert	Syndroom van Gilbert
-A B	A	B	Ab	1.080 stuks	1.080 stuks
-A B	A	B	Ab	1-2-2019	[DATUM-1]
-A B	A	B	Ab	15 mei	[DATUM-1]
-A B	A	B	Ab	datum - :08-04-2015)	datum - :[DATUM-1])
-A B	A	B	Ab	datum - :13-11-2015)	datum - :[DATUM-1])
-A B	A	B	Ab	datum - :20-06-2019)	datum - :[DATUM-1])
-A B	A	B	Ab	datum - 06-10-2011)	[DATUM-1]
-A B	A	B	Ab	datum - 07-05	[DATUM-1]
-A B	A	B	Ab	datum - 07-09-2017)	[DATUM-1]
-A B	A	B	Ab	datum - 07-10-2014)	[DATUM-1]
-A B	A	B	Ab	datum - 08-01 (datum)	[DATUM-1]
-A B	A	B	Ab	datum - 1/8	[DATUM-1]
-A B	A	B	Ab	datum - 10-10-2016	[DATUM-1]
-A B	A	B	Ab	datum - 11 okt:	[DATUM-1]
-A B	A	B	Ab	datum - 12-07-2016	[DATUM-1]
-A B	A	B	Ab	datum - 1-2-2019	[DATUM-1]
-A B	A	B	Ab	datum - 15 mei	[DATUM-1]
-A B	A	B	Ab	datum - 17-08	[DATUM-1]
-A B	A	B	Ab	datum - 1-9-2015	[DATUM-1]
-A B	A	B	Ab	datum - 21/12 & 28-09	[DATUM-1]
-A B	A	B	Ab	datum - 22-05-2017	[DATUM-1]
-A B	A	B	Ab	datum - 25 juli	[DATUM-1]
-A B	A	B	Ab	datum - 26 april & 19april	[DATUM-1]
-A B	A	B	Ab	datum - 27 oktober	[DATUM-1]
-A B	A	B	Ab	datum - 27-03-2018	[DATUM-1]
-A B	A	B	Ab	datum - 4-9	[DATUM-1]
-A B	A	B	Ab	datum - 5 september	[DATUM-1]
-A B	A	B	Ab	datum - 5/4	[DATUM-1]
-A B	A	B	Ab	datum - 6/11	[DATUM-1]
-A B	A	B	Ab	datum - 9-4-2015	[DATUM-1]
-A B	A	B	Ab	geen datum - 2-3 (aantal)	[DATUM-1]
-A B	A	B	Ab	geen datum - ,1/1,	[DATUM-1]
-A B	A	B	Ab	geen datum - ,5/325	[DATUM-1]
-A B	A	B	Ab	geen datum - 10.3 10^	[DATUM-1]
-A B	A	B	Ab	geen datum - 2-3-4 (aantal)	[DATUM-1]
-A B	A	B	Ab	geen datum - 8-10 (aantal)	[DATUM-1]
-A B	A	B	Ab	90,00	90,00
-A B	A	B	Ab	30,00	30,00
-A B	A	B	Ab	180.0080.00
-A B	A	B	Ab	10,000,00
-A B	A	B	Ab	100,0000,00
-A B	A	B	Ab	20/42	20/42
-A B	A	B	Ab	500/125	500/125
-A B	A	B	Ab	0,075,075
-A B	A	B	Ab	40,00	40,00
-A B	A	B	Ab	84,00	84,00
-A B	A	B	Ab	126,9926,99
-A B	A	B	Ab	180,0080,00
-A B	A	B	Ab	15-105-10
-A B	A	B	Ab	 & 200 1	 & 200 1
-A B	A	B	Ab	0,03/0,15 (1.1,03/0,15 (1.1
-A B	A	B	Ab	0,5 (4,5 (4
-A B	A	B	Ab	0.8 -1.0.8 -1.0
-A B	A	B	Ab	1,2 0,2/0,9,2 0,2/0,9
-A B	A	B	Ab	10 111130 11113
-A B	A	B	Ab	10.00 (= tijd)0.00 (= tijd)
-A B	A	B	Ab	100/12,500/12,5
-A B	A	B	Ab	100/5000/50
-A B	A	B	Ab	105/5505/55
-A B	A	B	Ab	126/86 & 115/6726/86 & 115/67
-A B	A	B	Ab	135/14535/145
-A B	A	B	Ab	138/63 & 135/7338/63 & 135/73
-A B	A	B	Ab	14.004.00
-A B	A	B	Ab	15.30 (=tijd)5.30 (=tijd)
-A B	A	B	Ab	15.50 16.00 (=tijd)5.50 16.00 (=tijd)
-A B	A	B	Ab	150/12,5 & 84,0050/12,5 & 84,00
-A B	A	B	Ab	155/95-10055/95-100
-A B	A	B	Ab	16:20 & 16:306:20 & 16:30
-A B	A	B	Ab	160/80 & 1.68, 7560/80 & 1.68, 75
-A B	A	B	Ab	164/10864/108
-A B	A	B	Ab	167/9867/98
-A B	A	B	Ab	180 280 2
-A B	A	B	Ab	20-25	20-25
-A B	A	B	Ab	250/100 & 36,00	250/100 & 36,00
-A B	A	B	Ab	30/150 & 252,00	30/150 & 252,00
-A B	A	B	Ab	300/12,5	300/12,5
-A B	A	B	Ab	40.00 (ICPC)	40.00 (ICPC)
-A B	A	B	Ab	400/12 & (=320/9	400/12 & (=320/9
-A B	A	B	Ab	50 = 6,7 & 150/75	50 = 6,7 & 150/75
-A B	A	B	Ab	500/125 & 30,00	500/125 & 30,00
-A B	A	B	Ab	500/20 (3.1	500/20 (3.1
-A B	A	B	Ab	540.0	540.0
-A B	A	B	Ab	8.7 13.1 7.0 11.0	8.7 13.1 7.0 11.0
-A B	A	B	Ab	98.00	98.00
-A B	A	B	Ab	venserpolder 08-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-A B	A	B	Ab	venserpolder 10-2019 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-A B	A	B	Ab	venserpolder 03-2019  (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-A B	A	B	Ab	venserpolder 04-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-A B	A	B	Ab	venserpolder 01-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-A B	A	B	Ab	Scheemda	[LOCATIE-1]
-A B	A	B	Ab	Coev & Hardenber	[LOCATIE-1]
-A B	A	B	Ab	Frankrijk	[LOCATIE-1]
-A B	A	B	Ab	Groningen	[LOCATIE-1]
-A B	A	B	Ab	hapert	[LOCATIE-1]
-A B	A	B	Ab	Leeuwarden	[LOCATIE-1]
-A B	A	B	Ab	Meppel	[LOCATIE-1]
-A B	A	B	Ab	Oostenrijk	[LOCATIE-1]
-A B	A	B	Ab	Opende	[LOCATIE-1]
-A B	A	B	Ab	Hanzeplein	[LOCATIE-1]
-A B	A	B	Ab	Duitsland	[LOCATIE-1]
-A B	A	B	Ab	8802 XJ	[LOCATIE-1]
-A B	A	B	Ab	Hoogezand	[LOCATIE-1]
-A B	A	B	Ab	Drenthe	[LOCATIE-1]
-A B	A	B	Ab	Hoogeveen	[LOCATIE-1]
-A B	A	B	Ab	Tel: telnr	[NUMMERWOORD-1]
-A B	A	B	Ab	Dr. J. W. Kapelle	[PERSOON-1]
-A B	A	B	Ab	DR IBOG	[PERSOON-1]
-A B	A	B	Ab	Reinier (van de Graafgasthuis)	[PERSOON-1]
-A B	A	B	Ab	Schiphorst-Halfweeg	[PERSOON-1]
-A B	A	B	Ab	telnr	telnr
-A B	A	B	Ab	111426 6276 (geen telnr)	[LANGNUMMER-1]
-A B	A	B	Ab	 & Dr C. (zonder Brasse)	[PERSOON-1]
-A B	A	B	Ab	Tel: 0612345678	[NUMMERWOORD-1]
-A B	A	B	Ab	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
-A B	A	B	Ab	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1][URL-1]
-A B	A	B	Ab	tluik@amsterdamumc.nl	[URL-1]
-A B	A	B	Ab	1,2 0,2/0,9	[LANGNUMMER-1]
-A B	A	B	Ab	0.8 -1.0.8 -1.0
-A B	A	B	Ab	0.8-0.9.8-0.9
-A B	A	B	Ab	0.8 - 0.9.8 - 0.9
-A B	A	B	Ab	1507AB	[LOCATIE-1]
-A B	A	B	Ab	1507 AB	[LOCATIE-1]
-A B	A	B	Ab	150/7550/75
-A B	A	B	Ab	& 150/75	& 150/75
-A B	A	B	Ab	150/75++ & 130.050/75++ & 130.0
-A B	A	B	Ab	 	 
-A B	A	B	Ab		
-A B	A	B	Ab	De Lichtenberg	[INSTELLING-1]
-A B	A	B	Ab	Catharina Ziekenhuis	[INSTELLING-1]
-A B	A	B	Ab	Dunya zorg en welzijn	[INSTELLING-1]
-A B	A	B	Ab	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
-A B	A	B	Ab	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
-A B	A	B	Ab	GGZ Centraal	[GGZ-1]
-A B	A	B	Ab	Gezondheidscentrum Reigersbos	[INSTELLLING-1]
-A B	A	B	Ab	Hanimeli thuiszorg bv	[INSTELLLING-1]
-A B	A	B	Ab	Bovenij ziekenhuis	[INSTELLLING-1]
-A B	A	B	Ab	Stg woongroep babajit	[INSTELLLING-1]
-A B	A	B	Ab	Amsterdam UMC, locatie AMC	[INSTELLLING-1]
-A B	A	B	Ab	Wordt hees van de medicatie	Wordt hees van de medicatie
-A B	A	B	Ab	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
-A B	A	B	Ab	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
-A B	A	B	Ab	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
-A B	A	B	Ab	Antonius Ziekenhuis heeft heel kuil	Antonius Ziekenhuis heeft heel kuil
-A B	A	B	Ab	Esens GGz	[GGZ-1]
-A B	A	B	Ab	ZD46584392	[NUMMERWOORD-1]
-A B	A	B	Ab	Patient drinkt > 10 glazen alcohol per week	Patient drinkt > 10 glazen alcohol per week
-A B	A	B	Ab	Patient drinkt> 10 glazen alcohol per week	Patient drinkt> 10 glazen alcohol per week
-A B	A	B	Ab	Patient drinkt >10 glazen alcohol per week	Patient drinkt >10 glazen alcohol per week
-A B	A	B	Ab	Patient drinkt < 10 glazen alcohol per week	Patient drinkt < 10 glazen alcohol per week
-A B	A	B	Ab	Patient drinkt< 10 glazen alcohol per week	Patient drinkt< 10 glazen alcohol per week
-A B	A	B	Ab	Patient drinkt <10 glazen alcohol per week	Patient drinkt <10 glazen alcohol per week
-# TODO add a test case with < or > followed by 2 or more spaces
-A B	A	B	Ab	DORPSTRAAT 15	[LOCATIE-1]
-A B	A	B	Ab	DORPstraat 16	[LOCATIE-1]
-A B	A	B	Ab	dorpstraat 17	[LOCATIE-1]
-A B	A	B	Ab	dorpStraat 18	[LOCATIE-1]
-A B	A	B	Ab	BSN 123456789	[NUMMERWOORD-1]
-A B	A	B	Ab	BSN123456789	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsn 123456789	[NUMMERWOORD-1]
-A B	A	B	Ab	Bsb123456789	[INSTELLING-1][LANGNUMMER-1]
-A B	A	B	Ab	bsn 123456789	[NUMMERWOORD-1]
-A B	A	B	Ab	bsn123456789	[NUMMERWOORD-1]
-A B	A	B	Ab	bSN 123456789	bSN [LANGNUMMER-1]
-A B	A	B	Ab	bSN123456789	bSN [LANGNUMMER-1]
-A B	A	B	Ab	van Kooten en de Bie	[PERSOON-1] en [PERSOON-2]
-A B	A	B	Ab	Mevrouw Donderslag tot en met Bliksemschicht van der Mokummerhei	Mevrouw [PERSOON-1]
-A B	A	B	Ab	Gumus werd opgenomen per 01-01-2001	[PERSOON-1] werd opgenomen per [DATUM-1]
-A B	A	B	Ab	Meneer met Roodjeuk	Meneer met Roodjeuk	
-A B	A	B	Ab	Opgenomen in Stg ggz friesland en daarna in Diakonessenhuis utrecht	Opgenomen in [INSTELLING-1] en daarna in [INSTELLING-2]
-A B	A	B	Ab	Patient naam: d'Oliveria	Patient naam: [PERSOON-1]
-A B	A	B	Ab	glucnuven 4,2	glucnuven 4,2
-A B	A	B	Ab	glucnuven 4,2 cholest	glucnuven 4,2 cholest
-A B	A	B	Ab	Rechter (schouder)	Rechter (schouder)
-A B	A	B	Ab	Schouder links	Schouder links
-A B	A	B	Ab	Schouder rechts	Schouder rechts
+# =============================================================================							
+#							
+# This file contains a large set of text fragments used to validate DEDUCE. It contains 8 tab-delimited columns:							
+# 0) the record ID. Is not used in the testing code and its only purpose is to ease find a test case for a human user [Rec_ID]							
+# 1) the failure / pass status. 'F' denotes that this record produces a known failure. 'P' denotes that it should pass. Values must be in capitals [Pass_or_Fail]							
+# 2) the first names of the patient            [Pat_Firstnames]							
+# 3) the initials of the patient               [Pat_Initials]							
+# 4) the surname of the patient                [Pat_Surname]							
+# 5) the given name (roepnaam) of the patient  [Pat_Givenname]							
+# 6) the input identifiable text fed to DEDUCE [Identifiable_input]							
+# 7) the expected output                       [Expected_output]							
+#							
+# A special set of lookup-lists TODO finish the documentation once the code is							
+#							
+# This file was originally included in the HAG (dept. General Practice)							
+# version of DEDUCE which was maintained by the KIK (dept. Clinical Informatics);\							
+# both departments are part of the AmsterdamUMC.							
+#							
+# Comment lines begin with a hash-sign							
+#							
+# =============================================================================							
+# Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
+1	P	Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1]
+2	P	Aa Bb Cc	B	Aaa	BBBB	fys 40 jarige	fys [LEEFTIJD-1] jarige
+3	P	Aa Bb Cc	B	Aaa	BBBB	wordt 33 jaar	wordt [LEEFTIJD-1] jaar
+4	P	Aa Bb Cc	B	Aaa	BBBB	10-jarige patient	[LEEFTIJD-1]-jarige patient
+5	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 83 jaar	vanaf 83 jaar
+6	P	Aa Bb Cc	B	Aaa	BBBB	sinds 2 jaar	sinds 2 jaar
+7	P	Aa Bb Cc	B	Aaa	BBBB	komende 3 jaar	komende 3 jaar
+8	P	Aa Bb Cc	B	Aaa	BBBB	na 15 jaar afwezig	na 15 jaar afwezig
+9	P	Aa Bb Cc	B	Aaa	BBBB	herhalen na 20 jaar	herhalen na 20 jaar
+10	P	Aa Bb Cc	B	Aaa	BBBB	sinds 28e	sinds 28e
+11	P	Aa Bb Cc	B	Aaa	BBBB	seh amc	seh [ZIEKENHUIS-1]
+12	P	Aa Bb Cc	B	Aaa	BBBB	gyn-amc	gyn-[ZIEKENHUIS-1]
+13	P	Aa Bb Cc	B	Aaa	BBBB	amc ron	[ZIEKENHUIS-1] ron
+14	P	Aa Bb Cc	B	Aaa	BBBB	vw amc chir	vw [ZIEKENHUIS-1] chir
+15	P	Aa Bb Cc	B	Aaa	BBBB	olvg chir	[ZIEKENHUIS-1] chir
+# test to see if hospitals with or without diacriticals are correctly masked							
+16	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Máxima Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
+17	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Maxima Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
+# Failing. See Jira issue RDM-87							
+18	P	Aa Bb Cc	B	Aaa	BBBB	van het zonnehuis	van het [ZORGINSTELLING-1]
+19	P	Aa Bb Cc	B	Aaa	BBBB	amc plastische chirurgie	[ZIEKENHUIS-1] plastische chirurgie
+20	P	Aa Bb Cc	B	Aaa	BBBB	sdz 10mg/d	sdz 10mg/d
+21	P	Aa Bb Cc	B	Aaa	BBBB	ketoconaz sdz	ketoconaz sdz
+22	P	Aa Bb Cc	B	Aaa	BBBB	decubitus bovenbeen	[INSTELLING-1] bovenbeen
+23	P	Aa Bb Cc	B	Aaa	BBBB	desloratadine sdz	desloratadine sdz
+24	P	Aa Bb Cc	B	Aaa	BBBB	as woensdag 1/5 woord	as woensdag [DATUM-1] woord
+25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] woord erachter
+26	P	Aa Bb Cc	B	Aaa	BBBB	begon 2-3dg geleden	begon 2-3dg geleden
+27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [DATUM-1] woord erachter
+28	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 05-12 ook	vanaf [DATUM-1] ook
+29	P	Aa Bb Cc	B	Aaa	BBBB	zie 1/1/2001 pt	zie [DATUM-1] pt
+30	P	Aa Bb Cc	B	Aaa	BBBB	temp 37 1	temp 37 1
+31	P	Aa Bb Cc	B	Aaa	BBBB	temp 37 1 hoog	temp 3[DATUM-1] hoog
+32	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4.2	glucnuven 4.2
+33	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4.2 cholest	glucnuven 4.2 cholest
+34	P	Aa Bb Cc	B	Aaa	BBBB	tablet 10 5mg	tablet 10 5mg
+35	P	Aa Bb Cc	B	Aaa	BBBB	gewicht 73.2 quet/bmi 28 4 chol	gewicht 7[DATUM-1] quet/bmi [DATUM-2] chol
+36	P	Aa Bb Cc	B	Aaa	BBBB	1/4 tablet	[DATUM-1] tablet
+37	P	Aa Bb Cc	B	Aaa	BBBB	3-5d2dr	[DATUM-1] 2dr
+38	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 1-2 zakjes	vanaf [DATUM-1] zakjes
+39	P	Aa Bb Cc	B	Aaa	BBBB	2 5ml	2 5ml
+40	P	Aa Bb Cc	B	Aaa	BBBB	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol
+41	P	Aa Bb Cc	B	Aaa	BBBB	via google.nl	via [URL-1]
+42	P	Aa Bb Cc	B	Aaa	BBBB	scapula-stabilisatoren.behandeling	scapula-stabilisatoren.behandeling
+43	P	Aa Bb Cc	B	Aaa	BBBB	scapula-stabilisatoren.be.	[URL-1].
+44	P	Aa Bb Cc	B	Aaa	BBBB	ZOVIRAX 50MG/G CREME	ZOVIRAX 50MG/G CREME
+45	P	Aa Bb Cc	B	Aaa	BBBB	zoon tjerk	zoon tjerk
+46	P	Aa Bb Cc	B	Aaa	BBBB	trudy meer zorg thuis	trudy meer zorg thuis
+47	P	Aa Bb Cc	B	Aaa	BBBB	dr van der Luik faxnr 075-1234567	[PERSOON-1] faxnr [TELEFOONNUMMER-1]
+48	P	Aa Bb Cc	B	Aaa	BBBB	06 123456876	[TELEFOONNUMMER-1]
+49	P	Aa Bb Cc	B	Aaa	BBBB	nu vier 4 jaar ziektevrij	nu vier [LEEFTIJD-1] jaar ziektevrij
+50	P	Aa Bb Cc	B	Aaa	BBBB	gyn amc van 11-01 t/m 28-04-2009	gyn [INSTELLING-1] van [DATUM-1] t/m [DATUM-2]
+51	P	Aa Bb Cc	B	Aaa	BBBB	heup operatie 12/05	heup operatie [DATUM-1]
+52	P	Aa Bb Cc	B	Aaa	BBBB	dit is een 3-3-2019 datum	dit is een [DATUM-1] datum
+53	P	Aa Bb Cc	B	Aaa	BBBB	9	9
+54	P	Aa Bb Cc	B	Aaa	BBBB	G Creme	[PERSOON-1]
+55	P	Aa Bb Cc	B	Aaa	BBBB	O.L.V.G. Oost: amoxicilline 2dd 500 mg	[PERSOON-1]
+56	P	Aa Bb Cc	B	Aaa	BBBB	Si	Si
+57	P	Aa Bb Cc	B	Aaa	BBBB	Tel (telefonisch)	[PERSOON-1] (telefonisch)
+58	P	Aa Bb Cc	B	Aaa	BBBB	]	]
+59	P	Aa Bb Cc	B	Aaa	BBBB	T-Save (is iud)	[PERSOON-1] (is iud)
+60	P	Aa Bb Cc	B	Aaa	BBBB	Abd (abdomen)	Abd (abdomen)
+61	P	Aa Bb Cc	B	Aaa	BBBB	Operatie	Operatie
+62	P	Aa Bb Cc	B	Aaa	BBBB	Boek	Boek
+63	P	Aa Bb Cc	B	Aaa	BBBB	Rust	
+64	P	Aa Bb Cc	B	Aaa	BBBB	Elders	Elders
+65	P	Aa Bb Cc	B	Aaa	BBBB	OD (oculus dexter, rechter oog)	OD (oculus dexter, rechter oog)
+66	P	Aa Bb Cc	B	Aaa	BBBB	VT (vaginaal toucher)	VT (vaginaal toucher)
+67	P	Aa Bb Cc	B	Aaa	BBBB	Mycose	Mycose
+68	P	Aa Bb Cc	B	Aaa	BBBB	Enk/Arm	Enk/Arm
+69	P	Aa Bb Cc	B	Aaa	BBBB	MST (mamma sparende therapie)	MST (mamma sparende therapie)
+70	P	Aa Bb Cc	B	Aaa	BBBB	RFE	RFE
+71	P	Aa Bb Cc	B	Aaa	BBBB	FRANSSEN	[PERSOON-1]
+72	P	Aa Bb Cc	B	Aaa	BBBB	Winter-tenen	Winter-tenen
+73	P	Aa Bb Cc	B	Aaa	BBBB	IM Slotervaart ZH  Cytologie, MEDVRI, Pap 1. Epitheelatrofie	IM [INSTELLING-1] ZH Cytologie, MEDVRI, [PERSOON-1] 1. Epitheelatrofie
+74	P	Aa Bb Cc	B	Aaa	BBBB	klachten duren al 5 jaar	klachten duren al 5 jaar
+75	P	Aa Bb Cc	B	Aaa	BBBB	Azithromycine	Azithromycine
+76	P	Aa Bb Cc	B	Aaa	BBBB	< kleiner dan	< kleiner dan
+77	P	Aa Bb Cc	B	Aaa	BBBB	D1C PREGEBALINE CAPSULE	D1C PREGEBALINE CAPSULE
+78	P	Aa Bb Cc	B	Aaa	BBBB	16 maal	16 maal
+79	P	Aa Bb Cc	B	Aaa	BBBB	1,5,	1,5,
+80	P	Aa Bb Cc	B	Aaa	BBBB	5 maanden	5 maanden
+81	P	Aa Bb Cc	B	Aaa	BBBB	Rood oog	Rood oog
+82	P	Aa Bb Cc	B	Aaa	BBBB	T 36,5. Milde drukpijn	T 36,5. Milde drukpijn
+82	P	Koele kikker	B	Aaa	BBBB	T 36,5. Milde drukpijn	T 36,5. Milde drukpijn
+83	P	Aa Bb Cc	B	Aaa	BBBB	[60 jaar	[[LEEFTIJD-1] jaar
+84	P	Aa Bb Cc	B	Aaa	BBBB	10 jaarscore 2.4%   5 jaarscore 9-11% RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over 1 jaar	[LEEFTIJD-1] jaarscore 2.4% [LEEFTIJD-1] jaarscore [DATUM-1]  RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over [LEEFTIJD-1] jaar
+85	P	Aa Bb Cc	B	Aaa	BBBB	Sinds 1 maand	Sinds 1 maand
+86	P	Aa Bb Cc	B	Aaa	BBBB	Jasmin (oac)	[PERSOON-1] (oac)
+87	P	Aa Bb Cc	B	Aaa	BBBB	Linker (schouder)	Linker (schouder)
+88	P	Aa Bb Cc	B	Aaa	BBBB	Burn out	Burn out
+89	P	Aa Bb Cc	B	Aaa	BBBB	IM OLVG: Dermatologie, MEDSPE, Conclusie Ad 1-4 Basaalcelcarcinomen Ad 5 Actinische keratose	[PERSOON-1] keratose
+90	P	Aa Bb Cc	B	Aaa	BBBB	"M. ""Bowen"""	"M. ""Bowen"""
+91	P	Aa Bb Cc	B	Aaa	BBBB	1-8. Radiologie afspraak	[DATUM-1]. Radiologie afspraak
+92	P	Aa Bb Cc	B	Aaa	BBBB	1-8. Chirurgie afspraak	[DATUM-1]. Chirurgie afspraak
+93	P	Aa Bb Cc	B	Aaa	BBBB	1-8. Plastische afspraak	[DATUM-1]. Plastische afspraak
+94	P	Aa Bb Cc	B	Aaa	BBBB	Thakoer	[PERSOON-1]
+95	P	Aa Bb Cc	B	Aaa	BBBB	Willibrordus	[PERSOON-1]
+96	P	Aa Bb Cc	B	Aaa	BBBB	van der Kraats	[PERSOON-1]
+97	P	Aa Bb Cc	B	Aaa	BBBB	hypercholelestorolemieosteoporose	hypercholelestorolemieosteoporose
+98	P	Aa Bb Cc	B	Aaa	BBBB	Verzorgingshuis huize het oosten	[INSTELLING-1]
+99	P	Aa Bb Cc	B	Aaa	BBBB	Turkmenistan	[LOCATIE-1]
+100	P	Aa Bb Cc	B	Aaa	BBBB	90842375	[LANGNUMMER-1]
+101	P	Aa Bb Cc	B	Aaa	BBBB	0908-42375	[LANGNUMMER-1]
+102	P	Aa Bb Cc	B	Aaa	BBBB	09.08.42.375	[DATUM-1].375
+103	P	Aa Bb Cc	B	Aaa	BBBB	020-25476098	[TELEFOONNUMMER-1]
+104	P	Aa Bb Cc	B	Aaa	BBBB	7583	[LEEFTIJD-1]
+105	P	Aa Bb Cc	B	Aaa	BBBB	7-5-83	[LEEFTIJD-1]
+106	P	Aa Bb Cc	B	Aaa	BBBB	2/4/65	[LEEFTIJD-1]
+107	P	Aa Bb Cc	B	Aaa	BBBB	23.12.7652	[LEEFTIJD-1]
+108	P	Aa Bb Cc	B	Aaa	BBBB	06.43.53.74.98	[LEEFTIJD-1]
+109	P	Aa Bb Cc	B	Aaa	BBBB	06-568937334	[LEEFTIJD-1]
+110	P	Aa Bb Cc	B	Aaa	BBBB	2.4.65	[LEEFTIJD-1]
+111	P	Aa Bb Cc	B	Aaa	BBBB	Geb 2 juni 1964	[LEEFTIJD-1]
+112	P	Aa Bb Cc	B	Aaa	BBBB	Geb 2-6-64	Geb [DATUM-1]
+113	P	Aa Bb Cc	B	Aaa	BBBB	Tel no 0283674939	[PERSOON-1] no [TELEFOONNUMMER-1]
+114	P	Aa Bb Cc	B	Aaa	BBBB	Tel 06 24238605	[PERSOON-1] [LANGNUMMER-1]
+115	P	Aa Bb Cc	B	Aaa	BBBB	Tel 020 42386050	[PERSOON-1] [TELEFOONNUMMER-1]0
+116	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2-3-54	Dat [DATUM-1]
+117	P	Aa Bb Cc	B	Aaa	BBBB	Dat. 6487	[LEEFTIJD-1]
+118	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2 juni 2006	[LEEFTIJD-1]
+119	P	Aa Bb Cc	B	Aaa	BBBB	BSN 354	[NUMMERWOORD-1]
+120	P	Aa Bb Cc	B	Aaa	BBBB	Bsn: 638 678909	[NUMMERWOORD-1]
+121	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 576	[NUMMERWOORD-1]
+122	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 78690678	[NUMMERWOORD-1]
+123	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  365896790	[NUMMERWOORD-1]
+124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	[NUMMERWOORD-1]
+125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	[NUMMERWOORD-1]
+126	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Zwart	[PERSOON-1]
+127	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
+128	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
+129	P	Aa Bb Cc	B	Aaa	BBBB	Vrakking	[PERSOON-1]
+130	P	Aa Bb Cc	B	Aaa	BBBB	Fletchina	[PERSOON-1]
+131	P	Aa Bb Cc	B	Aaa	BBBB	MvAtten	[PERSOON-1]
+132	P	Aa Bb Cc	B	Aaa	BBBB	M v Atten	[PERSOON-1]
+133	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder,J. Stroucken.	[LOCATIE-1],[PERSOON-1].
+134	P	Aa Bb Cc	B	Aaa	BBBB	yhessing	[PERSOON-1]
+135	P	Aa Bb Cc	B	Aaa	BBBB	y hessing	[PERSOON-1]
+136	P	Aa Bb Cc	B	Aaa	BBBB	Overman	[PERSOON-1]
+137	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wilpe	[PERSOON-1]
+138	P	Aa Bb Cc	B	Aaa	BBBB	B. Nizynska	[PERSOON-1]
+139	P	Aa Bb Cc	B	Aaa	BBBB	M.S.A. Suttorp	[PERSOON-1]
+140	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wissen	[PERSOON-1]
+141	P	Aa Bb Cc	B	Aaa	BBBB	Cogswell	[PERSOON-1]
+142	P	Aa Bb Cc	B	Aaa	BBBB	Lioen	[PERSOON-1]
+143	P	Aa Bb Cc	B	Aaa	BBBB	r.boot@amc.nl	[PERSOON-1]
+144	P	Aa Bb Cc	B	Aaa	BBBB	Loenermark 188	[LOCATIE-1]
+145	P	Aa Bb Cc	B	Aaa	BBBB	Oude Turfmarkt	[LOCATIE-1]
+146	P	Aa Bb Cc	B	Aaa	BBBB	GAZO venserpolder	GAZO [LOCATIE-1]
+147	P	Aa Bb Cc	B	Aaa	BBBB	Transvaal Apotheek	[INSTELLING-1]
+148	P	Aa Bb Cc	B	Aaa	BBBB	Apotheek GC Reigersbos	[INSTELLING-1]
+149	P	Aa Bb Cc	B	Aaa	BBBB	naar AMC kan	naar [INSTELLING-1] kan
+150	P	Aa Bb Cc	B	Aaa	BBBB	Onze Lieve Vrouwe Gasthuis	[INSTELLING-1]
+151	P	Aa Bb Cc	B	Aaa	BBBB	GC H'drecht	[INSTELLING-1]
+152	P	Aa Bb Cc	B	Aaa	BBBB	A'dam	[LOCATIE-1]
+153	P	Aa Bb Cc	B	Aaa	BBBB	Cordaan	[INSTELLING-1]
+154	P	Aa Bb Cc	B	Aaa	BBBB	Pantar	[INSTELLING-1]
+155	P	Aa Bb Cc	B	Aaa	BBBB	apo Gein	apo [INSTELLING-1]
+156	P	Aa Bb Cc	B	Aaa	BBBB	GGZ JELLINEK	GGZ [INSTELLING-1]
+157	P	Aa Bb Cc	B	Aaa	BBBB	Opname Flevo Dr. Korsten Chirurgie	Opname [LOCATIE-1] Dr. [PERSOON-1] Chirurgie
+158	P	Aa Bb Cc	B	Aaa	BBBB	Van: Bronner	Van: [PERSOON-1]
+159	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blekkert,Neuroloog	Van: [PERSOON-1],Neuroloog
+160	P	Aa Bb Cc	B	Aaa	BBBB	van : BOODT,Uroloog	van : [PERSOON-1],Uroloog
+161	P	Aa Bb Cc	B	Aaa	BBBB	Overleg met dr Baas, longarts Avl	Overleg met dr [PERSOON-1], longarts Avl
+162	P	Aa Bb Cc	B	Aaa	BBBB	Van: Ribbert, M.A.H.	Van: [PERSOON-1]
+163	P	Aa Bb Cc	B	Aaa	BBBB	Aios M Binnema	[PERSOON-1]
+164	P	Aa Bb Cc	B	Aaa	BBBB	Naar : [PERSOON-1] Driest (POH GGZ)	Naar : [PERSOON-1] [PERSOON-1] (POH GGZ)
+165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1], rontgen
+166	P	Aa Bb Cc	B	Aaa	BBBB	Van : Eenhorst, oog c/cornea nu rustig	[PERSOON-1]
+167	P	Aa Bb Cc	B	Aaa	BBBB	Van : KNOTTENBELT, pch c/fibroom kin	[PERSOON-1]
+168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	Regiearts [PERSOON-1] tel: in gesprek
+169	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blankevoort, SEH	Van: [PERSOON-1], SEH
+170	P	Aa Bb Cc	B	Aaa	BBBB	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. S. [PERSOON-1]. Benauwd, hoest, bekend met
+171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	[INSTELLING-1]
+172	P	Aa Bb Cc	B	Aaa	BBBB	Van: Linzel, longarts	Van: Linzel, longarts
+173	P	Aa Bb Cc	B	Aaa	BBBB	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	[PERSOON-1]
+174	P	Aa Bb Cc	B	Aaa	BBBB	Van : Craanen	Van : [PERSOON-1]
+175	P	Aa Bb Cc	B	Aaa	BBBB	Opname Cardioloog blaricum	Opname Cardioloog [LOCATIE-1]
+176	P	Aa Bb Cc	B	Aaa	BBBB	Van  : Cunningham [PERSOON-1],VZG	Van : [PERSOON-1] [PERSOON-1],VZG
+177	P	Aa Bb Cc	B	Aaa	BBBB	Van: Kortz, Cardioloog	Van: [PERSOON-1], Cardioloog
+178	P	Aa Bb Cc	B	Aaa	BBBB	naar Noorderdok voor echogeleide injectie	naar [INSTELLING-1] voor echogeleide injectie
+179	P	Aa Bb Cc	B	Aaa	BBBB	Van : SPANK, VD, car	Van : [PERSOON-1], VD, car
+180	P	Aa Bb Cc	B	Aaa	BBBB	Van : Houten	Van : [PERSOON-1]
+181	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[INSTELLING-1]
+182	P	Aa Bb Cc	B	Aaa	BBBB	Leids Cytologisch en Pathologisch lab	[INSTELLING-1]
+183	P	Aa Bb Cc	B	Aaa	BBBB	AMC	[INSTELLING-1]
+184	P	Aa Bb Cc	B	Aaa	BBBB	ATAL	[INSTELLING-1]
+185	P	Aa Bb Cc	B	Aaa	BBBB	Atal Artsenlaboratorium	[INSTELLING-1]
+186	P	Aa Bb Cc	B	Aaa	BBBB	Atal Medial	[INSTELLING-1]
+187	P	Aa Bb Cc	B	Aaa	BBBB	Atal-Medial	[INSTELLING-1]
+188	P	Aa Bb Cc	B	Aaa	BBBB	Bascule	[INSTELLING-1]
+189	P	Aa Bb Cc	B	Aaa	BBBB	Bonga	[INSTELLING-1]
+190	P	Aa Bb Cc	B	Aaa	BBBB	Buitenhof	[INSTELLING-1]
+191	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[INSTELLING-1]
+192	P	Aa Bb Cc	B	Aaa	BBBB	GGZ inGeest	[INSTELLING-1]
+193	P	Aa Bb Cc	B	Aaa	BBBB	ggzingeest	[INSTELLING-1]
+194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[INSTELLING-1]
+195	P	Aa Bb Cc	B	Aaa	BBBB	Hoogstraten	[PERSOON-1]
+196	P	Aa Bb Cc	B	Aaa	BBBB	Leids universitair medisch centrum	[INSTELLING-1]
+197	P	Aa Bb Cc	B	Aaa	BBBB	Marsepeintje kinderdagverblijf	[INSTELLING-1]
+198	P	Aa Bb Cc	B	Aaa	BBBB	OLVG	[INSTELLING-1]
+199	P	Aa Bb Cc	B	Aaa	BBBB	Pep Psychologen	[INSTELLING-1]
+200	P	Aa Bb Cc	B	Aaa	BBBB	Pep,Psychologen	[INSTELLING-1]
+201	P	Aa Bb Cc	B	Aaa	BBBB	Prezens GGZ Ingeest	[INSTELLING-1]
+202	P	Aa Bb Cc	B	Aaa	BBBB	PSY - Q	[INSTELLING-1]
+203	P	Aa Bb Cc	B	Aaa	BBBB	reade	[INSTELLING-1]
+204	P	Aa Bb Cc	B	Aaa	BBBB	revalidatie Hoogstraat	revalidatie [INSTELLING-1]
+205	P	Aa Bb Cc	B	Aaa	BBBB	Revalidatiecentrum De Hoogstraat	[INSTELLING-1]
+206	P	Aa Bb Cc	B	Aaa	BBBB	Rijn apotheek	[INSTELLING-1]
+207	P	Aa Bb Cc	B	Aaa	BBBB	Rijn apotheek	[INSTELLING-1]
+208	P	Aa Bb Cc	B	Aaa	BBBB	SLAZ	[INSTELLING-1]
+209	P	Aa Bb Cc	B	Aaa	BBBB	Symbiant	[INSTELLING-1]
+210	P	Aa Bb Cc	B	Aaa	BBBB	Tel.Bonga	Tel.[INSTELLING-1]
+211	P	Aa Bb Cc	B	Aaa	BBBB	Trappenberg	[INSTELLING-1]
+212	P	Aa Bb Cc	B	Aaa	BBBB	VU	[PERSOON-1]
+213	P	Aa Bb Cc	B	Aaa	BBBB	VUmc	[INSTELLING-1]
+214	P	Aa Bb Cc	B	Aaa	BBBB	Zuyderland	[INSTELLING-1]
+215	P	Aa Bb Cc	B	Aaa	BBBB	A Leloup	[PERSOON-1]
+216	P	Aa Bb Cc	B	Aaa	BBBB	A. Lel oup	[PERSOON-1]
+217	P	Aa Bb Cc	B	Aaa	BBBB	A. Leloup	[PERSOON-1]
+218	P	Aa Bb Cc	B	Aaa	BBBB	A.Leloup	[PERSOON-1]
+219	P	Aa Bb Cc	B	Aaa	BBBB	ABijlsma	[PERSOON-1]
+220	P	Aa Bb Cc	B	Aaa	BBBB	Blickman	[PERSOON-1]
+221	P	Aa Bb Cc	B	Aaa	BBBB	Fvos	[PERSOON-1]
+222	P	Aa Bb Cc	B	Aaa	BBBB	GORZEMAN	[PERSOON-1]
+223	P	Aa Bb Cc	B	Aaa	BBBB	kolle	[PERSOON-1]
+224	P	Aa Bb Cc	B	Aaa	BBBB	Leloup	[PERSOON-1]
+225	P	Aa Bb Cc	B	Aaa	BBBB	Mijnheere	[PERSOON-1]
+226	P	Aa Bb Cc	B	Aaa	BBBB	nezihe	[PERSOON-1]
+227	P	Aa Bb Cc	B	Aaa	BBBB	oude Raai	[PERSOON-1]
+228	P	Aa Bb Cc	B	Aaa	BBBB	Render	[PERSOON-1]
+229	P	Aa Bb Cc	B	Aaa	BBBB	Sarlui	[PERSOON-1]
+230	P	Aa Bb Cc	B	Aaa	BBBB	shanta	[PERSOON-1]
+231	P	Aa Bb Cc	B	Aaa	BBBB	Sharya	[PERSOON-1]
+232	P	Aa Bb Cc	B	Aaa	BBBB	STEE	[PERSOON-1]
+233	P	Aa Bb Cc	B	Aaa	BBBB	T/Charissaover	[PERSOON-1]
+234	P	Aa Bb Cc	B	Aaa	BBBB	TC Stee	[PERSOON-1]
+235	P	Aa Bb Cc	B	Aaa	BBBB	Teeuwes	[PERSOON-1]
+236	P	Aa Bb Cc	B	Aaa	BBBB	tonjav	[PERSOON-1]
+237	P	Aa Bb Cc	B	Aaa	BBBB	van Loon	[PERSOON-1]
+238	P	Aa Bb Cc	B	Aaa	BBBB	VIETJE	[PERSOON-1]
+239	P	Aa Bb Cc	B	Aaa	BBBB	Yurrian Bikker	[PERSOON-1]
+240	P	Aa Bb Cc	B	Aaa	BBBB	A'dam	[LOCATIE-1]
+241	P	Aa Bb Cc	B	Aaa	BBBB	amsteldijk	[LOCATIE-1]
+242	P	Aa Bb Cc	B	Aaa	BBBB	AMSTERDAM	[LOCATIE-1]
+243	P	Aa Bb Cc	B	Aaa	BBBB	Ardennen	[LOCATIE-1]
+244	P	Aa Bb Cc	B	Aaa	BBBB	bijlmer	[LOCATIE-1]
+245	P	Aa Bb Cc	B	Aaa	BBBB	brussel	[LOCATIE-1]
+246	P	Aa Bb Cc	B	Aaa	BBBB	Caracao	[LOCATIE-1]
+247	P	Aa Bb Cc	B	Aaa	BBBB	Curacau	[LOCATIE-1]
+248	P	Aa Bb Cc	B	Aaa	BBBB	Gasthuiskwartier	[LOCATIE-1]
+249	P	Aa Bb Cc	B	Aaa	BBBB	Kanaaleiland	[LOCATIE-1]
+250	P	Aa Bb Cc	B	Aaa	BBBB	Leiden	[LOCATIE-1]
+251	P	Aa Bb Cc	B	Aaa	BBBB	Oosterpark	[LOCATIE-1]
+252	P	Aa Bb Cc	B	Aaa	BBBB	Oude turfmarkt	[LOCATIE-1]
+253	P	Aa Bb Cc	B	Aaa	BBBB	Rhodos	[LOCATIE-1]
+254	P	Aa Bb Cc	B	Aaa	BBBB	Rivierstaete	[LOCATIE-1]
+255	P	Aa Bb Cc	B	Aaa	BBBB	Sri lanka	[LOCATIE-1]
+256	P	Aa Bb Cc	B	Aaa	BBBB	U trecht	[LOCATIE-1]
+257	P	Aa Bb Cc	B	Aaa	BBBB	ABN	[INSTELLING-1]
+258	P	Aa Bb Cc	B	Aaa	BBBB	ABnAmro	[INSTELLING-1]
+259	P	Aa Bb Cc	B	Aaa	BBBB	AFM	[INSTELLING-1]
+260	P	Aa Bb Cc	B	Aaa	BBBB	Klaverblad verz	[INSTELLING-1]
+261	P	Aa Bb Cc	B	Aaa	BBBB	Ouder Kind Team Kinderts	[INSTELLING-1]
+262	P	Aa Bb Cc	B	Aaa	BBBB	Raad van Kinderbescherming	[INSTELLING-1]
+263	P	Aa Bb Cc	B	Aaa	BBBB	de Marne	[INSTELLING-1]
+264	P	Aa Bb Cc	B	Aaa	BBBB	Verslavingszorg Terwille	[INSTELLING-1]
+265	P	Aa Bb Cc	B	Aaa	BBBB	12Hoven	[INSTELLING-1]
+266	P	Aa Bb Cc	B	Aaa	BBBB	Bergman Clinics	[INSTELLING-1]
+267	P	Aa Bb Cc	B	Aaa	BBBB	BETHESDA	[INSTELLING-1]
+268	P	Aa Bb Cc	B	Aaa	BBBB	Bethesda	[INSTELLING-1]
+269	P	Aa Bb Cc	B	Aaa	BBBB	DE ELBE	[INSTELLING-1]
+270	P	Aa Bb Cc	B	Aaa	BBBB	DE FUNDATIE	[INSTELLING-1]
+271	P	Aa Bb Cc	B	Aaa	BBBB	Huys ter Swaach	[INSTELLING-1]
+272	P	Aa Bb Cc	B	Aaa	BBBB	Icare	[INSTELLING-1]
+273	P	Aa Bb Cc	B	Aaa	BBBB	icare	[INSTELLING-1]
+274	P	Aa Bb Cc	B	Aaa	BBBB	Ielanan	[INSTELLING-1]
+275	P	Aa Bb Cc	B	Aaa	BBBB	Isala	[INSTELLING-1]
+276	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwerik	[INSTELLING-1]
+277	P	Aa Bb Cc	B	Aaa	BBBB	MCL	[INSTELLING-1]
+278	P	Aa Bb Cc	B	Aaa	BBBB	MZ	[INSTELLING-1]
+279	P	Aa Bb Cc	B	Aaa	BBBB	Nijenhuis Voetencentrum	[INSTELLING-1]
+280	P	Aa Bb Cc	B	Aaa	BBBB	Saxenburgh Groep	[INSTELLING-1]
+281	P	Aa Bb Cc	B	Aaa	BBBB	Sloterdijk	[INSTELLING-1]
+282	P	Aa Bb Cc	B	Aaa	BBBB	Treant Zorggroep	[INSTELLING-1]
+283	P	Aa Bb Cc	B	Aaa	BBBB	UMCG	[INSTELLING-1]
+284	P	Aa Bb Cc	B	Aaa	BBBB	Universitair Medisch Centrum Groningen	[INSTELLING-1]
+285	P	Aa Bb Cc	B	Aaa	BBBB	Villa Pinedo	[INSTELLING-1]
+286	P	Aa Bb Cc	B	Aaa	BBBB	Vital Health	[INSTELLING-1]
+287	P	Aa Bb Cc	B	Aaa	BBBB	WEEZENLANDEN	[INSTELLING-1]
+288	P	Aa Bb Cc	B	Aaa	BBBB	wza	[INSTELLING-1]
+289	P	Aa Bb Cc	B	Aaa	BBBB	WZA	[INSTELLING-1]
+290	P	Aa Bb Cc	B	Aaa	BBBB	Batting	[PERSOON-1]
+291	P	Aa Bb Cc	B	Aaa	BBBB	Belt	[PERSOON-1]
+292	P	Aa Bb Cc	B	Aaa	BBBB	BERGE VAN DEN	[PERSOON-1]
+293	P	Aa Bb Cc	B	Aaa	BBBB	BOELSTRA	[PERSOON-1]
+294	P	Aa Bb Cc	B	Aaa	BBBB	Dereksen	[PERSOON-1]
+295	P	Aa Bb Cc	B	Aaa	BBBB	Erion	[PERSOON-1]
+296	P	Aa Bb Cc	B	Aaa	BBBB	F. Harding	[PERSOON-1]
+297	P	Aa Bb Cc	B	Aaa	BBBB	Flart	[PERSOON-1]
+298	P	Aa Bb Cc	B	Aaa	BBBB	Germs	[PERSOON-1]
+299	P	Aa Bb Cc	B	Aaa	BBBB	Govaert	[PERSOON-1]
+300	P	Aa Bb Cc	B	Aaa	BBBB	hardieck	[PERSOON-1]
+301	P	Aa Bb Cc	B	Aaa	BBBB	hilberdink	[PERSOON-1]
+302	P	Aa Bb Cc	B	Aaa	BBBB	J Gelmers	[PERSOON-1]
+303	P	Aa Bb Cc	B	Aaa	BBBB	Jaaike	[PERSOON-1]
+304	P	Aa Bb Cc	B	Aaa	BBBB	Janike	[PERSOON-1]
+305	P	Aa Bb Cc	B	Aaa	BBBB	Joostens	[PERSOON-1]
+306	P	Aa Bb Cc	B	Aaa	BBBB	Korte J.H.	[PERSOON-1]
+307	P	Aa Bb Cc	B	Aaa	BBBB	M.E. Bodegom	[PERSOON-1]
+308	P	Aa Bb Cc	B	Aaa	BBBB	M.L.J. van der Wiel	[PERSOON-1]
+309	P	Aa Bb Cc	B	Aaa	BBBB	MANSIER	[PERSOON-1]
+310	P	Aa Bb Cc	B	Aaa	BBBB	NS CLEMENS	[PERSOON-1]
+311	P	Aa Bb Cc	B	Aaa	BBBB	R.D. van den Hoed	[PERSOON-1]
+312	P	Aa Bb Cc	B	Aaa	BBBB	Raber	[PERSOON-1]
+313	P	Aa Bb Cc	B	Aaa	BBBB	REYNERS	[PERSOON-1]
+314	P	Aa Bb Cc	B	Aaa	BBBB	STAAL	[PERSOON-1]
+315	P	Aa Bb Cc	B	Aaa	BBBB	STIPKOVITZ	[PERSOON-1]
+316	P	Aa Bb Cc	B	Aaa	BBBB	Swart & WZA	[PERSOON-1]
+317	P	Aa Bb Cc	B	Aaa	BBBB	TJ SPE	[PERSOON-1]
+318	P	Aa Bb Cc	B	Aaa	BBBB	Troost	[PERSOON-1]
+319	P	Aa Bb Cc	B	Aaa	BBBB	VELUTHAMANINGAL	[PERSOON-1]
+320	P	Aa Bb Cc	B	Aaa	BBBB	Winnock	[PERSOON-1]
+321	P	Aa Bb Cc	B	Aaa	BBBB	Y Froolik	[PERSOON-1]
+322	P	Aa Bb Cc	B	Aaa	BBBB	Y. Elkhaloufi	[PERSOON-1]
+323	P	Aa Bb Cc	B	Aaa	BBBB	ANAE Plein	[LOCATIE-1]
+324	P	Aa Bb Cc	B	Aaa	BBBB	Bernoiulliplein (moet zijn Bernouilliplein))	[LOCATIE-1](moet zijn [LOCATIE-2]))
+325	P	Aa Bb Cc	B	Aaa	BBBB	Coev/Hardenber	[LOCATIE-1]
+326	P	Aa Bb Cc	B	Aaa	BBBB	Friesland	[LOCATIE-1]
+327	P	Aa Bb Cc	B	Aaa	BBBB	heerenveen	[LOCATIE-1]
+328	P	Aa Bb Cc	B	Aaa	BBBB	Ijsselm	[LOCATIE-1]
+329	P	Aa Bb Cc	B	Aaa	BBBB	Kenya	[LOCATIE-1]
+330	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwarden	[LOCATIE-1]
+331	P	Aa Bb Cc	B	Aaa	BBBB	Nij	[LOCATIE-1]
+332	P	Aa Bb Cc	B	Aaa	BBBB	Paddepoel	[LOCATIE-1]
+333	P	Aa Bb Cc	B	Aaa	BBBB	rubenslaan	[LOCATIE-1]
+334	P	Aa Bb Cc	B	Aaa	BBBB	WINSCH (is waarschijnlijk Winschoten)	[LOCATIE-1] (is waarschijnlijk [LOCATIE-2])
+335	P	Aa Bb Cc	B	Aaa	BBBB	WINSUM	[LOCATIE-1]
+336	P	Aa Bb Cc	B	Aaa	BBBB	DUO	[INSTELLING-1]
+337	P	Aa Bb Cc	B	Aaa	BBBB	Interpolis	[INSTELLING-1]
+338	P	Aa Bb Cc	B	Aaa	BBBB	OPD voor geven GV 2016/2017	[PERSOON-1]
+339	P	Aa Bb Cc	B	Aaa	BBBB	OPD voor Geven GV 2016/2017	[PERSOON-1]
+340	P	Aa Bb Cc	B	Aaa	BBBB	Last van pob	Last van pob
+341	P	Aa Bb Cc	B	Aaa	BBBB	Pijn. Last van borst	Pijn. Last van borst
+342	P	Aa Bb Cc	B	Aaa	BBBB	Pijn op borst bij Last	Pijn op borst bij [PERSOON-1]
+343	P	Aa Bb Cc	B	Aaa	BBBB	Pijn op borst met last	Pijn op borst bij last
+344	P	Aa Bb Cc	B	Aaa	BBBB	Mr van Oranje plek	Mr [PERSOON-1] plek
+345	P	Aa Bb Cc	B	Aaa	BBBB	Oranje plek	Oranje plek
+346	P	Aa Bb Cc	B	Aaa	BBBB	5 september	[DATUM-1]
+347	P	Aa Bb Cc	B	Aaa	BBBB	108/7408/74	
+348	P	Aa Bb Cc	B	Aaa	BBBB	50/150	50/150
+349	P	Aa Bb Cc	B	Aaa	BBBB	250/100	250/100
+350	P	Aa Bb Cc	B	Aaa	BBBB	A80.00. gevallen	A80.00. gevallen
+351	P	Aa Bb Cc	B	Aaa	BBBB	80.00	[LONGNUMBER-1]
+352	P	Aa Bb Cc	B	Aaa	BBBB	A 80.00	A [LONGNUMBER-1]
+353	P	Aa Bb Cc	B	Aaa	BBBB	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
+354	P	Aa Bb Cc	B	Aaa	BBBB	De urine was schoon.	De urine was schoon.
+355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	QI/BMI (=):31,35
+356	P	Aa Bb Cc	B	Aaa	BBBB	even gebeld of alles goed gaat  bel haar wakker	even gebeld of alles goed gaat  bel haar wakker
+357	P	Aa Bb Cc	B	Aaa	BBBB	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar ligt
+358	P	Aa Bb Cc	B	Aaa	BBBB	het liever 7 nov ivm komende dagen feesten.	het liever 7 nov ivm komende dagen feesten.
+359	P	Aa Bb Cc	B	Aaa	BBBB	rouw om verlies vader	rouw om verlies vader
+360	P	Aa Bb Cc	B	Aaa	BBBB	99/99	99/99
+361	P	Aa Bb Cc	B	Aaa	BBBB	2,92 (-3,5)	2,92 (-3,5)
+362	P	Aa Bb Cc	B	Aaa	BBBB	239 (150-400)	239 (150-400)
+363	P	Aa Bb Cc	B	Aaa	BBBB	T4 ] 100	T4 ] 100
+364	P	Aa Bb Cc	B	Aaa	BBBB	6.2^([4.5)	6.2^([4.5)
+365	P	Aa Bb Cc	B	Aaa	BBBB	55-56kg	55-56kg
+366	P	Aa Bb Cc	B	Aaa	BBBB	L160,5	L160,5
+367	P	Aa Bb Cc	B	Aaa	BBBB	110,510,5	
+368	P	Aa Bb Cc	B	Aaa	BBBB	100 (2-1T)00 (2-1T)	
+369	P	Aa Bb Cc	B	Aaa	BBBB	1D0,5-1TD0,5-1T	
+370	P	Aa Bb Cc	B	Aaa	BBBB	(=320/9UG)	(=320/9UG)
+371	P	Aa Bb Cc	B	Aaa	BBBB	1.080 stuks)	1.080 stuks)
+372	P	Aa Bb Cc	B	Aaa	BBBB	30 1-3D1I	30 1-3D1I
+373	P	Aa Bb Cc	B	Aaa	BBBB	50 (3.1)	50 (3.1)
+374	P	Aa Bb Cc	B	Aaa	BBBB	500/125MG	500/125MG
+375	P	Aa Bb Cc	B	Aaa	BBBB	Syndroom van Gilbert	Syndroom van Gilbert
+376	P	Aa Bb Cc	B	Aaa	BBBB	1.080 stuks	1.080 stuks
+377	P	Aa Bb Cc	B	Aaa	BBBB	1-2-2019	[DATUM-1]
+378	P	Aa Bb Cc	B	Aaa	BBBB	15 mei	[DATUM-1]
+379	P	Aa Bb Cc	B	Aaa	BBBB	datum - :08-04-2015)	datum - :[DATUM-1])
+380	P	Aa Bb Cc	B	Aaa	BBBB	datum - :13-11-2015)	datum - :[DATUM-1])
+381	P	Aa Bb Cc	B	Aaa	BBBB	datum - :20-06-2019)	datum - :[DATUM-1])
+382	P	Aa Bb Cc	B	Aaa	BBBB	datum - 06-10-2011)	[DATUM-1]
+383	P	Aa Bb Cc	B	Aaa	BBBB	datum - 07-05	[DATUM-1]
+384	P	Aa Bb Cc	B	Aaa	BBBB	datum - 07-09-2017)	[DATUM-1]
+385	P	Aa Bb Cc	B	Aaa	BBBB	datum - 07-10-2014)	[DATUM-1]
+386	P	Aa Bb Cc	B	Aaa	BBBB	datum - 08-01 (datum)	[DATUM-1]
+387	P	Aa Bb Cc	B	Aaa	BBBB	datum - 1/8	[DATUM-1]
+388	P	Aa Bb Cc	B	Aaa	BBBB	datum - 10-10-2016	[DATUM-1]
+389	P	Aa Bb Cc	B	Aaa	BBBB	datum - 11 okt:	[DATUM-1]
+390	P	Aa Bb Cc	B	Aaa	BBBB	datum - 12-07-2016	[DATUM-1]
+391	P	Aa Bb Cc	B	Aaa	BBBB	datum - 1-2-2019	[DATUM-1]
+392	P	Aa Bb Cc	B	Aaa	BBBB	datum - 15 mei	[DATUM-1]
+393	P	Aa Bb Cc	B	Aaa	BBBB	datum - 17-08	[DATUM-1]
+394	P	Aa Bb Cc	B	Aaa	BBBB	datum - 1-9-2015	[DATUM-1]
+395	P	Aa Bb Cc	B	Aaa	BBBB	datum - 21/12 & 28-09	[DATUM-1]
+396	P	Aa Bb Cc	B	Aaa	BBBB	datum - 22-05-2017	[DATUM-1]
+397	P	Aa Bb Cc	B	Aaa	BBBB	datum - 25 juli	[DATUM-1]
+398	P	Aa Bb Cc	B	Aaa	BBBB	datum - 26 april & 19april	[DATUM-1]
+399	P	Aa Bb Cc	B	Aaa	BBBB	datum - 27 oktober	[DATUM-1]
+400	P	Aa Bb Cc	B	Aaa	BBBB	datum - 27-03-2018	[DATUM-1]
+401	P	Aa Bb Cc	B	Aaa	BBBB	datum - 4-9	[DATUM-1]
+402	P	Aa Bb Cc	B	Aaa	BBBB	datum - 5 september	[DATUM-1]
+403	P	Aa Bb Cc	B	Aaa	BBBB	datum - 5/4	[DATUM-1]
+404	P	Aa Bb Cc	B	Aaa	BBBB	datum - 6/11	[DATUM-1]
+405	P	Aa Bb Cc	B	Aaa	BBBB	datum - 9-4-2015	[DATUM-1]
+406	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3 (aantal)	[DATUM-1]
+407	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,1/1,	[DATUM-1]
+408	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,5/325	[DATUM-1]
+409	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 10.3 10^	[DATUM-1]
+410	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3-4 (aantal)	[DATUM-1]
+411	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 8-10 (aantal)	[DATUM-1]
+412	P	Aa Bb Cc	B	Aaa	BBBB	90	90
+413	P	Aa Bb Cc	B	Aaa	BBBB	30	30
+414	P	Aa Bb Cc	B	Aaa	BBBB	180.0080.00	
+415	P	Aa Bb Cc	B	Aaa	BBBB	10,000,00	
+416	P	Aa Bb Cc	B	Aaa	BBBB	100,0000,00	
+417	P	Aa Bb Cc	B	Aaa	BBBB	20/42	20/42
+418	P	Aa Bb Cc	B	Aaa	BBBB	500/125	500/125
+419	P	Aa Bb Cc	B	Aaa	BBBB	0,075,075	
+420	P	Aa Bb Cc	B	Aaa	BBBB	40	40
+421	P	Aa Bb Cc	B	Aaa	BBBB	84	84
+422	P	Aa Bb Cc	B	Aaa	BBBB	126,9926,99	
+423	P	Aa Bb Cc	B	Aaa	BBBB	180,0080,00	
+424	P	Aa Bb Cc	B	Aaa	BBBB	15-105-10	
+425	P	Aa Bb Cc	B	Aaa	BBBB	 & 200 1	 & 200 1
+426	P	Aa Bb Cc	B	Aaa	BBBB	0,03/0,15 (1.1,03/0,15 (1.1	
+427	P	Aa Bb Cc	B	Aaa	BBBB	0,5 (4,5 (4	
+428	P	Aa Bb Cc	B	Aaa	BBBB	0.8 -1.0.8 -1.0	
+429	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9,2 0,2/0,9	
+430	P	Aa Bb Cc	B	Aaa	BBBB	10 111130 11113	
+431	P	Aa Bb Cc	B	Aaa	BBBB	10.00 (= tijd)0.00 (= tijd)	
+432	P	Aa Bb Cc	B	Aaa	BBBB	100/12,500/12,5	
+433	P	Aa Bb Cc	B	Aaa	BBBB	100/5000/50	
+434	P	Aa Bb Cc	B	Aaa	BBBB	105/5505/55	
+435	P	Aa Bb Cc	B	Aaa	BBBB	126/86 & 115/6726/86 & 115/67	
+436	P	Aa Bb Cc	B	Aaa	BBBB	135/14535/145	
+437	P	Aa Bb Cc	B	Aaa	BBBB	138/63 & 135/7338/63 & 135/73	
+438	P	Aa Bb Cc	B	Aaa	BBBB	14.004.00	
+439	P	Aa Bb Cc	B	Aaa	BBBB	15.30 (=tijd)5.30 (=tijd)	
+440	P	Aa Bb Cc	B	Aaa	BBBB	15.50 16.00 (=tijd)5.50 16.00 (=tijd)	
+441	P	Aa Bb Cc	B	Aaa	BBBB	150/12,5 & 84,0050/12,5 & 84,00	
+442	P	Aa Bb Cc	B	Aaa	BBBB	155/95-10055/95-100	
+443	P	Aa Bb Cc	B	Aaa	BBBB	16:20 & 16:306:20 & 16:30	
+444	P	Aa Bb Cc	B	Aaa	BBBB	160/80 & 1.68, 7560/80 & 1.68, 75	
+445	P	Aa Bb Cc	B	Aaa	BBBB	164/10864/108	
+446	P	Aa Bb Cc	B	Aaa	BBBB	167/9867/98	
+447	P	Aa Bb Cc	B	Aaa	BBBB	180 280 2	
+448	P	Aa Bb Cc	B	Aaa	BBBB	20-25	20-25
+449	P	Aa Bb Cc	B	Aaa	BBBB	250/100 & 36,00	250/100 & 36,00
+450	P	Aa Bb Cc	B	Aaa	BBBB	30/150 & 252,00	30/150 & 252,00
+451	P	Aa Bb Cc	B	Aaa	BBBB	300/12,5	300/12,5
+452	P	Aa Bb Cc	B	Aaa	BBBB	40.00 (ICPC)	40.00 (ICPC)
+453	P	Aa Bb Cc	B	Aaa	BBBB	400/12 & (=320/9	400/12 & (=320/9
+454	P	Aa Bb Cc	B	Aaa	BBBB	50 = 6,7 & 150/75	50 = 6,7 & 150/75
+455	P	Aa Bb Cc	B	Aaa	BBBB	500/125 & 30,00	500/125 & 30,00
+456	P	Aa Bb Cc	B	Aaa	BBBB	500/20 (3.1	500/20 (3.1
+457	P	Aa Bb Cc	B	Aaa	BBBB	540.0	540.0
+458	P	Aa Bb Cc	B	Aaa	BBBB	8.7 13.1 7.0 11.0	8.7 13.1 7.0 11.0
+459	P	Aa Bb Cc	B	Aaa	BBBB	98.00	98.00
+460	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 08-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+461	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 10-2019 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+462	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 03-2019  (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+463	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 04-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+464	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 01-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+465	P	Aa Bb Cc	B	Aaa	BBBB	Scheemda	[LOCATIE-1]
+466	P	Aa Bb Cc	B	Aaa	BBBB	Coev & Hardenber	[LOCATIE-1]
+467	P	Aa Bb Cc	B	Aaa	BBBB	Frankrijk	[LOCATIE-1]
+468	P	Aa Bb Cc	B	Aaa	BBBB	Groningen	[LOCATIE-1]
+469	P	Aa Bb Cc	B	Aaa	BBBB	hapert	[LOCATIE-1]
+470	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwarden	[LOCATIE-1]
+471	P	Aa Bb Cc	B	Aaa	BBBB	Meppel	[LOCATIE-1]
+472	P	Aa Bb Cc	B	Aaa	BBBB	Oostenrijk	[LOCATIE-1]
+473	P	Aa Bb Cc	B	Aaa	BBBB	Opende	[LOCATIE-1]
+474	P	Aa Bb Cc	B	Aaa	BBBB	Hanzeplein	[LOCATIE-1]
+475	P	Aa Bb Cc	B	Aaa	BBBB	Duitsland	[LOCATIE-1]
+476	P	Aa Bb Cc	B	Aaa	BBBB	8802 XJ	[LOCATIE-1]
+477	P	Aa Bb Cc	B	Aaa	BBBB	Hoogezand	[LOCATIE-1]
+478	P	Aa Bb Cc	B	Aaa	BBBB	Drenthe	[LOCATIE-1]
+479	P	Aa Bb Cc	B	Aaa	BBBB	Hoogeveen	[LOCATIE-1]
+480	P	Aa Bb Cc	B	Aaa	BBBB	Tel: telnr	[NUMMERWOORD-1]
+481	P	Aa Bb Cc	B	Aaa	BBBB	Dr. J. W. Kapelle	[PERSOON-1]
+482	P	Aa Bb Cc	B	Aaa	BBBB	DR IBOG	[PERSOON-1]
+483	P	Aa Bb Cc	B	Aaa	BBBB	Reinier (van de Graafgasthuis)	[PERSOON-1]
+484	P	Aa Bb Cc	B	Aaa	BBBB	Schiphorst-Halfweeg	[PERSOON-1]
+485	P	Aa Bb Cc	B	Aaa	BBBB	telnr	telnr
+486	P	Aa Bb Cc	B	Aaa	BBBB	111426 6276 (geen telnr)	[LANGNUMMER-1]
+487	P	Aa Bb Cc	B	Aaa	BBBB	 & Dr C. (zonder Brasse)	[PERSOON-1]
+488	P	Aa Bb Cc	B	Aaa	BBBB	Tel: 0612345678	[NUMMERWOORD-1]
+489	P	Aa Bb Cc	B	Aaa	BBBB	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
+490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1][URL-1]
+491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[URL-1]
+492	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9	[LANGNUMMER-1]
+493	P	Aa Bb Cc	B	Aaa	BBBB	0.8 -1.0.8 -1.0	
+494	P	Aa Bb Cc	B	Aaa	BBBB	0.8-0.9.8-0.9	
+495	P	Aa Bb Cc	B	Aaa	BBBB	0.8 - 0.9.8 - 0.9	
+496	P	Aa Bb Cc	B	Aaa	BBBB	1507AB	[LOCATIE-1]
+497	P	Aa Bb Cc	B	Aaa	BBBB	1507 AB	[LOCATIE-1]
+498	P	Aa Bb Cc	B	Aaa	BBBB	150/7550/75	
+499	P	Aa Bb Cc	B	Aaa	BBBB	& 150/75	& 150/75
+500	P	Aa Bb Cc	B	Aaa	BBBB	150/75++ & 130.050/75++ & 130.0	
+501	P	Aa Bb Cc	B	Aaa	BBBB	 	 
+502	P	Aa Bb Cc	B	Aaa	BBBB		
+503	P	Aa Bb Cc	B	Aaa	BBBB	De Lichtenberg	[INSTELLING-1]
+504	P	Aa Bb Cc	B	Aaa	BBBB	Catharina Ziekenhuis	[INSTELLING-1]
+505	P	Aa Bb Cc	B	Aaa	BBBB	Dunya zorg en welzijn	[INSTELLING-1]
+506	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
+507	P	Aa Bb Cc	B	Aaa	BBBB	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
+508	P	Aa Bb Cc	B	Aaa	BBBB	GGZ Centraal	[GGZ-1]
+509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	[INSTELLLING-1]
+510	P	Aa Bb Cc	B	Aaa	BBBB	Hanimeli thuiszorg bv	[INSTELLLING-1]
+511	P	Aa Bb Cc	B	Aaa	BBBB	Bovenij ziekenhuis	[INSTELLLING-1]
+512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	[INSTELLLING-1]
+513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[INSTELLLING-1]
+514	P	Aa Bb Cc	B	Aaa	BBBB	Wordt hees van de medicatie	Wordt hees van de medicatie
+515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
+516	P	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
+517	P	Aa Bb Cc	B	Aaa	BBBB	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
+518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	Antonius Ziekenhuis heeft heel kuil
+519	P	Aa Bb Cc	B	Aaa	BBBB	Esens GGz	[GGZ-1]
+520	P	Aa Bb Cc	B	Aaa	BBBB	ZD46584392	[NUMMERWOORD-1]
+521	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt > 10 glazen alcohol per week	Patient drinkt > 10 glazen alcohol per week
+522	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt> 10 glazen alcohol per week	Patient drinkt> 10 glazen alcohol per week
+523	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt >10 glazen alcohol per week	Patient drinkt >10 glazen alcohol per week
+524	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt < 10 glazen alcohol per week	Patient drinkt < 10 glazen alcohol per week
+525	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt< 10 glazen alcohol per week	Patient drinkt< 10 glazen alcohol per week
+526	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt <10 glazen alcohol per week	Patient drinkt <10 glazen alcohol per week
+# TODO add a test case with < or > followed by 2 or more spaces							
+# TODO add all kind of test cases with trailing whitespaces							
+527	P	Aa Bb Cc	B	Aaa	BBBB	DORPSTRAAT 15	[LOCATIE-1]
+528	P	Aa Bb Cc	B	Aaa	BBBB	DORPstraat 16	[LOCATIE-1]
+529	P	Aa Bb Cc	B	Aaa	BBBB	dorpstraat 17	[LOCATIE-1]
+530	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18	[LOCATIE-1]
+531	P	Aa Bb Cc	B	Aaa	BBBB	BSN 123456789	BSN [ID-1]
+532	P	Aa Bb Cc	B	Aaa	BBBB	BSN123456789	BSN[ID-1]
+533	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 123456789	Bsn [ID-1]
+534	P	Aa Bb Cc	B	Aaa	BBBB	Bsb123456789	Bsb[ID-1]
+535	P	Aa Bb Cc	B	Aaa	BBBB	bsn 123456789	bsn [ID-1]
+536	P	Aa Bb Cc	B	Aaa	BBBB	bsn123456789	bsn[ID-1]
+537	P	Aa Bb Cc	B	Aaa	BBBB	bSN 123456789	bSN [ID-1]
+538	P	Aa Bb Cc	B	Aaa	BBBB	bSN123456789	bSN[ID-1]
+539	P	Aa Bb Cc	B	Aaa	BBBB	van Kooten en de Bie	[PERSOON-1] en [PERSOON-2]
+540	P	Aa Bb Cc	B	Aaa	BBBB	Mevrouw Donderslag tot en met Bliksemschicht van der Mokummerhei	Mevrouw [PERSOON-1]
+541	P	Aa Bb Cc	B	Aaa	BBBB	Gumus werd opgenomen per 01-01-2001	[PERSOON-1] werd opgenomen per [DATUM-1]
+542	P	Aa Bb Cc	B	Aaa	BBBB	Meneer met Roodjeuk	Meneer met Roodjeuk
+543	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Stg ggz friesland en daarna in Diakonessenhuis utrecht	Opgenomen in [INSTELLING-1] en daarna in [INSTELLING-2]
+544	P	Aa Bb Cc	B	Aaa	BBBB	Patient naam: d'Oliveria	Patient naam: [PERSOON-1]
+545	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4,2	glucnuven 4,2
+546	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4,2 cholest	glucnuven 4,2 cholest
+547	P	Aa Bb Cc	B	Aaa	BBBB	Rechter (schouder)	Rechter (schouder)
+548	P	Aa Bb Cc	B	Aaa	BBBB	Schouder links	Schouder links
+549	P	Aa Bb Cc	B	Aaa	BBBB	Schouder rechts	Schouder rechts
