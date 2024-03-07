@@ -104,7 +104,6 @@
 80	P	Aa Bb Cc	B	Aaa	BBBB	5 maanden	5 maanden
 81	P	Aa Bb Cc	B	Aaa	BBBB	Rood oog	Rood oog
 82	P	Aa Bb Cc	B	Aaa	BBBB	T 36,5. Milde drukpijn	T 36,5. Milde drukpijn
-82	P	Koele kikker	B	Aaa	BBBB	T 36,5. Milde drukpijn	T 36,5. Milde drukpijn
 83	P	Aa Bb Cc	B	Aaa	BBBB	[60 jaar	[[LEEFTIJD-1] jaar
 84	P	Aa Bb Cc	B	Aaa	BBBB	10 jaarscore 2.4%   5 jaarscore 9-11% RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over 1 jaar	[LEEFTIJD-1] jaarscore 2.4% [LEEFTIJD-1] jaarscore [DATUM-1]  RR goed dus nu geen vervolg nierfunctie (iom KK)  CVRM over [LEEFTIJD-1] jaar
 85	P	Aa Bb Cc	B	Aaa	BBBB	Sinds 1 maand	Sinds 1 maand
@@ -141,13 +140,13 @@
 116	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2-3-54	Dat [DATUM-1]
 117	P	Aa Bb Cc	B	Aaa	BBBB	Dat. 6487	[LEEFTIJD-1]
 118	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2 juni 2006	[LEEFTIJD-1]
-119	P	Aa Bb Cc	B	Aaa	BBBB	BSN 354	[NUMMERWOORD-1]
+119	P	Aa Bb Cc	B	Aaa	BBBB	BSN 354	[ID-1]
 120	P	Aa Bb Cc	B	Aaa	BBBB	Bsn: 638 678909	[NUMMERWOORD-1]
 121	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 576	[NUMMERWOORD-1]
-122	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 78690678	[NUMMERWOORD-1]
-123	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  365896790	[NUMMERWOORD-1]
-124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	[NUMMERWOORD-1]
-125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	[NUMMERWOORD-1]
+122	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 78690678	Bsn [ID-1]
+123	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  365896790	Bsn  [ID-1]
+124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	Bsn  3 [ID-1]
+125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	bsn [ID-1]
 126	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Zwart	[PERSOON-1]
 127	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
 128	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
@@ -165,62 +164,63 @@
 140	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wissen	[PERSOON-1]
 141	P	Aa Bb Cc	B	Aaa	BBBB	Cogswell	[PERSOON-1]
 142	P	Aa Bb Cc	B	Aaa	BBBB	Lioen	[PERSOON-1]
-143	P	Aa Bb Cc	B	Aaa	BBBB	r.boot@amc.nl	[PERSOON-1]
+143	P	Aa Bb Cc	B	Aaa	BBBB	r.boot@amc.nl	[EMAILADRES-1]
 144	P	Aa Bb Cc	B	Aaa	BBBB	Loenermark 188	[LOCATIE-1]
 145	P	Aa Bb Cc	B	Aaa	BBBB	Oude Turfmarkt	[LOCATIE-1]
 146	P	Aa Bb Cc	B	Aaa	BBBB	GAZO venserpolder	GAZO [LOCATIE-1]
-147	P	Aa Bb Cc	B	Aaa	BBBB	Transvaal Apotheek	[INSTELLING-1]
+147	P	Aa Bb Cc	B	Aaa	BBBB	Transvaal Apotheek	[ZORGINSTELLING-1]
 148	P	Aa Bb Cc	B	Aaa	BBBB	Apotheek GC Reigersbos	[INSTELLING-1]
-149	P	Aa Bb Cc	B	Aaa	BBBB	naar AMC kan	naar [INSTELLING-1] kan
-150	P	Aa Bb Cc	B	Aaa	BBBB	Onze Lieve Vrouwe Gasthuis	[INSTELLING-1]
-151	P	Aa Bb Cc	B	Aaa	BBBB	GC H'drecht	[INSTELLING-1]
+149	P	Aa Bb Cc	B	Aaa	BBBB	naar AMC kan	naar [ZIEKENHUIS-1] kan
+150	P	Aa Bb Cc	B	Aaa	BBBB	Onze Lieve Vrouwe Gasthuis	[ZIEKENHUIS-1]
+151	P	Aa Bb Cc	B	Aaa	BBBB	GC H'drecht	[ZORGINSTELLING-1]
 152	P	Aa Bb Cc	B	Aaa	BBBB	A'dam	[LOCATIE-1]
-153	P	Aa Bb Cc	B	Aaa	BBBB	Cordaan	[INSTELLING-1]
-154	P	Aa Bb Cc	B	Aaa	BBBB	Pantar	[INSTELLING-1]
+153	P	Aa Bb Cc	B	Aaa	BBBB	Cordaan	[ZORGINSTELLING-1]
+154	P	Aa Bb Cc	B	Aaa	BBBB	Pantar	[ZORGINSTELLING-1]
 155	P	Aa Bb Cc	B	Aaa	BBBB	apo Gein	apo [INSTELLING-1]
-156	P	Aa Bb Cc	B	Aaa	BBBB	GGZ JELLINEK	GGZ [INSTELLING-1]
+156	P	Aa Bb Cc	B	Aaa	BBBB	GGZ JELLINEK	GGZ [ZORGINSTELLING-1]
 157	P	Aa Bb Cc	B	Aaa	BBBB	Opname Flevo Dr. Korsten Chirurgie	Opname [LOCATIE-1] Dr. [PERSOON-1] Chirurgie
 158	P	Aa Bb Cc	B	Aaa	BBBB	Van: Bronner	Van: [PERSOON-1]
 159	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blekkert,Neuroloog	Van: [PERSOON-1],Neuroloog
 160	P	Aa Bb Cc	B	Aaa	BBBB	van : BOODT,Uroloog	van : [PERSOON-1],Uroloog
-161	P	Aa Bb Cc	B	Aaa	BBBB	Overleg met dr Baas, longarts Avl	Overleg met dr [PERSOON-1], longarts Avl
+161	P	Aa Bb Cc	B	Aaa	BBBB	Overleg met dr Baas, longarts Avl	Overleg met [PERSOON-1], longarts Avl
 162	P	Aa Bb Cc	B	Aaa	BBBB	Van: Ribbert, M.A.H.	Van: [PERSOON-1]
-163	P	Aa Bb Cc	B	Aaa	BBBB	Aios M Binnema	[PERSOON-1]
+163	P	Aa Bb Cc	B	Aaa	BBBB	Aios M Binnema	Aios [PERSOON-1]
 164	P	Aa Bb Cc	B	Aaa	BBBB	Naar : [PERSOON-1] Driest (POH GGZ)	Naar : [PERSOON-1] [PERSOON-1] (POH GGZ)
 165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1], rontgen
-166	P	Aa Bb Cc	B	Aaa	BBBB	Van : Eenhorst, oog c/cornea nu rustig	[PERSOON-1]
-167	P	Aa Bb Cc	B	Aaa	BBBB	Van : KNOTTENBELT, pch c/fibroom kin	[PERSOON-1]
+166	P	Aa Bb Cc	B	Aaa	BBBB	Van : Eenhorst, oog c/cornea nu rustig	Van : [PERSOON-1], oog c/cornea nu rustig
+167	P	Aa Bb Cc	B	Aaa	BBBB	Van : KNOTTENBELT, pch c/fibroom kin	Van : [PERSOON-1], pch c/fibroom kin
 168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	Regiearts [PERSOON-1] tel: in gesprek
 169	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blankevoort, SEH	Van: [PERSOON-1], SEH
-170	P	Aa Bb Cc	B	Aaa	BBBB	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. S. [PERSOON-1]. Benauwd, hoest, bekend met
-171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	[INSTELLING-1]
+170	P	Aa Bb Cc	B	Aaa	BBBB	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. [PERSOON-1]. Benauwd, hoest, bekend met
+171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	Van: Chirurgie [ZIEKENHUIS-1]
 172	P	Aa Bb Cc	B	Aaa	BBBB	Van: Linzel, longarts	Van: Linzel, longarts
-173	P	Aa Bb Cc	B	Aaa	BBBB	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	[PERSOON-1]
+173	P	Aa Bb Cc	B	Aaa	BBBB	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	TC met pt en met [PERSOON-1] [PERSOON-1]. Gaat ma [LANGNUMMER-1]
 174	P	Aa Bb Cc	B	Aaa	BBBB	Van : Craanen	Van : [PERSOON-1]
 175	P	Aa Bb Cc	B	Aaa	BBBB	Opname Cardioloog blaricum	Opname Cardioloog [LOCATIE-1]
-176	P	Aa Bb Cc	B	Aaa	BBBB	Van  : Cunningham [PERSOON-1],VZG	Van : [PERSOON-1] [PERSOON-1],VZG
+176	P	Aa Bb Cc	B	Aaa	BBBB	Van  : Cunningham [PERSOON-1],VZG	Van  : [PERSOON-1] [PERSOON-1],VZG
 177	P	Aa Bb Cc	B	Aaa	BBBB	Van: Kortz, Cardioloog	Van: [PERSOON-1], Cardioloog
-178	P	Aa Bb Cc	B	Aaa	BBBB	naar Noorderdok voor echogeleide injectie	naar [INSTELLING-1] voor echogeleide injectie
+178	P	Aa Bb Cc	B	Aaa	BBBB	naar Noorderdok voor echogeleide injectie	naar [ZORGINSTELLING-1] voor echogeleide injectie
 179	P	Aa Bb Cc	B	Aaa	BBBB	Van : SPANK, VD, car	Van : [PERSOON-1], VD, car
-180	P	Aa Bb Cc	B	Aaa	BBBB	Van : Houten	Van : [PERSOON-1]
-181	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[INSTELLING-1]
-182	P	Aa Bb Cc	B	Aaa	BBBB	Leids Cytologisch en Pathologisch lab	[INSTELLING-1]
-183	P	Aa Bb Cc	B	Aaa	BBBB	AMC	[INSTELLING-1]
-184	P	Aa Bb Cc	B	Aaa	BBBB	ATAL	[INSTELLING-1]
-185	P	Aa Bb Cc	B	Aaa	BBBB	Atal Artsenlaboratorium	[INSTELLING-1]
-186	P	Aa Bb Cc	B	Aaa	BBBB	Atal Medial	[INSTELLING-1]
-187	P	Aa Bb Cc	B	Aaa	BBBB	Atal-Medial	[INSTELLING-1]
-188	P	Aa Bb Cc	B	Aaa	BBBB	Bascule	[INSTELLING-1]
-189	P	Aa Bb Cc	B	Aaa	BBBB	Bonga	[INSTELLING-1]
-190	P	Aa Bb Cc	B	Aaa	BBBB	Buitenhof	[INSTELLING-1]
-191	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[INSTELLING-1]
-192	P	Aa Bb Cc	B	Aaa	BBBB	GGZ inGeest	[INSTELLING-1]
+# Case 180 fails because Houten is both a surname and a location. Location has higher priority and thus is masked with [LOCATIE]
+180	P	Aa Bb Cc	B	Aaa	BBBB	Van : Houten	Van : [LOCATIE-1]
+181	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[ZORGINSTELLING-1]
+182	P	Aa Bb Cc	B	Aaa	BBBB	Leids Cytologisch en Pathologisch lab	[ZORGINSTELLING-1]
+183	P	Aa Bb Cc	B	Aaa	BBBB	AMC	[ZIEKENHUIS-1]
+184	P	Aa Bb Cc	B	Aaa	BBBB	ATAL	[ZORGINSTELLING-1]
+185	P	Aa Bb Cc	B	Aaa	BBBB	Atal Artsenlaboratorium	[ZORGINSTELLING-1]
+186	P	Aa Bb Cc	B	Aaa	BBBB	Atal Medial	[ZORGINSTELLING-1]
+187	P	Aa Bb Cc	B	Aaa	BBBB	Atal-Medial	[ZORGINSTELLING-1]
+188	P	Aa Bb Cc	B	Aaa	BBBB	Bascule	[ZORGINSTELLING-1]
+189	P	Aa Bb Cc	B	Aaa	BBBB	Bonga	[ZORGINSTELLING-1]
+190	P	Aa Bb Cc	B	Aaa	BBBB	Buitenhof	[ZORGINSTELLING-1]
+191	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[ZORGINSTELLING-1]
+192	P	Aa Bb Cc	B	Aaa	BBBB	GGZ inGeest	[ZORGINSTELLING-1]
 193	P	Aa Bb Cc	B	Aaa	BBBB	ggzingeest	[INSTELLING-1]
-194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[INSTELLING-1]
+194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[ZORGINSTELLING-1]
 195	P	Aa Bb Cc	B	Aaa	BBBB	Hoogstraten	[PERSOON-1]
-196	P	Aa Bb Cc	B	Aaa	BBBB	Leids universitair medisch centrum	[INSTELLING-1]
+196	P	Aa Bb Cc	B	Aaa	BBBB	Leids universitair medisch centrum	[ZIEKENHUIS-1]
 197	P	Aa Bb Cc	B	Aaa	BBBB	Marsepeintje kinderdagverblijf	[INSTELLING-1]
-198	P	Aa Bb Cc	B	Aaa	BBBB	OLVG	[INSTELLING-1]
+198	P	Aa Bb Cc	B	Aaa	BBBB	OLVG	[ZIEKENHUIS-1]
 199	P	Aa Bb Cc	B	Aaa	BBBB	Pep Psychologen	[INSTELLING-1]
 200	P	Aa Bb Cc	B	Aaa	BBBB	Pep,Psychologen	[INSTELLING-1]
 201	P	Aa Bb Cc	B	Aaa	BBBB	Prezens GGZ Ingeest	[INSTELLING-1]
