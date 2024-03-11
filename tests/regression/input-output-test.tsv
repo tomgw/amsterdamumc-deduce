@@ -373,12 +373,12 @@
 344	P	Aa Bb Cc	B	Aaa	BBBB	Mr van Oranje plek	Mr [PERSOON-1] plek
 345	P	Aa Bb Cc	B	Aaa	BBBB	Oranje plek	Oranje plek
 346	P	Aa Bb Cc	B	Aaa	BBBB	5 september	[DATUM-1]
-347	P	Aa Bb Cc	B	Aaa	BBBB	108/7408/74	
+347	P	Aa Bb Cc	B	Aaa	BBBB	108/74	108/74
 348	P	Aa Bb Cc	B	Aaa	BBBB	50/150	50/150
 349	P	Aa Bb Cc	B	Aaa	BBBB	250/100	250/100
 350	P	Aa Bb Cc	B	Aaa	BBBB	A80.00. gevallen	A80.00. gevallen
-351	P	Aa Bb Cc	B	Aaa	BBBB	80.00	[LONGNUMBER-1]
-352	P	Aa Bb Cc	B	Aaa	BBBB	A 80.00	A [LONGNUMBER-1]
+351	P	Aa Bb Cc	B	Aaa	BBBB	80.00	80.00
+352	P	Aa Bb Cc	B	Aaa	BBBB	A 80.00	A 80.00
 353	P	Aa Bb Cc	B	Aaa	BBBB	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
 354	P	Aa Bb Cc	B	Aaa	BBBB	De urine was schoon.	De urine was schoon.
 355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	QI/BMI (=):31,35
@@ -393,9 +393,9 @@
 364	P	Aa Bb Cc	B	Aaa	BBBB	6.2^([4.5)	6.2^([4.5)
 365	P	Aa Bb Cc	B	Aaa	BBBB	55-56kg	55-56kg
 366	P	Aa Bb Cc	B	Aaa	BBBB	L160,5	L160,5
-367	P	Aa Bb Cc	B	Aaa	BBBB	110,510,5	
-368	P	Aa Bb Cc	B	Aaa	BBBB	100 (2-1T)00 (2-1T)	
-369	P	Aa Bb Cc	B	Aaa	BBBB	1D0,5-1TD0,5-1T	
+367	P	Aa Bb Cc	B	Aaa	BBBB	110,5	110,5
+368	P	Aa Bb Cc	B	Aaa	BBBB	100 (2-1T)	100 (2-1T)
+369	P	Aa Bb Cc	B	Aaa	BBBB	1D0,5-1T	1D0,5-1T
 370	P	Aa Bb Cc	B	Aaa	BBBB	(=320/9UG)	(=320/9UG)
 371	P	Aa Bb Cc	B	Aaa	BBBB	1.080 stuks)	1.080 stuks)
 372	P	Aa Bb Cc	B	Aaa	BBBB	30 1-3D1I	30 1-3D1I
@@ -514,7 +514,7 @@
 485	P	Aa Bb Cc	B	Aaa	BBBB	telnr	telnr
 486	P	Aa Bb Cc	B	Aaa	BBBB	111426 6276 (geen telnr)	[LANGNUMMER-1]
 487	P	Aa Bb Cc	B	Aaa	BBBB	 & Dr C. (zonder Brasse)	[PERSOON-1]
-488	P	Aa Bb Cc	B	Aaa	BBBB	Tel: 0612345678	[NUMMERWOORD-1]
+488	P	Aa Bb Cc	B	Aaa	BBBB	Tel: 0612345678	Tel: [ID-1]
 489	P	Aa Bb Cc	B	Aaa	BBBB	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
 490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1][URL-1]
 491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[URL-1]
@@ -582,3 +582,10 @@
 547	P	Aa Bb Cc	B	Aaa	BBBB	Rechter (schouder)	Rechter (schouder)
 548	P	Aa Bb Cc	B	Aaa	BBBB	Schouder links	Schouder links
 549	P	Aa Bb Cc	B	Aaa	BBBB	Schouder rechts	Schouder rechts
+# Next few test are for the Eponymous prefixes
+550	P	Aa Bb Cc	B	Aaa	BBBB	Ziekte van Gilbert	Ziekte van Gilbert
+551	P	Aa Bb Cc	B	Aaa	BBBB	Afwijking van Gilbert	Afwijking van Gilbert
+552	P	Aa Bb Cc	B	Aaa	BBBB	Tumor van Kaposi	Tumor van Kaposi
+553	P	Aa Bb Cc	B	Aaa	BBBB	Reactie van Suzuki	Reactie van Suzuki
+554	P	Aa Bb Cc	B	Aaa	BBBB	Complex van Gilbert	Complex van Gilbert
+555	P	Aa Bb Cc	B	Aaa	BBBB	Aandoening van Guillain-Barré	Aandoening van Guillain-Barré
