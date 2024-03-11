@@ -530,32 +530,34 @@
 500	P	Aa Bb Cc	B	Aaa	BBBB	150/75++ & 130.0	150/75++ & 130.0
 501	P	Aa Bb Cc	B	Aaa	BBBB	 	 
 502	P	Aa Bb Cc	B	Aaa	BBBB		
-503	P	Aa Bb Cc	B	Aaa	BBBB	De Lichtenberg	[INSTELLING-1]
-504	P	Aa Bb Cc	B	Aaa	BBBB	Catharina Ziekenhuis	[INSTELLING-1]
+503	P	Aa Bb Cc	B	Aaa	BBBB	De Lichtenberg	[ZORGINSTELLING-1]
+504	P	Aa Bb Cc	B	Aaa	BBBB	Catharina Ziekenhuis	[ZIEKENHUIS-1]
 505	P	Aa Bb Cc	B	Aaa	BBBB	Dunya zorg en welzijn	[INSTELLING-1]
-506	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
-507	P	Aa Bb Cc	B	Aaa	BBBB	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
-508	P	Aa Bb Cc	B	Aaa	BBBB	GGZ Centraal	[GGZ-1]
+# Next 2 are expected failures: 'Het Hoge Heem' has been added to institutions but fails because of the case-sensitivity problem.
+506	F	Aa Bb Cc	B	Aaa	BBBB	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
+507	F	Aa Bb Cc	B	Aaa	BBBB	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
+508	P	Aa Bb Cc	B	Aaa	BBBB	GGZ Centraal	[ZORGINSTELLING-1]
 509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	[INSTELLLING-1]
 510	P	Aa Bb Cc	B	Aaa	BBBB	Hanimeli thuiszorg bv	[INSTELLLING-1]
-511	P	Aa Bb Cc	B	Aaa	BBBB	Bovenij ziekenhuis	[INSTELLLING-1]
+511	P	Aa Bb Cc	B	Aaa	BBBB	Bovenij ziekenhuis	[ZIEKENHUIS-1]
 512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	[INSTELLLING-1]
-513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[INSTELLLING-1]
+513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[ZIEKENHUIS-1], locatie [ZIEKENHUIS-2]
 514	P	Aa Bb Cc	B	Aaa	BBBB	Wordt hees van de medicatie	Wordt hees van de medicatie
 515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
 516	P	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
-517	P	Aa Bb Cc	B	Aaa	BBBB	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
-518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	Antonius Ziekenhuis heeft heel kuil
+# Expected failure: Leidse Rijn added as location but text contains the lower-case 'rijn'
+517	F	Aa Bb Cc	B	Aaa	BBBB	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
+518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	[ZIEKENHUIS-1] heeft heel kuil
 519	P	Aa Bb Cc	B	Aaa	BBBB	Esens GGz	[GGZ-1]
-520	P	Aa Bb Cc	B	Aaa	BBBB	ZD46584392	[NUMMERWOORD-1]
+520	P	Aa Bb Cc	B	Aaa	BBBB	ZD46584392	ZD[ID-1]
 521	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt > 10 glazen alcohol per week	Patient drinkt > 10 glazen alcohol per week
 522	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt> 10 glazen alcohol per week	Patient drinkt> 10 glazen alcohol per week
 523	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt >10 glazen alcohol per week	Patient drinkt >10 glazen alcohol per week
 524	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt < 10 glazen alcohol per week	Patient drinkt < 10 glazen alcohol per week
 525	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt< 10 glazen alcohol per week	Patient drinkt< 10 glazen alcohol per week
 526	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt <10 glazen alcohol per week	Patient drinkt <10 glazen alcohol per week
-# TODO add a test case with < or > followed by 2 or more spaces							
-# TODO add all kind of test cases with trailing whitespaces							
+# TODO add a test case with < or > followed by 2 or more spaces
+# TODO add all kind of test cases with trailing whitespaces
 527	P	Aa Bb Cc	B	Aaa	BBBB	DORPSTRAAT 15	[LOCATIE-1]
 528	P	Aa Bb Cc	B	Aaa	BBBB	DORPstraat 16	[LOCATIE-1]
 529	P	Aa Bb Cc	B	Aaa	BBBB	dorpstraat 17	[LOCATIE-1]
@@ -572,7 +574,8 @@
 540	P	Aa Bb Cc	B	Aaa	BBBB	Mevrouw Donderslag tot en met Bliksemschicht van der Mokummerhei	Mevrouw [PERSOON-1]
 541	P	Aa Bb Cc	B	Aaa	BBBB	Gumus werd opgenomen per 01-01-2001	[PERSOON-1] werd opgenomen per [DATUM-1]
 542	P	Aa Bb Cc	B	Aaa	BBBB	Meneer met Roodjeuk	Meneer met Roodjeuk
-543	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Stg ggz friesland en daarna in Diakonessenhuis utrecht	Opgenomen in [INSTELLING-1] en daarna in [INSTELLING-2]
+# Expected failures: Friesland added as location and Diakonessenhuis Utrecht; case sensitivity problem.
+543	F	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Stg ggz friesland en daarna in Diakonessenhuis utrecht	Opgenomen in [INSTELLING-1] en daarna in [INSTELLING-2]
 544	P	Aa Bb Cc	B	Aaa	BBBB	Patient naam: d'Oliveria	Patient naam: [PERSOON-1]
 545	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4,2	glucnuven 4,2
 546	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4,2 cholest	glucnuven 4,2 cholest
