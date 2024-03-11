@@ -432,12 +432,12 @@
 403	P	Aa Bb Cc	B	Aaa	BBBB	datum - 5/4	datum - [DATUM-1]
 404	P	Aa Bb Cc	B	Aaa	BBBB	datum - 6/11	datum - [DATUM-1]
 405	P	Aa Bb Cc	B	Aaa	BBBB	datum - 9-4-2015	datum - [DATUM-1]
-406	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3 (aantal)	[DATUM-1]
-407	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,1/1,	[DATUM-1]
-408	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,5/325	[DATUM-1]
-409	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 10.3 10^	[DATUM-1]
-410	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3-4 (aantal)	[DATUM-1]
-411	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 8-10 (aantal)	[DATUM-1]
+406	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3 (aantal)	geen datum - 2-3 (aantal)
+407	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,1/1,	geen datum - ,1/1,
+408	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - ,5/325	geen datum - ,5/325
+409	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 10.3 10^	geen datum - 10.3 10^
+410	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 2-3-4 (aantal)	geen datum - 2-3-4 (aantal)
+411	P	Aa Bb Cc	B	Aaa	BBBB	geen datum - 8-10 (aantal)	geen datum - 8-10 (aantal)
 412	P	Aa Bb Cc	B	Aaa	BBBB	90,00	90,00
 413	P	Aa Bb Cc	B	Aaa	BBBB	30,00	30,00
 414	P	Aa Bb Cc	B	Aaa	BBBB	180.00	180.00
