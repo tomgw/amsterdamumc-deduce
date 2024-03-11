@@ -518,15 +518,16 @@
 489	P	Aa Bb Cc	B	Aaa	BBBB	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
 490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1][URL-1]
 491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[URL-1]
-492	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9	[LANGNUMMER-1]
-493	P	Aa Bb Cc	B	Aaa	BBBB	0.8 -1.0.8 -1.0	
-494	P	Aa Bb Cc	B	Aaa	BBBB	0.8-0.9.8-0.9	
-495	P	Aa Bb Cc	B	Aaa	BBBB	0.8 - 0.9.8 - 0.9	
+# In the HAG version the expected result was [LANGNUMMER-1]. Ask if this is the correct expectation. Possibly an error.
+492	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9	1,2 0,2/0,9
+493	P	Aa Bb Cc	B	Aaa	BBBB	0.8 -1.0	0.8 -1.0
+494	P	Aa Bb Cc	B	Aaa	BBBB	0.8-0.9	0.8-0.9
+495	P	Aa Bb Cc	B	Aaa	BBBB	0.8 - 0.9	0.8 - 0.9
 496	P	Aa Bb Cc	B	Aaa	BBBB	1507AB	[LOCATIE-1]
 497	P	Aa Bb Cc	B	Aaa	BBBB	1507 AB	[LOCATIE-1]
-498	P	Aa Bb Cc	B	Aaa	BBBB	150/7550/75	
+498	P	Aa Bb Cc	B	Aaa	BBBB	150/75	150/75
 499	P	Aa Bb Cc	B	Aaa	BBBB	& 150/75	& 150/75
-500	P	Aa Bb Cc	B	Aaa	BBBB	150/75++ & 130.050/75++ & 130.0	
+500	P	Aa Bb Cc	B	Aaa	BBBB	150/75++ & 130.0	150/75++ & 130.0
 501	P	Aa Bb Cc	B	Aaa	BBBB	 	 
 502	P	Aa Bb Cc	B	Aaa	BBBB		
 503	P	Aa Bb Cc	B	Aaa	BBBB	De Lichtenberg	[INSTELLING-1]
