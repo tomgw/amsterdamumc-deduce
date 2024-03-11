@@ -85,3 +85,16 @@ class TestDeduce:
         )
 
         assert dd.utils.annotate_intext(doc) == expected_intext_annotated
+
+    def test_deidentify_location_with_space(self, model):
+        metadata = {"patient": Person(first_names=["Jan"], surname="Jansen")}
+        text_with_location = ("betreft: Jan Jansen, bsn 111222333, patnr 000334433. De patient J. Jansen is 64 "
+        "jaar oud en woonachtig in Utrecht, Adres Oude Turfmarkt.")
+        doc = model.deidentify(text_with_location, metadata=metadata)
+
+        expected_deidentified = (
+            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
+            "[LEEFTIJD-1] jaar oud en woonachtig in [LOCATIE-1], Adres [LOCATIE-2]."
+        )
+
+        assert doc.deidentified_text == expected_deidentified
