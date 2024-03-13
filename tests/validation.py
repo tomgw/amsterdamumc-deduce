@@ -16,9 +16,10 @@ def annotators_from_group(model: Deduce, group: str) -> set[str]:
 
 class TestValidationFile:
     def test_with_validation_file(self, model):
-        file_to_test = './regression/input-output-test.tsv'
 
+        file_to_test = './regression/input-output-test.tsv'
         record_list = list()
+
         with open(file_to_test, mode="r", encoding="utf-8") as file:
             lines = file.readlines()
             count = 0
@@ -38,8 +39,12 @@ class TestValidationFile:
             columns = record.split("\t")
             if len(columns) > 1:
                 record_id = columns[0]
+                # TODO deal with non numeric values in the record_id
+                if int(record_id) != record_count:
+                    raise ValueError("No consecutive record ID at approx. record ID: ", int(record_id),
+                                     ". Value present: ", record_count)
             else:
-                record_id = "missing record ID in line: ", record_count
+                record_id = "Missing record ID at approx. record ID: ", record_count
 
             if len(columns) != 8:
                 print("Missing column in record with ID  ", record_id)
