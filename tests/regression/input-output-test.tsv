@@ -35,10 +35,10 @@
 13	P	Aa Bb Cc	B	Aaa	BBBB	amc ron	[ZIEKENHUIS-1] ron
 14	P	Aa Bb Cc	B	Aaa	BBBB	vw amc chir	vw [ZIEKENHUIS-1] chir
 15	P	Aa Bb Cc	B	Aaa	BBBB	olvg chir	[ZIEKENHUIS-1] chir
-# test to see if hospitals with or without diacriticals are correctly masked							
+# test to see if hospitals with or without diacriticals are correctly masked
 16	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Máxima Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
 17	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in Maxima Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
-# Failing. See Jira issue RDM-87							
+# Failing. See Jira issue RDM-87
 18	P	Aa Bb Cc	B	Aaa	BBBB	van het zonnehuis	van het [ZORGINSTELLING-1]
 19	P	Aa Bb Cc	B	Aaa	BBBB	amc plastische chirurgie	[ZIEKENHUIS-1] plastische chirurgie
 20	P	Aa Bb Cc	B	Aaa	BBBB	sdz 10mg/d	sdz 10mg/d
@@ -56,10 +56,10 @@
 32	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4.2	glucnuven 4.2
 33	P	Aa Bb Cc	B	Aaa	BBBB	glucnuven 4.2 cholest	glucnuven 4.2 cholest
 34	P	Aa Bb Cc	B	Aaa	BBBB	tablet 10 5mg	tablet 10 5mg
-35	P	Aa Bb Cc	B	Aaa	BBBB	gewicht 73.2 quet/bmi 28 4 chol	gewicht 7[DATUM-1] quet/bmi [DATUM-2] chol
-36	P	Aa Bb Cc	B	Aaa	BBBB	1/4 tablet	[DATUM-1] tablet
-37	P	Aa Bb Cc	B	Aaa	BBBB	3-5d2dr	[DATUM-1] 2dr
-38	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 1-2 zakjes	vanaf [DATUM-1] zakjes
+35	P	Aa Bb Cc	B	Aaa	BBBB	gewicht 73.2 quet/bmi 28 4 chol	gewicht 73.2 quet/bmi 28 4 chol
+36	P	Aa Bb Cc	B	Aaa	BBBB	1/4 tablet	1/4 tablet
+37	P	Aa Bb Cc	B	Aaa	BBBB	3-5d2dr	3-5d2dr
+38	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 1-2 zakjes	vanaf 1-2 zakjes
 39	P	Aa Bb Cc	B	Aaa	BBBB	2 5ml	2 5ml
 40	P	Aa Bb Cc	B	Aaa	BBBB	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol	hb 6.6 ht 0.22 ery 8.9 mcv 64 mch 1.23 mchc 19.2 chol
 41	P	Aa Bb Cc	B	Aaa	BBBB	via google.nl	via [URL-1]
@@ -276,7 +276,9 @@
 247	P	Aa Bb Cc	B	Aaa	BBBB	Curacau	[LOCATIE-1]
 248	P	Aa Bb Cc	B	Aaa	BBBB	Gasthuiskwartier	[LOCATIE-1]
 249	P	Aa Bb Cc	B	Aaa	BBBB	Kanaaleiland	[LOCATIE-1]
-250	P	Aa Bb Cc	B	Aaa	BBBB	Leiden	[LOCATIE-1]
+# De locatie Leiden is een probleem geval vanwege common word/ werkwoord leiden. Let
+# Wel er is ook een medische term zoals 'Factor V Leiden' of 'Uitzichtloos leiden' typ fout korte ei ipv lange ij
+250	F	Aa Bb Cc	B	Aaa	BBBB	Leiden	[LOCATIE-1]
 251	P	Aa Bb Cc	B	Aaa	BBBB	Oosterpark	[LOCATIE-1]
 252	P	Aa Bb Cc	B	Aaa	BBBB	Oude turfmarkt	[LOCATIE-1]
 253	P	Aa Bb Cc	B	Aaa	BBBB	Rhodos	[LOCATIE-1]
@@ -296,20 +298,20 @@
 267	P	Aa Bb Cc	B	Aaa	BBBB	BETHESDA	[ZIEKENUHUIS-1]
 268	P	Aa Bb Cc	B	Aaa	BBBB	Bethesda	[ZIEKENUHUIS-1]
 269	P	Aa Bb Cc	B	Aaa	BBBB	DE ELBE	[INSTELLING-1]
-270	P	Aa Bb Cc	B	Aaa	BBBB	DE FUNDATIE	[INSTELLING-1]
+270	P	Aa Bb Cc	B	Aaa	BBBB	DE FUNDATIE	[ZORGINSTELLING-1]
 271	P	Aa Bb Cc	B	Aaa	BBBB	Huys ter Swaach	[ZORGINSTELLING-1]
 272	P	Aa Bb Cc	B	Aaa	BBBB	Icare	[ZORGINSTELLING-1]
 273	P	Aa Bb Cc	B	Aaa	BBBB	icare	[INSTELLING-1]
-274	P	Aa Bb Cc	B	Aaa	BBBB	Ielanan	[INSTELLING-1]
+274	P	Aa Bb Cc	B	Aaa	BBBB	Ielanan	[ZORGINSTELLING-1]
 275	P	Aa Bb Cc	B	Aaa	BBBB	Isala	[ZIEKENHUIS-1]
 276	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwerik	[INSTELLING-1]
 277	P	Aa Bb Cc	B	Aaa	BBBB	MCL	[ZIEKENHUIS-1]
 278	P	Aa Bb Cc	B	Aaa	BBBB	MZ	[INSTELLING-1]
 279	P	Aa Bb Cc	B	Aaa	BBBB	Nijenhuis Voetencentrum	[INSTELLING-1]
 280	P	Aa Bb Cc	B	Aaa	BBBB	Saxenburgh Groep	[ZORGINSTELLING-1]
-281	P	Aa Bb Cc	B	Aaa	BBBB	Sloterdijk	[INSTELLING-1]
+281	P	Aa Bb Cc	B	Aaa	BBBB	Sloterdijk	[ZORGINSTELLING-1]
 282	P	Aa Bb Cc	B	Aaa	BBBB	Treant Zorggroep	[ZIEKENHUIS-1]
-283	P	Aa Bb Cc	B	Aaa	BBBB	UMCG	[ZIEKEHUIS-1]
+283	P	Aa Bb Cc	B	Aaa	BBBB	UMCG	[ZIEKENHUIS-1]
 284	P	Aa Bb Cc	B	Aaa	BBBB	Universitair Medisch Centrum Groningen	[ZIEKENHUIS-1]
 285	P	Aa Bb Cc	B	Aaa	BBBB	Villa Pinedo	[ZORGINSTELLING-1]
 286	P	Aa Bb Cc	B	Aaa	BBBB	Vital Health	[ZORGINSTELLING-1]
@@ -486,11 +488,11 @@
 457	P	Aa Bb Cc	B	Aaa	BBBB	540.0	540.0
 458	P	Aa Bb Cc	B	Aaa	BBBB	8.7 13.1 7.0 11.0	8.7 13.1 7.0 11.0
 459	P	Aa Bb Cc	B	Aaa	BBBB	98.00	98.00
-460	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 08-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-461	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 10-2019 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-462	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 03-2019  (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-463	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 04-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
-464	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 01-2017 (onderdeel van datum)	venserpolder [DATUM-1] (onderdeel van datum)
+460	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 08-2017 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
+461	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 10-2019 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
+462	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 03-2019  (onderdeel van datum)	[LOCATIE-1] [DATUM-1]  (onderdeel van datum)
+463	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 04-2017 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
+464	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 01-2017 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
 465	P	Aa Bb Cc	B	Aaa	BBBB	Scheemda	[LOCATIE-1]
 466	P	Aa Bb Cc	B	Aaa	BBBB	Coev & Hardenber	[LOCATIE-1]
 467	P	Aa Bb Cc	B	Aaa	BBBB	Frankrijk	[LOCATIE-1]
@@ -516,8 +518,8 @@
 487	P	Aa Bb Cc	B	Aaa	BBBB	 & Dr C. (zonder Brasse)	[PERSOON-1]
 488	P	Aa Bb Cc	B	Aaa	BBBB	Tel: 0612345678	Tel: [ID-1]
 489	P	Aa Bb Cc	B	Aaa	BBBB	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
-490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1][URL-1]
-491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[URL-1]
+490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1@[URL-1]
+491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[EMAILADRES-1]
 # In the HAG version the expected result was [LANGNUMMER-1]. Ask if this is the correct expectation. Possibly an error.
 492	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9	1,2 0,2/0,9
 493	P	Aa Bb Cc	B	Aaa	BBBB	0.8 -1.0	0.8 -1.0
@@ -544,10 +546,11 @@
 513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[ZIEKENHUIS-1], locatie [ZIEKENHUIS-2]
 514	P	Aa Bb Cc	B	Aaa	BBBB	Wordt hees van de medicatie	Wordt hees van de medicatie
 515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
-516	P	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
+# De Dood is een plaats (Buurtschap in de gemeente Rucphen)
+516	F	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
 # Expected failure: Leidse Rijn added as location but text contains the lower-case 'rijn'
 517	F	Aa Bb Cc	B	Aaa	BBBB	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
-518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	[ZIEKENHUIS-1] heeft heel kuil
+518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	[ZIEKENHUIS-1] heeft heel [PERSOON-1]
 519	P	Aa Bb Cc	B	Aaa	BBBB	Esens GGz	[ZORGINSTELLING-1] GGz
 520	P	Aa Bb Cc	B	Aaa	BBBB	ZD46584392	ZD[ID-1]
 521	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt > 10 glazen alcohol per week	Patient drinkt > 10 glazen alcohol per week
@@ -589,3 +592,10 @@
 553	P	Aa Bb Cc	B	Aaa	BBBB	Reactie van Suzuki	Reactie van Suzuki
 554	P	Aa Bb Cc	B	Aaa	BBBB	Complex van Gilbert	Complex van Gilbert
 555	P	Aa Bb Cc	B	Aaa	BBBB	Aandoening van Guillain-Barré	Aandoening van Guillain-Barré
+# See test case 250 for explaination on these test cases
+556	F	Aa Bb Cc	B	Aaa	BBBB	Factor V Leiden	Factor V Leiden
+557	P	Aa Bb Cc	B	Aaa	BBBB	Woont in Leiden	Woont in [LOCATIE-1]
+558	P	Aa Bb Cc	B	Aaa	BBBB	Woont in alkmaar	Woont in [LOCATIE-1]
+# Missing capital in amsterdam ...
+559	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in amsterdam Universitair Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
+560	P	Aa Bb Cc	B	Aaa	BBBB	Zijn broer klaas ...	Zijn broer [PERSOON-1] ...
