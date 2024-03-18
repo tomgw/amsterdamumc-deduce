@@ -338,14 +338,14 @@
 307	P	Aa Bb Cc	B	Aaa	BBBB	M.E. Bodegom	[PERSOON-1]
 308	P	Aa Bb Cc	B	Aaa	BBBB	M.L.J. van der Wiel	[PERSOON-1]
 309	P	Aa Bb Cc	B	Aaa	BBBB	MANSIER	[PERSOON-1]
-310	P	Aa Bb Cc	B	Aaa	BBBB	NS CLEMENS	[PERSOON-1]
+310	P	Aa Bb Cc	B	Aaa	BBBB	NS CLEMENS	NS [PERSOON-1]
 311	P	Aa Bb Cc	B	Aaa	BBBB	R.D. van den Hoed	[PERSOON-1]
 312	P	Aa Bb Cc	B	Aaa	BBBB	Raber	[PERSOON-1]
 313	P	Aa Bb Cc	B	Aaa	BBBB	REYNERS	[PERSOON-1]
 314	P	Aa Bb Cc	B	Aaa	BBBB	STAAL	[PERSOON-1]
 315	P	Aa Bb Cc	B	Aaa	BBBB	STIPKOVITZ	[PERSOON-1]
-316	P	Aa Bb Cc	B	Aaa	BBBB	Swart & WZA	[PERSOON-1]
-317	P	Aa Bb Cc	B	Aaa	BBBB	TJ SPE	[PERSOON-1]
+316	P	Aa Bb Cc	B	Aaa	BBBB	Swart & WZA	[PERSOON-1] & [ZIEKENHUIS-1]
+317	P	Aa Bb Cc	B	Aaa	BBBB	TJ SPE	TJ [PERSOON-1]
 318	P	Aa Bb Cc	B	Aaa	BBBB	Troost	[PERSOON-1]
 319	P	Aa Bb Cc	B	Aaa	BBBB	VELUTHAMANINGAL	[PERSOON-1]
 320	P	Aa Bb Cc	B	Aaa	BBBB	Winnock	[PERSOON-1]
@@ -573,8 +573,10 @@
 536	P	Aa Bb Cc	B	Aaa	BBBB	bsn123456789	bsn[ID-1]
 537	P	Aa Bb Cc	B	Aaa	BBBB	bSN 123456789	bSN [ID-1]
 538	P	Aa Bb Cc	B	Aaa	BBBB	bSN123456789	bSN[ID-1]
+# Test case for a combination of two Dutch surnames with prefixes and 'en'. Example of two known Dutch comedians.
 539	P	Aa Bb Cc	B	Aaa	BBBB	van Kooten en de Bie	[PERSOON-1] en [PERSOON-2]
-540	P	Aa Bb Cc	B	Aaa	BBBB	Mevrouw Donderslag tot en met Bliksemschicht van der Mokummerhei	Mevrouw [PERSOON-1]
+# Test case for Dutch surnames with a large number of interfix. Synthetic example.
+540	P	Aa Bb Cc	B	Aaa	BBBB	Donderslag tot en met Bliksemschicht van der Mokummerhei	[PERSOON-1]
 541	P	Aa Bb Cc	B	Aaa	BBBB	Gumus werd opgenomen per 01-01-2001	[PERSOON-1] werd opgenomen per [DATUM-1]
 542	P	Aa Bb Cc	B	Aaa	BBBB	Meneer met Roodjeuk	Meneer met Roodjeuk
 # Expected failures: Friesland added as location and Diakonessenhuis Utrecht; case sensitivity problem.
