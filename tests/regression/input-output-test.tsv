@@ -158,7 +158,7 @@
 132	P	Aa Bb Cc	B	Aaa	BBBB	M v Atten	[PERSOON-1]
 133	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder,J. Stroucken.	[LOCATIE-1],[PERSOON-1].
 134	P	Aa Bb Cc	B	Aaa	BBBB	yhessing	[PERSOON-1]
-135	P	Aa Bb Cc	B	Aaa	BBBB	y hessing	[PERSOON-1]
+135	P	Aa Bb Cc	B	Aaa	BBBB	y hessing	y [PERSOON-1]
 136	P	Aa Bb Cc	B	Aaa	BBBB	Overman	[PERSOON-1]
 137	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wilpe	[PERSOON-1]
 138	P	Aa Bb Cc	B	Aaa	BBBB	B. Nizynska	[PERSOON-1]
@@ -599,3 +599,4 @@
 # Missing capital in amsterdam ...
 559	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in amsterdam Universitair Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
 560	P	Aa Bb Cc	B	Aaa	BBBB	Zijn broer klaas ...	Zijn broer [PERSOON-1] ...
+561	P	Aa Bb Cc	B	Aaa	BBBB	The patient heeft diabetes type-1 sinds mei-1974	The patient heeft diabetes type-1 sinds [DATUM-1]
