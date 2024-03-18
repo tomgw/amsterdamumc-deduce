@@ -518,7 +518,7 @@
 487	P	Aa Bb Cc	B	Aaa	BBBB	 & Dr C. (zonder Brasse)	[PERSOON-1]
 488	P	Aa Bb Cc	B	Aaa	BBBB	Tel: 0612345678	Tel: [ID-1]
 489	P	Aa Bb Cc	B	Aaa	BBBB	ttluik@sag-amst [URL-1]	[URL-1] [URL-1]
-490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1@[URL-1]
+490	P	Aa Bb Cc	B	Aaa	BBBB	[LANGNUMMER-1]@ringamsterdam.nl	[LANGNUMMER-1]@[URL-1]
 491	P	Aa Bb Cc	B	Aaa	BBBB	tluik@amsterdamumc.nl	[EMAILADRES-1]
 # In the HAG version the expected result was [LANGNUMMER-1]. Ask if this is the correct expectation. Possibly an error.
 492	P	Aa Bb Cc	B	Aaa	BBBB	1,2 0,2/0,9	1,2 0,2/0,9
@@ -534,15 +534,15 @@
 502	P	Aa Bb Cc	B	Aaa	BBBB		
 503	P	Aa Bb Cc	B	Aaa	BBBB	De Lichtenberg	[ZORGINSTELLING-1]
 504	P	Aa Bb Cc	B	Aaa	BBBB	Catharina Ziekenhuis	[ZIEKENHUIS-1]
-505	P	Aa Bb Cc	B	Aaa	BBBB	Dunya zorg en welzijn	[INSTELLING-1]
+505	P	Aa Bb Cc	B	Aaa	BBBB	Dunya zorg en welzijn	[ZORGINSTELLING-1]
 # Next 2 are expected failures: 'Het Hoge Heem' has been added to institutions but fails because of the case-sensitivity problem.
 506	F	Aa Bb Cc	B	Aaa	BBBB	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
 507	F	Aa Bb Cc	B	Aaa	BBBB	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
 508	P	Aa Bb Cc	B	Aaa	BBBB	GGZ Centraal	[ZORGINSTELLING-1]
-509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	[INSTELLLING-1]
-510	P	Aa Bb Cc	B	Aaa	BBBB	Hanimeli thuiszorg bv	[INSTELLLING-1]
+509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	Gezondheidscentrum [ZORGINSTELLING-1]
+510	P	Aa Bb Cc	B	Aaa	BBBB	Hanimeli thuiszorg bv	[ZORGINSTELLING-1] thuiszorg bv
 511	P	Aa Bb Cc	B	Aaa	BBBB	Bovenij ziekenhuis	[ZIEKENHUIS-1]
-512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	[INSTELLLING-1]
+512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	Stg woongroep [ZORGINSTELLING-1]
 513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[ZIEKENHUIS-1], locatie [ZIEKENHUIS-2]
 514	P	Aa Bb Cc	B	Aaa	BBBB	Wordt hees van de medicatie	Wordt hees van de medicatie
 515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
