@@ -180,7 +180,7 @@
 154	P	Aa Bb Cc	B	Aaa	BBBB	Pantar	[ZORGINSTELLING-1]
 155	P	Aa Bb Cc	B	Aaa	BBBB	apo Gein	apo [INSTELLING-1]
 156	P	Aa Bb Cc	B	Aaa	BBBB	GGZ JELLINEK	GGZ [ZORGINSTELLING-1]
-157	P	Aa Bb Cc	B	Aaa	BBBB	Opname Flevo Dr. Korsten Chirurgie	Opname [LOCATIE-1] Dr. [PERSOON-1] Chirurgie
+157	P	Aa Bb Cc	B	Aaa	BBBB	Opname Flevo Dr. Korsten Chirurgie	Opname [ZIEKENHUIS-1] Dr. [PERSOON-1] Chirurgie
 158	P	Aa Bb Cc	B	Aaa	BBBB	Van: Bronner	Van: [PERSOON-1]
 159	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blekkert,Neuroloog	Van: [PERSOON-1],Neuroloog
 160	P	Aa Bb Cc	B	Aaa	BBBB	van : BOODT,Uroloog	van : [PERSOON-1],Uroloog
@@ -188,7 +188,7 @@
 162	P	Aa Bb Cc	B	Aaa	BBBB	Van: Ribbert, M.A.H.	Van: [PERSOON-1]
 163	P	Aa Bb Cc	B	Aaa	BBBB	Aios M Binnema	Aios [PERSOON-1]
 164	P	Aa Bb Cc	B	Aaa	BBBB	Naar : [PERSOON-1] Driest (POH GGZ)	Naar : [PERSOON-1] [PERSOON-1] (POH GGZ)
-165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1], rontgen
+165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1],rontgen
 166	P	Aa Bb Cc	B	Aaa	BBBB	Van : Eenhorst, oog c/cornea nu rustig	Van : [PERSOON-1], oog c/cornea nu rustig
 167	P	Aa Bb Cc	B	Aaa	BBBB	Van : KNOTTENBELT, pch c/fibroom kin	Van : [PERSOON-1], pch c/fibroom kin
 168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	Regiearts [PERSOON-1] tel: in gesprek
@@ -227,12 +227,12 @@
 200	P	Aa Bb Cc	B	Aaa	BBBB	Pep,Psychologen	[INSTELLING-1]
 201	P	Aa Bb Cc	B	Aaa	BBBB	Prezens GGZ Ingeest	[INSTELLING-1]
 202	P	Aa Bb Cc	B	Aaa	BBBB	PSY - Q	[INSTELLING-1]
-203	P	Aa Bb Cc	B	Aaa	BBBB	reade	[INSTELLING-1]
+203	P	Aa Bb Cc	B	Aaa	BBBB	reade	[ZORGINSTELLING-1]
 # Hoogstraat is both a location and a healthcare institute. Location prevails.
 204	P	Aa Bb Cc	B	Aaa	BBBB	revalidatie Hoogstraat	revalidatie [LOCATIE-1]
 205	P	Aa Bb Cc	B	Aaa	BBBB	Revalidatiecentrum De Hoogstraat	Revalidatiecentrum [ZORGINSTELLING-1]
 206	P	Aa Bb Cc	B	Aaa	BBBB	Rijn apotheek	[ZORGINSTELLING-1]
-207	P	Aa Bb Cc	B	Aaa	BBBB	"Rijn apotheek"	[ZORGINSTELLING-1]
+207	P	Aa Bb Cc	B	Aaa	BBBB	"Rijn apotheek"	"[ZORGINSTELLING-1]"
 208	P	Aa Bb Cc	B	Aaa	BBBB	SLAZ	[ZORGINSTELLING-1]
 209	P	Aa Bb Cc	B	Aaa	BBBB	Symbiant	[ZORGINSTELLING-1]
 210	P	Aa Bb Cc	B	Aaa	BBBB	Tel.Bonga	Tel.[ZORGINSTELLING-1]
