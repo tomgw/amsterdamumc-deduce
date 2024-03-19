@@ -55,7 +55,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             are overwritten, and other defaults are kept. When `load_base_config` is
             set to `False`, no defaults are loaded and only configuration from `config`
             is applied.
-        looup_data_path: The path to look for lookup data, by default included in
+        lookup_data_path: The path to look for lookup data, by default included in
             the package. If you want to make changes to source files, it's recommended
             to copy the source data and pointing deduce to this folder with this
             argument.
@@ -88,7 +88,12 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             load_base_config=load_base_config, user_config=config
         )
 
-        self.lookup_data_path = self._initialize_lookup_data_path(lookup_data_path)
+        if "lookup_table_path" in self.config.keys():
+            config_file_path = Path(os.path.dirname(Path(self.config["config_file_dir"])))
+            self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
+        else:
+            self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
+        logging.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
         self.lookup_structs = get_lookup_structs(
@@ -124,9 +129,12 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
                 base_config = json.load(file)
 
             utils.overwrite_dict(config, base_config)
+            # store the config-file-dir as an entry in the config dict
+            config["config_file_dir"] = _BASE_CONFIG_FILE
 
         if user_config is not None:
             if isinstance(user_config, str):
+                config["config_file_dir"] = user_config
                 with open(user_config, "r", encoding="utf-8") as file:
                     user_config = json.load(file)
 
