@@ -615,3 +615,4 @@
 564	P	Aa Bb Cc	B	de Vries	BBBB	Dhr. de Vries woonachtig in Feanwaldsterwal is opgenomen in het AmsterdamUMC	[PATIENT] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1]
 # When the surname in the text does not contain diacritials then the mask is [PERSOON-X] in place of [PATIENT]
 565	P	Aa Bb Cc	B	Çiftçi	Yaël	Yael Ciftci woonachtig in 2e Exloërmond is opgenomen in het Maxima Medisch Centrum voor een röntgenfoto na een diagnose van Guillain-Barré	[PERSOON-1] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1] voor een röntgenfoto na een diagnose van Guillain-Barré
+566	P	Aa Bb Cc	B	de Vries	Jan	Dhr. Jan de Vries woonachtig in Nerts 33 is opgenomen in het Maxima Medisch Centrum	[PATIENT] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1]
