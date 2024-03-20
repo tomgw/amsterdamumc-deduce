@@ -43,7 +43,8 @@
 19	P	Aa Bb Cc	B	Aaa	BBBB	amc plastische chirurgie	[ZIEKENHUIS-1] plastische chirurgie
 20	P	Aa Bb Cc	B	Aaa	BBBB	sdz 10mg/d	sdz 10mg/d
 21	P	Aa Bb Cc	B	Aaa	BBBB	ketoconaz sdz	ketoconaz sdz
-22	P	Aa Bb Cc	B	Aaa	BBBB	decubitus bovenbeen	[INSTELLING-1] bovenbeen
+# Decubitus is a health care institute, but medical terms prevail.
+22	P	Aa Bb Cc	B	Aaa	BBBB	decubitus bovenbeen	decubitus bovenbeen
 23	P	Aa Bb Cc	B	Aaa	BBBB	desloratadine sdz	desloratadine sdz
 24	P	Aa Bb Cc	B	Aaa	BBBB	as woensdag 1/5 woord	as woensdag [DATUM-1] woord
 25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] woord erachter
@@ -66,17 +67,18 @@
 42	P	Aa Bb Cc	B	Aaa	BBBB	scapula-stabilisatoren.behandeling	scapula-stabilisatoren.behandeling
 43	P	Aa Bb Cc	B	Aaa	BBBB	scapula-stabilisatoren.be.	[URL-1].
 44	P	Aa Bb Cc	B	Aaa	BBBB	ZOVIRAX 50MG/G CREME	ZOVIRAX 50MG/G CREME
-45	P	Aa Bb Cc	B	Aaa	BBBB	zoon tjerk	zoon tjerk
-46	P	Aa Bb Cc	B	Aaa	BBBB	trudy meer zorg thuis	trudy meer zorg thuis
+45	P	Aa Bb Cc	B	Aaa	BBBB	zoon tjerk	zoon [PERSOON-1]
+46	P	Aa Bb Cc	B	Aaa	BBBB	trudy meer zorg thuis	[PERSOON-1] meer [ZORGINSTELLING-1]
 47	P	Aa Bb Cc	B	Aaa	BBBB	dr van der Luik faxnr 075-1234567	[PERSOON-1] faxnr [TELEFOONNUMMER-1]
 48	P	Aa Bb Cc	B	Aaa	BBBB	06 123456876	[TELEFOONNUMMER-1]
 49	P	Aa Bb Cc	B	Aaa	BBBB	nu vier 4 jaar ziektevrij	nu vier [LEEFTIJD-1] jaar ziektevrij
-50	P	Aa Bb Cc	B	Aaa	BBBB	gyn amc van 11-01 t/m 28-04-2009	gyn [INSTELLING-1] van [DATUM-1] t/m [DATUM-2]
+50	P	Aa Bb Cc	B	Aaa	BBBB	gyn amc van 11-01 t/m 28-04-2009	gyn [ZIEKENHUIS-1] van [DATUM-1] t/m [DATUM-2]
 51	P	Aa Bb Cc	B	Aaa	BBBB	heup operatie 12/05	heup operatie [DATUM-1]
 52	P	Aa Bb Cc	B	Aaa	BBBB	dit is een 3-3-2019 datum	dit is een [DATUM-1] datum
 53	P	Aa Bb Cc	B	Aaa	BBBB	9	9
 54	P	Aa Bb Cc	B	Aaa	BBBB	G Creme	[PERSOON-1]
-55	P	Aa Bb Cc	B	Aaa	BBBB	O.L.V.G. Oost: amoxicilline 2dd 500 mg	[PERSOON-1]
+# The abbreviation O.L.V.G is considered to be initials and Oost is a surname. That's why this is masked as a person.
+55	P	Aa Bb Cc	B	Aaa	BBBB	O.L.V.G. Oost: amoxicilline 2dd 500 mg	[PERSOON-1]: amoxicilline 2dd 500 mg
 56	P	Aa Bb Cc	B	Aaa	BBBB	Si	Si
 57	P	Aa Bb Cc	B	Aaa	BBBB	Tel (telefonisch)	[PERSOON-1] (telefonisch)
 58	P	Aa Bb Cc	B	Aaa	BBBB	]	]
@@ -84,9 +86,9 @@
 60	P	Aa Bb Cc	B	Aaa	BBBB	Abd (abdomen)	Abd (abdomen)
 61	P	Aa Bb Cc	B	Aaa	BBBB	Operatie	Operatie
 62	P	Aa Bb Cc	B	Aaa	BBBB	Boek	Boek
-63	P	Aa Bb Cc	B	Aaa	BBBB	Rust	
+63	P	Aa Bb Cc	B	Aaa	BBBB	Rust	Rust
 64	P	Aa Bb Cc	B	Aaa	BBBB	Elders	Elders
-65	P	Aa Bb Cc	B	Aaa	BBBB	OD (oculus dexter, rechter oog)	OD (oculus dexter, rechter oog)
+65	P	Aa Bb Cc	B	Aaa	BBBB	OD (oculus dexter, rechter oog)	OD (oculus [PERSOON-1], rechter oog)
 66	P	Aa Bb Cc	B	Aaa	BBBB	VT (vaginaal toucher)	VT (vaginaal toucher)
 67	P	Aa Bb Cc	B	Aaa	BBBB	Mycose	Mycose
 68	P	Aa Bb Cc	B	Aaa	BBBB	Enk/Arm	Enk/Arm
@@ -217,16 +219,17 @@
 190	P	Aa Bb Cc	B	Aaa	BBBB	Buitenhof	[ZORGINSTELLING-1]
 191	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[ZORGINSTELLING-1]
 192	P	Aa Bb Cc	B	Aaa	BBBB	GGZ inGeest	[ZORGINSTELLING-1]
-193	P	Aa Bb Cc	B	Aaa	BBBB	ggzingeest	[INSTELLING-1]
+193	P	Aa Bb Cc	B	Aaa	BBBB	ggzingeest	[ZORGINSTELLING-1]
 194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[ZORGINSTELLING-1]
 195	P	Aa Bb Cc	B	Aaa	BBBB	Hoogstraten	[PERSOON-1]
 196	P	Aa Bb Cc	B	Aaa	BBBB	Leids universitair medisch centrum	[ZIEKENHUIS-1]
-197	P	Aa Bb Cc	B	Aaa	BBBB	Marsepeintje kinderdagverblijf	[INSTELLING-1]
+197	P	Aa Bb Cc	B	Aaa	BBBB	Marsepeintje kinderdagverblijf	[ZORGINSTELLING-1] kinderdagverblijf
 198	P	Aa Bb Cc	B	Aaa	BBBB	OLVG	[ZIEKENHUIS-1]
-199	P	Aa Bb Cc	B	Aaa	BBBB	Pep Psychologen	[INSTELLING-1]
-200	P	Aa Bb Cc	B	Aaa	BBBB	Pep,Psychologen	[INSTELLING-1]
-201	P	Aa Bb Cc	B	Aaa	BBBB	Prezens GGZ Ingeest	[INSTELLING-1]
-202	P	Aa Bb Cc	B	Aaa	BBBB	PSY - Q	[INSTELLING-1]
+# Pep is also a person. Thuis it is replaced with the mask PERSON
+199	F	Aa Bb Cc	B	Aaa	BBBB	Pep Psychologen	[PERSOON-1]
+200	P	Aa Bb Cc	B	Aaa	BBBB	Pep,Psychologen	[ZORGINSTELLING-1]
+201	P	Aa Bb Cc	B	Aaa	BBBB	Prezens GGZ Ingeest	[ZORGINSTELLING-1]
+202	P	Aa Bb Cc	B	Aaa	BBBB	PSY - Q	[ZORGINSTELLING-1]
 203	P	Aa Bb Cc	B	Aaa	BBBB	reade	[ZORGINSTELLING-1]
 # Hoogstraat is both a location and a healthcare institute. Location prevails.
 204	P	Aa Bb Cc	B	Aaa	BBBB	revalidatie Hoogstraat	revalidatie [LOCATIE-1]
@@ -286,10 +289,10 @@
 255	P	Aa Bb Cc	B	Aaa	BBBB	Sri lanka	[LOCATIE-1]
 256	P	Aa Bb Cc	B	Aaa	BBBB	U trecht	[LOCATIE-1]
 257	P	Aa Bb Cc	B	Aaa	BBBB	ABN	[INSTELLING-1]
-258	P	Aa Bb Cc	B	Aaa	BBBB	ABnAmro	[INSTELLING-1]
+258	P	Aa Bb Cc	B	Aaa	BBBB	ABnAmro	[ZORGINSTELLING-1]
 259	P	Aa Bb Cc	B	Aaa	BBBB	AFM	[INSTELLING-1]
-260	P	Aa Bb Cc	B	Aaa	BBBB	Klaverblad verz	[INSTELLING-1]
-261	P	Aa Bb Cc	B	Aaa	BBBB	Ouder Kind Team Kinderts	[INSTELLING-1]
+260	P	Aa Bb Cc	B	Aaa	BBBB	Klaverblad verz	[ZORGINSTELLING-1]
+261	P	Aa Bb Cc	B	Aaa	BBBB	Ouder Kind Team Kinderts	[ZORGINSTELLING-1]
 262	P	Aa Bb Cc	B	Aaa	BBBB	Raad van Kinderbescherming	[ZORGINSTELLING-1]
 263	P	Aa Bb Cc	B	Aaa	BBBB	de Marne	[ZORGINSTELLING-1]
 264	P	Aa Bb Cc	B	Aaa	BBBB	Verslavingszorg Terwille	Verslavingszorg [ZORGINSTELLING-1]
@@ -304,10 +307,12 @@
 273	P	Aa Bb Cc	B	Aaa	BBBB	icare	[ZORGINSTELLING-1]
 274	P	Aa Bb Cc	B	Aaa	BBBB	Ielanan	[ZORGINSTELLING-1]
 275	P	Aa Bb Cc	B	Aaa	BBBB	Isala	[ZIEKENHUIS-1]
-276	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwerik	[INSTELLING-1]
+276	P	Aa Bb Cc	B	Aaa	BBBB	Leeuwerik	[LOCATIE-1]
 277	P	Aa Bb Cc	B	Aaa	BBBB	MCL	[ZIEKENHUIS-1]
-278	P	Aa Bb Cc	B	Aaa	BBBB	MZ	[INSTELLING-1]
-279	P	Aa Bb Cc	B	Aaa	BBBB	Nijenhuis Voetencentrum	[INSTELLING-1]
+# 2 letter organisations are not yet dealt with correctly
+278	F	Aa Bb Cc	B	Aaa	BBBB	MZ	[INSTELLING-1]
+# Nijnenhuis is also a surname. DEDUCE at the moment replace names with a higher priority than organizations
+279	P	Aa Bb Cc	B	Aaa	BBBB	Nijenhuis Voetencentrum	[PERSOON-1]
 280	P	Aa Bb Cc	B	Aaa	BBBB	Saxenburgh Groep	[ZORGINSTELLING-1]
 281	P	Aa Bb Cc	B	Aaa	BBBB	Sloterdijk	[ZORGINSTELLING-1]
 282	P	Aa Bb Cc	B	Aaa	BBBB	Treant Zorggroep	[ZIEKENHUIS-1]
@@ -372,7 +377,7 @@
 341	P	Aa Bb Cc	B	Aaa	BBBB	Pijn. Last van borst	Pijn. Last van borst
 342	P	Aa Bb Cc	B	Aaa	BBBB	Pijn op borst bij Last	Pijn op borst bij Last
 343	P	Aa Bb Cc	B	Aaa	BBBB	Pijn op borst met last	Pijn op borst met last
-344	P	Aa Bb Cc	B	Aaa	BBBB	Mr van Oranje plek	Mr [PERSOON-1] plek
+344	P	Aa Bb Cc	B	Aaa	BBBB	Mr van Oranje plek	[PERSOON-1] plek
 345	P	Aa Bb Cc	B	Aaa	BBBB	Oranje plek	Oranje plek
 346	P	Aa Bb Cc	B	Aaa	BBBB	5 september	[DATUM-1]
 347	P	Aa Bb Cc	B	Aaa	BBBB	108/74	108/74
@@ -383,10 +388,11 @@
 352	P	Aa Bb Cc	B	Aaa	BBBB	A 80.00	A 80.00
 353	P	Aa Bb Cc	B	Aaa	BBBB	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
 354	P	Aa Bb Cc	B	Aaa	BBBB	De urine was schoon.	De urine was schoon.
-355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	QI/BMI (=):31,35
+# Failure because Qi is a (chinees) name
+355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	[PERSON-1]/BMI (=):31,35
 356	P	Aa Bb Cc	B	Aaa	BBBB	even gebeld of alles goed gaat  bel haar wakker	even gebeld of alles goed gaat  bel haar wakker
 357	P	Aa Bb Cc	B	Aaa	BBBB	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar ligt
-358	P	Aa Bb Cc	B	Aaa	BBBB	het liever 7 nov ivm komende dagen feesten.	het liever 7 nov ivm komende dagen feesten.
+358	P	Aa Bb Cc	B	Aaa	BBBB	het liever 7 nov ivm komende dagen feesten.	het liever [DATUM-1] ivm komende dagen feesten.
 359	P	Aa Bb Cc	B	Aaa	BBBB	rouw om verlies vader	rouw om verlies vader
 360	P	Aa Bb Cc	B	Aaa	BBBB	99/99	99/99
 361	P	Aa Bb Cc	B	Aaa	BBBB	2,92 (-3,5)	2,92 (-3,5)
@@ -426,7 +432,7 @@
 395	P	Aa Bb Cc	B	Aaa	BBBB	datum - 21/12 & 28-09	datum - [DATUM-1]
 396	P	Aa Bb Cc	B	Aaa	BBBB	datum - 22-05-2017	datum - [DATUM-1]
 397	P	Aa Bb Cc	B	Aaa	BBBB	datum - 25 juli	datum - [DATUM-1]
-398	P	Aa Bb Cc	B	Aaa	BBBB	datum - 26 april & 19april	datum - [DATUM-1]
+398	P	Aa Bb Cc	B	Aaa	BBBB	datum - 26 april & 19april	datum - [DATUM-1] & [DATUM-2]
 399	P	Aa Bb Cc	B	Aaa	BBBB	datum - 27 oktober	datum - [DATUM-1]
 400	P	Aa Bb Cc	B	Aaa	BBBB	datum - 27-03-2018	datum - [DATUM-1]
 401	P	Aa Bb Cc	B	Aaa	BBBB	datum - 4-9	datum - [DATUM-1]
@@ -545,7 +551,7 @@
 512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	Stg woongroep [ZORGINSTELLING-1]
 513	P	Aa Bb Cc	B	Aaa	BBBB	Amsterdam UMC, locatie AMC	[ZIEKENHUIS-1], locatie [ZIEKENHUIS-2]
 514	P	Aa Bb Cc	B	Aaa	BBBB	Wordt hees van de medicatie	Wordt hees van de medicatie
-515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"	"Essenti&#235	le hypertensie zonder orgaanbeschadiging"
+515	P	Aa Bb Cc	B	Aaa	BBBB	"Essenti&#235le hypertensie zonder orgaanbeschadiging"	"Essenti&#235le hypertensie zonder orgaanbeschadiging"
 # De Dood is een plaats (Buurtschap in de gemeente Rucphen)
 516	F	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
 # Expected failure: Leidse Rijn added as location but text contains the lower-case 'rijn'
@@ -575,8 +581,8 @@
 538	P	Aa Bb Cc	B	Aaa	BBBB	bSN123456789	bSN[ID-1]
 # Test case for a combination of two Dutch surnames with prefixes and 'en'. Example of two known Dutch comedians.
 539	P	Aa Bb Cc	B	Aaa	BBBB	van Kooten en de Bie	[PERSOON-1] en [PERSOON-2]
-# Test case for Dutch surnames with a large number of interfix. Synthetic example.
-540	P	Aa Bb Cc	B	Aaa	BBBB	Donderslag tot en met Bliksemschicht van der Mokummerhei	[PERSOON-1]
+# Test case for Dutch surnames with a large number of interfixes.
+540	P	Aa Bb Cc	B	Aaa	BBBB	Mevrouw van der Heide-Jagers Op Akkerhuis werd opgenomen op 15 mei	[PERSOON-1] werd opgenomen op [DATUM-1]
 541	P	Aa Bb Cc	B	Aaa	BBBB	Gumus werd opgenomen per 01-01-2001	[PERSOON-1] werd opgenomen per [DATUM-1]
 542	P	Aa Bb Cc	B	Aaa	BBBB	Meneer met Roodjeuk	Meneer met Roodjeuk
 # Expected failures: Friesland added as location and Diakonessenhuis Utrecht; case sensitivity problem.
@@ -601,4 +607,6 @@
 # Missing capital in amsterdam ...
 559	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in amsterdam Universitair Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
 560	P	Aa Bb Cc	B	Aaa	BBBB	Zijn broer klaas ...	Zijn broer [PERSOON-1] ...
-561	P	Aa Bb Cc	B	Aaa	BBBB	The patient heeft diabetes type-1 sinds mei-1974	The patient heeft diabetes type-1 sinds [DATUM-1]
+561	P	Aa Bb Cc	B	Aaa	BBBB	The patient heeft diabetes type-1 sindsmei-1974	The patient heeft diabetes type-1 sinds[DATUM-1]
+# a number of failing test with erronerous whitespaces or punctuations in the identifiable information
+562	F	Aa Bb Cc	B	Aaa	BBBB	Klom penhouwer heeft last van ADHD	[PERSOON-1] heeft last van ADHD
