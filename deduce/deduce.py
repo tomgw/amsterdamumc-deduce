@@ -97,7 +97,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
         self.lookup_structs = get_lookup_structs(
-       lookup_path=Path(os.path.realpath(self.lookup_data_path)),
+            lookup_path=Path(os.path.realpath(self.lookup_data_path)),
             tokenizer=self.tokenizers["default"],
             deduce_version=__version__,
             build=build_lookup_structs,
