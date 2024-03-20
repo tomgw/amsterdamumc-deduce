@@ -10,7 +10,7 @@ from typing import Optional
 import docdeid as dd
 from docdeid.tokenizer import Tokenizer
 
-from deduce.data.lookup.src import all_lists
+
 from deduce.depr import DeprecatedDsCollection
 from deduce.lookup_struct_loader import (
     load_eponymous_disease_lookup,
@@ -248,6 +248,10 @@ def get_lookup_structs(
             "healthcare_institutions": "healthcare_institution",
         }
     )
+
+    all_lists=[]
+    for i in lookup_path.glob("src/*/lst_*"):
+        all_lists.append( os.path.basename(os.path.split(i)[0]) + "/" + os.path.basename(i)) 
 
     base_items = load_raw_itemsets(base_path=lookup_path, subdirs=all_lists)
 

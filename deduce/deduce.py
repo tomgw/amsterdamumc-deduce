@@ -97,7 +97,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
         self.lookup_structs = get_lookup_structs(
-            lookup_path=self.lookup_data_path,
+       lookup_path=Path(os.path.realpath(self.lookup_data_path)),
             tokenizer=self.tokenizers["default"],
             deduce_version=__version__,
             build=build_lookup_structs,
@@ -179,7 +179,7 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             args.update(
                 lookup_values=lookup_struct.items(),
                 matching_pipeline=lookup_struct.matching_pipeline,
-                tokenizer=extras["tokenizer]"],
+                tokenizer=extras["tokenizer"],
             )
         elif isinstance(lookup_struct, dd.ds.LookupTrie):
             args.update(trie=lookup_struct)
