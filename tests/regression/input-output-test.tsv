@@ -609,4 +609,7 @@
 560	P	Aa Bb Cc	B	Aaa	BBBB	Zijn broer klaas ...	Zijn broer [PERSOON-1] ...
 561	P	Aa Bb Cc	B	Aaa	BBBB	The patient heeft diabetes type-1 sindsmei-1974	The patient heeft diabetes type-1 sinds[DATUM-1]
 # a number of failing test with erronerous whitespaces or punctuations in the identifiable information
-562	F	Aa Bb Cc	B	Aaa	BBBB	Klom penhouwer heeft last van ADHD	[PERSOON-1] heeft last van ADHD
+562	F	Aa Bb Cc	B	Aaa	BBBB	Klom penhouwer heeft last van ADHD	[PERSOON-1] heeft last van ADHD 
+# Test case for words with and without diacriticals while the place name has diacritials in the lookup list
+563	P	Aa Bb Cc	B	de Vries	BBBB	Dhr. de Vries woonachtig in Feanwâldsterwâl is opgenomen in het AmsterdamUMC	[PATIENT] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1]
+564	P	Aa Bb Cc	B	de Vries	BBBB	Dhr. de Vries woonachtig in Feanwaldsterwal is opgenomen in het AmsterdamUMC	[PATIENT] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1]
