@@ -14,7 +14,7 @@ import docdeid as dd
 from deprecated import deprecated
 from frozendict import frozendict
 
-from deduce.utils import overwrite_dict, class_for_name, initialize_class
+from deduce import utils
 from deduce.annotation_processor import (
     CleanAnnotationTag,
     DeduceMergeAdjacentAnnotations,
@@ -26,6 +26,7 @@ from deduce.lookup_struct_loader import load_interfix_lookup, load_prefix_lookup
 from deduce.lookup_structs import get_lookup_structs, load_raw_itemsets
 from deduce.redactor import DeduceRedactor
 from deduce.tokenizer import DeduceTokenizer
+from deduce.data.lookup.src import all_lists
 
 __version__ = importlib.metadata.version(__package__ or __name__)
 
@@ -88,12 +89,26 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             load_base_config=load_base_config, user_config=config
         )
 
-        self.lookup_data_path = self._initialize_lookup_data_path(lookup_data_path)
+        if "lookup_table_path" in self.config.keys():
+            config_file_path = Path(os.path.dirname(Path(self.config["config_file_dir"])))
+            self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
+        else:
+            self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
+        logging.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
+        if "all_lists" in self.config.keys():
+            all_lists=self.config["all_lists"]
+        if len(all_lists) == 0:
+            # generate a new one if deduce.data.lookup.src.all_lists is empty AND it is empty/not present in config.json
+            all_lists=[]
+            for i in self.lookup_data_path.glob("src/*/lst_*"):
+                all_lists.append( os.path.basename(os.path.split(i)[0]) + "/" + os.path.basename(i))
+
         self.lookup_structs = get_lookup_structs(
-            lookup_path=self.lookup_data_path,
+            lookup_path=Path(os.path.realpath(self.lookup_data_path)),
             tokenizer=self.tokenizers["default"],
+            all_lists=all_lists,
             deduce_version=__version__,
             build=build_lookup_structs,
         )
@@ -123,14 +138,17 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             with open(_BASE_CONFIG_FILE, "r", encoding="utf-8") as file:
                 base_config = json.load(file)
 
-            overwrite_dict(config, base_config)
+            utils.overwrite_dict(config, base_config)
+            # store the config-file-dir as an entry in the config dict
+            config["config_file_dir"] = _BASE_CONFIG_FILE
 
         if user_config is not None:
             if isinstance(user_config, str):
+                config["config_file_dir"] = user_config
                 with open(user_config, "r", encoding="utf-8") as file:
                     user_config = json.load(file)
 
-            overwrite_dict(config, user_config)
+            utils.overwrite_dict(config, user_config)
 
         return frozendict(config)
 
@@ -171,7 +189,7 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             args.update(
                 lookup_values=lookup_struct.items(),
                 matching_pipeline=lookup_struct.matching_pipeline,
-                tokenizer=extras["tokenizer]"],
+                tokenizer=extras["tokenizer"],
             )
         elif isinstance(lookup_struct, dd.ds.LookupTrie):
             args.update(trie=lookup_struct)
@@ -221,9 +239,9 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         pattern_args = args.pop("pattern")
         module = pattern_args.pop("module")
         cls = pattern_args.pop("class")
-        cls = class_for_name(module, cls)
+        cls = utils.class_for_name(module, cls)
 
-        pattern = initialize_class(cls, args=pattern_args, extras=extras)
+        pattern = utils.initialize_class(cls, args=pattern_args, extras=extras)
 
         return dd.process.TokenPatternAnnotator(pattern=pattern)
 
@@ -252,8 +270,8 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         module = args.pop("module")
         cls = args.pop("class")
 
-        cls = class_for_name(module, cls)
-        return initialize_class(cls, args=args, extras=extras)
+        cls = utils.class_for_name(module, cls)
+        return utils.initialize_class(cls, args=args, extras=extras)
 
     @staticmethod
     @deprecated(
@@ -278,9 +296,9 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
         module_name = ".".join(elems[:-1])
         class_name = elems[-1]
 
-        cls = class_for_name(module_name=module_name, class_name=class_name)
+        cls = utils.class_for_name(module_name=module_name, class_name=class_name)
 
-        return initialize_class(cls, args, extras)
+        return utils.initialize_class(cls, args, extras)
 
     @staticmethod
     def _get_or_create_annotator_group(
@@ -358,8 +376,8 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             "clean_street_tags",
             CleanAnnotationTag(
                 tag_map={
-                    "straat+huisnummer": "locatie",
-                    "straat+huisnummer+huisnummerletter": "locatie",
+                    "straatnaam+huisnummer": "locatie",
+                    "straatnaam+huisnummer+huisnummerletter": "locatie"
                 }
             ),
         )

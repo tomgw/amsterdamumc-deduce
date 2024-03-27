@@ -616,3 +616,44 @@
 # When the surname in the text does not contain diacritials then the mask is [PERSOON-X] in place of [PATIENT]
 565	P	Aa Bb Cc	B	Çiftçi	Yaël	Yael Ciftci woonachtig in 2e Exloërmond is opgenomen in het Maxima Medisch Centrum voor een röntgenfoto na een diagnose van Guillain-Barré	[PERSOON-1] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1] voor een röntgenfoto na een diagnose van Guillain-Barré
 566	P	Aa Bb Cc	B	de Vries	Jan	Dhr. Jan de Vries woonachtig in Nerts 33 is opgenomen in het Maxima Medisch Centrum	[PATIENT] woonachtig in [LOCATIE-1] is opgenomen in het [ZIEKENHUIS-1]
+# Tests for Dutch housenumber postfixes. A maximum of 4 spaces is considered valid.
+# A large number of these postfix tests have been marked as Failing because of an upcoming
+# improvement to the range of pre-, post-tokens used for the annotation/rematching.
+567	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18bis	[LOCATIE-1]
+568	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 bis	[LOCATIE-1]
+569	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18  bis	[LOCATIE-1]
+570	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18   bis	[LOCATIE-1]
+571	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18   bis	[LOCATIE-1]
+572	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18    bis	[LOCATIE-1]    bis
+573	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18     bis	[LOCATIE-1]     bis
+574	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 I	[LOCATIE-1]
+575	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG I	ABCDEFG I
+576	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 II	[LOCATIE-1]
+577	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG II	ABCDEFG II
+578	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 III	[LOCATIE-1]
+579	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG III	ABCDEFG III
+580	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 IV	[LOCATIE-1]
+581	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG IV	ABCDEFG IV
+582	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 V	[LOCATIE-1]
+583	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG V	ABCDEFG V
+584	P	Aa Bb Cc	B	Aaa	BBBB	rubenslaan	[STRAATNAAM-1]
+585	P	Aa Bb Cc	B	Aaa	BBBB	VELDJEN 15	[LOCATIE-1]
+586	P	Aa Bb Cc	B	Aaa	BBBB	VELDjen 16A	[LOCATIE-1]
+587	P	Aa Bb Cc	B	Aaa	BBBB	veldjen 17-Z	[LOCATIE-1]-Z
+588	P	Aa Bb Cc	B	Aaa	BBBB	medicatie bis eind	medicatie bis eind
+589	F	Aa Bb Cc	B	Aaa	BBBB	veldjen 18 III	[LOCATIE-1]
+590	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18	[LOCATIE-1]
+591	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat  18	[LOCATIE-1]
+592	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat   18	[LOCATIE-1]
+593	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-1	[LOCATIE-1]
+594	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-12	[LOCATIE-1]
+595	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-I	[LOCATIE-1]
+596	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-II	[LOCATIE-1]
+597	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-III	[LOCATIE-1]
+598	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-IV	[LOCATIE-1]
+599	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18Bis	[STRAATNAAM-1] 
+600	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-F	[LOCATIE-1]
+601	P	Aa Bb Cc	B	Aaa	BBBB	Veldjen	[STRAATNAAM-1]
+602	P	Aa Bb Cc	B	Aaa	BBBB	StaatNietInDeOpzoekLijstenStraat	[STRAATNAAM-1]
+603	F	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 20-21	[LOCATIE-1]
+604	P	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 2021	[LOCATIE-1]

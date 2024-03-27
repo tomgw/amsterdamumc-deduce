@@ -330,11 +330,11 @@
       "args": {
         "pattern": [
           {
-            "re_match": "[A-Z][a-z]+(baan|bolwerk|dam|dijk|dreef|drf|dyk|gr|gracht|hf|hof|kade|laan|ln|markt|mrkt|pad|park|pd|plantsoen|plein|pln|plnts|prk|singel|sngl|st|steeg|stg|str|straat|weg|wg)$"
+            "re_match": "(?i)[A-Z][a-z]+(baan|bolwerk|dam|dijk|dreef|drf|dyk|gr|gracht|hf|hof|kade|laan|ln|markt|mrkt|pad|park|pd|plantsoen|plein|pln|plnts|prk|singel|sngl|st|steeg|stg|str|straat|weg|wg)$"
           }
         ],
-        "tag": "straat",
-        "priority": 1
+        "tag": "straatnaam",
+        "priority": 3
       }
     },
     "street_lookup": {
@@ -343,12 +343,37 @@
       "args": {
         "lookup_values": "street",
         "overlapping": true,
-        "tag": "straat",
-        "priority": 1
+        "tag": "straatnaam",
+        "priority": 3
+      }
+    },
+    "housenumber_with_minus": {
+      "annotator_type": "deduce.annotator.ContextAnnotator",
+      "priority": 6,
+      "group": "locations",
+      "args": {
+        "iterative": true,
+        "pattern": [
+          {
+            "name": "housenumber_with_minus",
+            "direction": "right",
+            "pre_tag": [
+              "straatnaam"
+            ],
+            "tag": "{tag}+huisnummer_met_minus",
+            "skip": ["-"],
+            "pattern": [
+              {
+                "re_match": "\\d{1,4}[-]\\d{1-4}$"
+              }
+            ]
+          }
+        ]
       }
     },
     "housenumber": {
       "annotator_type": "deduce.annotator.ContextAnnotator",
+      "priority": 4,
       "group": "locations",
       "args": {
         "iterative": true,
@@ -357,7 +382,7 @@
             "name": "housenumber_right",
             "direction": "right",
             "pre_tag": [
-              "straat"
+              "straatnaam"
             ],
             "tag": "{tag}+huisnummer",
             "skip": [],
@@ -371,7 +396,7 @@
             "name": "housenumber_housenumberletter_right",
             "direction": "right",
             "pre_tag": [
-              "straat"
+              "straatnaam"
             ],
             "tag": "{tag}+huisnummer+huisnummerletter",
             "skip": [],
