@@ -1,4 +1,5 @@
 {
+  "lookup_table_path": "./deduce/data/lookup",
   "adjacent_annotations_slack": "[\\. \\-]?[\\. ]?",
   "resolve_overlap_strategy": {
     "attributes": [
