@@ -7,6 +7,9 @@ from docdeid import Annotation, AnnotationSet
 
 from deduce import Deduce
 
+_BASE_PATH = Path(os.path.dirname(__file__)).parent
+
+
 
 def regression_test(
     model: Deduce,
@@ -16,8 +19,8 @@ def regression_test(
 ):
     if known_failures is None:
         known_failures = set()
-
-    with open(Path(examples_file), "rb") as file:
+    print("\n*****", _BASE_PATH)
+    with open(examples_file, "rb") as file:
         examples = json.load(file)["examples"]
 
     failures = set()
@@ -44,62 +47,62 @@ class TestRegression:
     def test_regression_name(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/names.json",
+            examples_file="./data/regression_cases/names.json",
             enabled=annotators_from_group(model, "names"),
         )
 
     def test_regression_location(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/locations.json",
+            examples_file="./data/regression_cases/locations.json",
             enabled=annotators_from_group(model, "locations"),
         )
 
     def test_regression_institution(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/institutions.json",
+            examples_file="./data/regression_cases/institutions.json",
             enabled=annotators_from_group(model, "institutions"),
         )
 
     def test_regression_date(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/dates.json",
+            examples_file="./data/regression_cases/dates.json",
             enabled=annotators_from_group(model, "dates"),
         )
 
     def test_regression_age(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/ages.json",
+            examples_file="./data/regression_cases/ages.json",
             enabled=annotators_from_group(model, "ages"),
         )
 
     def test_regression_identifier(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/identifiers.json",
+            examples_file="./data/regression_cases/identifiers.json",
             enabled=annotators_from_group(model, "identifiers"),
         )
 
     def test_regression_phone(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/phone_numbers.json",
+            examples_file="./data/regression_cases/phone_numbers.json",
             enabled=annotators_from_group(model, "phone_numbers"),
         )
 
     def test_regression_email(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/emails.json",
+            examples_file="./data/regression_cases/emails.json",
             enabled=annotators_from_group(model, "email_addresses"),
         )
 
     def test_regression_url(self, model):
         regression_test(
             model=model,
-            examples_file="../data/regression_cases/urls.json",
+            examples_file="./data/regression_cases/urls.json",
             enabled=annotators_from_group(model, "urls"),
         )

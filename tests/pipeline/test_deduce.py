@@ -94,7 +94,7 @@ class TestDeduce:
 
         expected_deidentified = (
             "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
-            "[LEEFTIJD-1] jaar oud en woonachtig in [LOCATIE-1], Adres [LOCATIE-2]."
+            "[LEEFTIJD-1] jaar oud en woonachtig in [LOCATIE-1], Adres Oude Turfmarkt."
         )
 
         assert doc.deidentified_text == expected_deidentified
