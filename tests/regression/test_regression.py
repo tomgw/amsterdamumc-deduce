@@ -10,7 +10,6 @@ from deduce import Deduce
 _BASE_PATH = Path(os.path.dirname(__file__)).parent
 
 
-
 def regression_test(
     model: Deduce,
     examples_file: str,
@@ -19,8 +18,10 @@ def regression_test(
 ):
     if known_failures is None:
         known_failures = set()
-    print("\n*****", _BASE_PATH)
-    with open(examples_file, "rb") as file:
+
+    common_path_str = str(_BASE_PATH) + str(examples_file)
+    normalised_path = os.path.normpath(common_path_str)
+    with open(normalised_path, "rb") as file:
         examples = json.load(file)["examples"]
 
     failures = set()
