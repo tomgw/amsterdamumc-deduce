@@ -67,10 +67,13 @@ class TestRegression:
         )
 
     def test_regression_date(self, model):
+        enabled_annotator_names = annotators_from_group(model, "dates")
+        post_processing_annotators = annotators_from_group(model, "post_processing")
+        enabled_annotator_names = enabled_annotator_names.union(post_processing_annotators)
         regression_test(
             model=model,
             examples_file="./data/regression_cases/dates.json",
-            enabled=annotators_from_group(model, "dates"),
+            enabled=enabled_annotator_names,
         )
 
     def test_regression_age(self, model):

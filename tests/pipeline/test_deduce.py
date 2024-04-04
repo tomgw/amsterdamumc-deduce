@@ -98,3 +98,57 @@ class TestDeduce:
         )
 
         assert doc.deidentified_text == expected_deidentified
+
+
+    def test_deidentify_placenames(self, model):
+        metadata = {"patient": Person(first_names=["Jan"], surname="Jansen")}
+        text_with_location = ("betreft: Jan Jansen, bsn 111222333, patnr 000334433. De patient J. Jansen is 64 "
+        "jaar oud en woonachtig in utrecht, UTrecht, zaltbommel, bunNIK, Halfweg, Helfweg, Súdwest-Fryslân, Alphen ( NB ), Alphen (ZH)")
+        doc = model.deidentify(text_with_location, metadata=metadata)
+
+        expected_deidentified = (
+            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
+            "[LEEFTIJD-1] jaar oud en woonachtig in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], [LOCATIE-5], "
+            "Helfweg, [LOCATIE-6], [LOCATIE-7], [LOCATIE-8] (ZH)"
+        )
+
+        assert doc.deidentified_text == expected_deidentified
+
+    def test_deidentify_streetnames(self, model):
+        metadata = {"patient": Person(first_names=["Jan"], surname="Jansen")}
+        text_with_location = ("betreft: Jan Jansen, bsn 111222333, patnr 000334433. De patient J. Jansen is 64 "
+                              "jaar oud en woonachtig in Dorpstraat 1, DORPSTRAAT 2, DorpStraat 3, dorpstraat 4, "
+                              "Dorpstraat 6, Amsterdamsestraatweg, 1234 AA, 1e Achterstraat, "
+                              "Amsterdamsestraatweg")
+        # TODO 1 problem remains to be solved with streetnames:
+        # 1) Streetnames without a house number are not masked
+        #    e.g. '... Amsterdamsestraatweg, 1234 AA ...' and 'Amsterdamsestraatweg' is not picked up
+
+        doc = model.deidentify(text_with_location, metadata=metadata)
+
+        expected_deidentified = (
+            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar oud en woonachtig"
+            " in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], [LOCATIE-1], Amsterdamsestraatweg, [LOCATIE-5], "
+            "1e Achterstraat, Amsterdamsestraatweg"
+        )
+
+        assert doc.deidentified_text == expected_deidentified
+
+    def test_deidentify_careinstitutes(self, model):
+        metadata = {"patient": Person(first_names=["Jan"], surname="Jansen")}
+        text_with_location = ("betreft: Jan Jansen, bsn 111222333, patnr 000334433. De patient J. Jansen is 64 "
+                              "jaar oud en opgenomen in ggzingeest, daarna in reade. Hij haalt zijn medicatie"
+                              "bij Rijn apotheek of 'Rijn apotheek'")
+        # TODO 1 problem remains to be solved with streetnames:
+        # 1) Streetnames without a house number are not masked
+        #    e.g. '... Amsterdamsestraatweg, 1234 AA ...' and 'Amsterdamsestraatweg' is not picked up
+
+        doc = model.deidentify(text_with_location, metadata=metadata)
+
+        expected_deidentified = (
+            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar oud en woonachtig"
+            " in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], [LOCATIE-1], Amsterdamsestraatweg, [LOCATIE-5], "
+            "1e Achterstraat, Amsterdamsestraatweg"
+        )
+
+        assert doc.deidentified_text == expected_deidentified

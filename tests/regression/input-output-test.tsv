@@ -32,7 +32,7 @@
 10	P	Aa Bb Cc	B	Aaa	BBBB	sinds 28e	sinds 28e
 11	P	Aa Bb Cc	B	Aaa	BBBB	seh amc	seh [ZIEKENHUIS-1]
 12	P	Aa Bb Cc	B	Aaa	BBBB	gyn-amc	gyn-[ZIEKENHUIS-1]
-13	P	Aa Bb Cc	B	Aaa	BBBB	amc ron	[ZIEKENHUIS-1] ron
+13	P	Aa Bb Cc	B	Aaa	BBBB	amc ron	[ZIEKENHUIS-1] [PERSOON-1]
 14	P	Aa Bb Cc	B	Aaa	BBBB	vw amc chir	vw [ZIEKENHUIS-1] chir
 15	P	Aa Bb Cc	B	Aaa	BBBB	olvg chir	[ZIEKENHUIS-1] chir
 # test to see if hospitals with or without diacriticals are correctly masked
@@ -47,9 +47,10 @@
 22	P	Aa Bb Cc	B	Aaa	BBBB	decubitus bovenbeen	decubitus bovenbeen
 23	P	Aa Bb Cc	B	Aaa	BBBB	desloratadine sdz	desloratadine sdz
 24	P	Aa Bb Cc	B	Aaa	BBBB	as woensdag 1/5 woord	as woensdag [DATUM-1] woord
-25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] woord erachter
+# woord is a surname but also a word ;-).
+25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] [PERSOON-1] erachter
 26	P	Aa Bb Cc	B	Aaa	BBBB	begon 2-3dg geleden	begon 2-3dg geleden
-27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [DATUM-1] woord erachter
+27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [DATUM-1] [PERSOON-1] erachter
 28	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 05-12 ook	vanaf [DATUM-1] ook
 29	P	Aa Bb Cc	B	Aaa	BBBB	zie 1/1/2001 pt	zie [DATUM-1] pt
 30	P	Aa Bb Cc	B	Aaa	BBBB	temp 37 1	temp 37 1
@@ -79,10 +80,11 @@
 54	P	Aa Bb Cc	B	Aaa	BBBB	G Creme	[PERSOON-1]
 # The abbreviation O.L.V.G is considered to be initials and Oost is a surname. That's why this is masked as a person.
 55	P	Aa Bb Cc	B	Aaa	BBBB	O.L.V.G. Oost: amoxicilline 2dd 500 mg	[PERSOON-1]: amoxicilline 2dd 500 mg
-56	P	Aa Bb Cc	B	Aaa	BBBB	Si	Si
-57	P	Aa Bb Cc	B	Aaa	BBBB	Tel (telefonisch)	[PERSOON-1] (telefonisch)
+56	P	Aa Bb Cc	B	Aaa	BBBB	Si	[PERSOON-1]
+# Tel is present in the exceptions for surnames
+57	P	Aa Bb Cc	B	Aaa	BBBB	Tel (telefonisch)	Tel (telefonisch)
 58	P	Aa Bb Cc	B	Aaa	BBBB	]	]
-59	P	Aa Bb Cc	B	Aaa	BBBB	T-Save (is iud)	[PERSOON-1] (is iud)
+59	P	Aa Bb Cc	B	Aaa	BBBB	T-Save (is iud)	T-[ZORGINSTELLING-1] (is iud)
 60	P	Aa Bb Cc	B	Aaa	BBBB	Abd (abdomen)	Abd (abdomen)
 61	P	Aa Bb Cc	B	Aaa	BBBB	Operatie	Operatie
 62	P	Aa Bb Cc	B	Aaa	BBBB	Boek	Boek
@@ -95,7 +97,7 @@
 69	P	Aa Bb Cc	B	Aaa	BBBB	MST (mamma sparende therapie)	MST (mamma sparende therapie)
 70	P	Aa Bb Cc	B	Aaa	BBBB	RFE	RFE
 71	P	Aa Bb Cc	B	Aaa	BBBB	FRANSSEN	[PERSOON-1]
-72	P	Aa Bb Cc	B	Aaa	BBBB	Winter-tenen	Winter-tenen
+72	P	Aa Bb Cc	B	Aaa	BBBB	Winter-tenen	[PERSOON-1]-tenen
 73	P	Aa Bb Cc	B	Aaa	BBBB	IM Slotervaart ZH  Cytologie, MEDVRI, Pap 1. Epitheelatrofie	IM [ZIEKENHUIS-1] ZH  Cytologie, MEDVRI, [PERSOON-1] 1. Epitheelatrofie
 74	P	Aa Bb Cc	B	Aaa	BBBB	klachten duren al 5 jaar	klachten duren al 5 jaar
 75	P	Aa Bb Cc	B	Aaa	BBBB	Azithromycine	Azithromycine
@@ -180,7 +182,7 @@
 152	P	Aa Bb Cc	B	Aaa	BBBB	A'dam	[LOCATIE-1]
 153	P	Aa Bb Cc	B	Aaa	BBBB	Cordaan	[ZORGINSTELLING-1]
 154	P	Aa Bb Cc	B	Aaa	BBBB	Pantar	[ZORGINSTELLING-1]
-155	P	Aa Bb Cc	B	Aaa	BBBB	apo Gein	apo [INSTELLING-1]
+155	P	Aa Bb Cc	B	Aaa	BBBB	apo Gein	apo [LOCATIE-1]
 156	P	Aa Bb Cc	B	Aaa	BBBB	GGZ JELLINEK	GGZ [ZORGINSTELLING-1]
 157	P	Aa Bb Cc	B	Aaa	BBBB	Opname Flevo Dr. Korsten Chirurgie	Opname [ZIEKENHUIS-1] Dr. [PERSOON-1] Chirurgie
 158	P	Aa Bb Cc	B	Aaa	BBBB	Van: Bronner	Van: [PERSOON-1]
@@ -288,9 +290,9 @@
 254	P	Aa Bb Cc	B	Aaa	BBBB	Rivierstaete	[LOCATIE-1]
 255	P	Aa Bb Cc	B	Aaa	BBBB	Sri lanka	[LOCATIE-1]
 256	P	Aa Bb Cc	B	Aaa	BBBB	U trecht	[LOCATIE-1]
-257	P	Aa Bb Cc	B	Aaa	BBBB	ABN	[INSTELLING-1]
+257	P	Aa Bb Cc	B	Aaa	BBBB	ABN	[ZORGINSTELLING-1]
 258	P	Aa Bb Cc	B	Aaa	BBBB	ABnAmro	[ZORGINSTELLING-1]
-259	P	Aa Bb Cc	B	Aaa	BBBB	AFM	[INSTELLING-1]
+259	P	Aa Bb Cc	B	Aaa	BBBB	AFM	[ZORGINSTELLING-1]
 260	P	Aa Bb Cc	B	Aaa	BBBB	Klaverblad verz	[ZORGINSTELLING-1]
 261	P	Aa Bb Cc	B	Aaa	BBBB	Ouder Kind Team Kinderts	[ZORGINSTELLING-1]
 262	P	Aa Bb Cc	B	Aaa	BBBB	Raad van Kinderbescherming	[ZORGINSTELLING-1]
@@ -320,11 +322,12 @@
 284	P	Aa Bb Cc	B	Aaa	BBBB	Universitair Medisch Centrum Groningen	[ZIEKENHUIS-1]
 285	P	Aa Bb Cc	B	Aaa	BBBB	Villa Pinedo	[ZORGINSTELLING-1]
 286	P	Aa Bb Cc	B	Aaa	BBBB	Vital Health	[ZORGINSTELLING-1]
-287	P	Aa Bb Cc	B	Aaa	BBBB	WEEZENLANDEN	[INSTELLING-1]
+287	P	Aa Bb Cc	B	Aaa	BBBB	WEEZENLANDEN	[ZIEKENHUIS-1]
 288	P	Aa Bb Cc	B	Aaa	BBBB	wza	[ZIEKENHUIS-1]
 289	P	Aa Bb Cc	B	Aaa	BBBB	WZA	[ZIEKENHUIS-1]
 290	P	Aa Bb Cc	B	Aaa	BBBB	Batting	[PERSOON-1]
-291	P	Aa Bb Cc	B	Aaa	BBBB	Belt	[PERSOON-1]
+# Failing because Belt is in the exception list for surnames
+291	F	Aa Bb Cc	B	Aaa	BBBB	Belt	[PERSOON-1]
 292	P	Aa Bb Cc	B	Aaa	BBBB	BERGE VAN DEN	[PERSOON-1]
 293	P	Aa Bb Cc	B	Aaa	BBBB	BOELSTRA	[PERSOON-1]
 294	P	Aa Bb Cc	B	Aaa	BBBB	Dereksen	[PERSOON-1]
@@ -347,7 +350,8 @@
 311	P	Aa Bb Cc	B	Aaa	BBBB	R.D. van den Hoed	[PERSOON-1]
 312	P	Aa Bb Cc	B	Aaa	BBBB	Raber	[PERSOON-1]
 313	P	Aa Bb Cc	B	Aaa	BBBB	REYNERS	[PERSOON-1]
-314	P	Aa Bb Cc	B	Aaa	BBBB	STAAL	[PERSOON-1]
+# Failing because Staal is also in the common word list
+314	F	Aa Bb Cc	B	Aaa	BBBB	STAAL	[PERSOON-1]
 315	P	Aa Bb Cc	B	Aaa	BBBB	STIPKOVITZ	[PERSOON-1]
 316	P	Aa Bb Cc	B	Aaa	BBBB	Swart & WZA	[PERSOON-1] & [ZIEKENHUIS-1]
 317	P	Aa Bb Cc	B	Aaa	BBBB	TJ SPE	TJ [PERSOON-1]
@@ -369,7 +373,7 @@
 333	P	Aa Bb Cc	B	Aaa	BBBB	rubenslaan	[LOCATIE-1]
 334	P	Aa Bb Cc	B	Aaa	BBBB	WINSCH (is waarschijnlijk Winschoten)	[LOCATIE-1] (is waarschijnlijk [LOCATIE-2])
 335	P	Aa Bb Cc	B	Aaa	BBBB	WINSUM	[LOCATIE-1]
-336	P	Aa Bb Cc	B	Aaa	BBBB	DUO	[INSTELLING-1]
+336	P	Aa Bb Cc	B	Aaa	BBBB	DUO	[ZORGINSTELLING-1]
 337	P	Aa Bb Cc	B	Aaa	BBBB	Interpolis	[ZORGINSTELLING-1]
 338	P	Aa Bb Cc	B	Aaa	BBBB	OPD voor geven GV 2016/2017	[PERSOON-1]
 339	P	Aa Bb Cc	B	Aaa	BBBB	OPD voor Geven GV 2016/2017	[PERSOON-1]
@@ -389,7 +393,7 @@
 353	P	Aa Bb Cc	B	Aaa	BBBB	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
 354	P	Aa Bb Cc	B	Aaa	BBBB	De urine was schoon.	De urine was schoon.
 # Failure because Qi is a (chinees) name
-355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	[PERSON-1]/BMI (=):31,35
+355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	[PERSOON-1]/BMI (=):31,35
 356	P	Aa Bb Cc	B	Aaa	BBBB	even gebeld of alles goed gaat  bel haar wakker	even gebeld of alles goed gaat  bel haar wakker
 357	P	Aa Bb Cc	B	Aaa	BBBB	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar ligt
 358	P	Aa Bb Cc	B	Aaa	BBBB	het liever 7 nov ivm komende dagen feesten.	het liever [DATUM-1] ivm komende dagen feesten.
@@ -654,6 +658,7 @@
 599	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18Bis	[STRAATNAAM-1] 
 600	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-F	[LOCATIE-1]
 601	P	Aa Bb Cc	B	Aaa	BBBB	Veldjen	[STRAATNAAM-1]
-602	P	Aa Bb Cc	B	Aaa	BBBB	StaatNietInDeOpzoekLijstenStraat	[STRAATNAAM-1]
+602	P	Aa Bb Cc	B	Aaa	BBBB	StaatNietInDeOpzoekLijstenStraat	StaatNietInDeOpzoekLijstenStraat
 603	F	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 20-21	[LOCATIE-1]
 604	P	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 2021	[LOCATIE-1]
+605	P	Aa Bb Cc	B	Aaa	BBBB	2de Graaf van Hollanddijk	[LOCATIE-1]

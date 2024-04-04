@@ -498,6 +498,39 @@
         "pre_match_words": ["januari", "jan", "februari", "feb", "maart", "mrt", "april", "apr", "mei", "juni", "jun", "juli", "jul", "augustus", "aug", "september", "sep", "sept", "oktober", "okt", "november", "nov", "december", "dec"]
       }
     },
+    "date_month_year_1": {
+      "comment": [
+        "Reg-expression annotator to deal with dates only containing the month followed by year.",
+        "The month can be numerals (with an optional leading zero), abbreviated or full out (in English",
+        "or Dutch). An number of delimiters preceded or followed by whitespaces (max 4) between the month ",
+        "and year. E.g. 1-2023, 01/2023, 1 - 2023, januari 2023, jan 2023, May-1974"
+      ],
+      "annotator_type": "docdeid.process.RegexpAnnotator",
+      "priority": -1,
+      "overlapping": true,
+      "group": "dates",
+      "args": {
+        "regexp_pattern": "(?i)((((?:\\b)(0)?[1-9]|1[0,1,2]))|(januari|january|jan|februari|february|feb|maart|march|mrt|april|apr|mei|may|juni|june|jun|juli|july|jul|augustus|aug|september|sep|sept|oktober|october|okt|november|nov|december|dec))(\\s{0,4})[-/\\\\\\. ](\\s{0,4})((19|20|\\'|`)?\\d{2})(?!\\d)",
+        "tag": "datum"
+      }
+    },
+    "date_day_month_1": {
+      "comment": [
+        "Reg-expression annotator to deal with dates with the day, the month in letters and without the year.",
+        "The days can be numerals (with an optional leading zero), followed by the month either abbreviated or full",
+        "out (in English or Dutch). An number of delimiters preceded or followed by whitespaces (max 4) between",
+        "the day and month. E.g. 5 september, 5-mei, 06/juni"
+      ],
+      "annotator_type": "docdeid.process.RegexpAnnotator",
+      "priority": -1,
+      "overlapping": true,
+      "group": "dates",
+      "args": {
+        "regexp_pattern": "(?i)(?:\\b)((0)?[1-9]|[1,2,3][0-9])(\\s{0,4}|[- /\\\\])(januari|january|jan|februari|february|feb|maart|march|mrt|april|apr|mei|may|juni|june|jun|juli|july|jul|augustus|aug|september|sep|sept|oktober|october|okt|november|nov|december|dec)",
+        "tag": "datum"
+      }
+    },
+
     "age": {
       "annotator_type": "deduce.annotator.RegexpPseudoAnnotator",
       "group": "ages",
