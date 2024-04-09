@@ -31,6 +31,7 @@ class TestValidationFile:
         print("\nNumber of records read: ", len(record_list))
 
         mismatch_count = 0
+        match_count = 0
         expected_failure_count = 0
         record_count = 0
         failed = False
@@ -69,16 +70,27 @@ class TestValidationFile:
             if not matching:
                 if failure_status == 'F':
                     expected_failure_count += 1
+                    # print("\n==> Expected failure at record ", record_id)
                 else:
                     mismatch_count += 1
                     failed = True
                     print("\n==> Mismatch at record ", record_id)
+                    print("Raw:      >" + identifiable_input + "<")
                     print("Expected: >" + expected_output + "<")
                     print("Actual:   >" + actual_output + "<")
+            else:
+                match_count += 1
+                # print("\n==> Match at record ", record_id)
+
         # assert mismatch_count == 0
         print("Done")
-        print("Number of mismatches: ", mismatch_count)
-        print("Expected mismatches: ", expected_failure_count)
+        print("==============================================================")
+        print("Numer of records    :", record_count)
+        print("Numer of matches    :", match_count)
+        print("Number of mismatches:", mismatch_count)
+        print("Expected mismatches :", expected_failure_count)
+
+        print("==============================================================")
         # failures = set()
 
         #

@@ -345,7 +345,6 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
                 annotator = self._get_annotator_from_class(annotator_type, args, extras)
 
             group.add_processor(annotator_name, annotator)
-
         return annotators
 
     @staticmethod

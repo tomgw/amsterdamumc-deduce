@@ -75,7 +75,14 @@
         {
             "id": 6,
             "text": "32-01-2018",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "32-01-2018",
+                    "start_char": 0,
+                    "end_char": 10,
+                    "tag": "datum"
+                }
+            ]
         },
         {
             "id": 7,

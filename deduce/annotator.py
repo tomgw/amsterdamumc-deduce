@@ -122,7 +122,6 @@ class TokenPatternAnnotator(dd.process.Annotator):
         self.pattern = pattern
         self.ds = ds
         self.skip = set(skip or [])
-
         self._start_words = None
         self._matching_pipeline = None
 
@@ -537,7 +536,6 @@ class RegexpPseudoAnnotator(RegexpAnnotator):
         self.pre_pseudo = set(pre_pseudo or [])
         self.post_pseudo = set(post_pseudo or [])
         self.lowercase = lowercase
-
         super().__init__(*args, **kwargs)
 
     @staticmethod
