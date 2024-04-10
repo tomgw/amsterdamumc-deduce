@@ -48,9 +48,9 @@
 23	P	Aa Bb Cc	B	Aaa	BBBB	desloratadine sdz	desloratadine sdz
 24	P	Aa Bb Cc	B	Aaa	BBBB	as woensdag 1/5 woord	as woensdag [DATUM-1] woord
 # woord is a surname but also a word ;-).
-25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [DATUM-1] [PERSOON-1] erachter
+25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [LANGNUMMER-1][PERSOON-1] erachter
 26	P	Aa Bb Cc	B	Aaa	BBBB	begon 2-3dg geleden	begon 2-3dg geleden
-27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [DATUM-1] [PERSOON-1] erachter
+27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [LANGNUMMER-1][PERSOON-1] erachter
 28	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 05-12 ook	vanaf [DATUM-1] ook
 29	P	Aa Bb Cc	B	Aaa	BBBB	zie 1/1/2001 pt	zie [DATUM-1] pt
 30	P	Aa Bb Cc	B	Aaa	BBBB	temp 37 1	temp 37 1
@@ -70,8 +70,8 @@
 44	P	Aa Bb Cc	B	Aaa	BBBB	ZOVIRAX 50MG/G CREME	ZOVIRAX 50MG/G CREME
 45	P	Aa Bb Cc	B	Aaa	BBBB	zoon tjerk	zoon [PERSOON-1]
 46	P	Aa Bb Cc	B	Aaa	BBBB	trudy meer zorg thuis	[PERSOON-1] meer [ZORGINSTELLING-1]
-47	P	Aa Bb Cc	B	Aaa	BBBB	dr van der Luik faxnr 075-1234567	[PERSOON-1] faxnr [TELEFOONNUMMER-1]
-48	P	Aa Bb Cc	B	Aaa	BBBB	06 123456876	[TELEFOONNUMMER-1]
+47	P	Aa Bb Cc	B	Aaa	BBBB	dr van der Luik faxnr 075-1234567	[PERSOON-1] faxnr [LANGNUMMER-1]
+48	P	Aa Bb Cc	B	Aaa	BBBB	06 123456876	[LANGNUMMER-1]
 49	P	Aa Bb Cc	B	Aaa	BBBB	nu vier 4 jaar ziektevrij	nu vier [LEEFTIJD-1] jaar ziektevrij
 50	P	Aa Bb Cc	B	Aaa	BBBB	gyn amc van 11-01 t/m 28-04-2009	gyn [ZIEKENHUIS-1] van [DATUM-1] t/m [DATUM-2]
 51	P	Aa Bb Cc	B	Aaa	BBBB	heup operatie 12/05	heup operatie [DATUM-1]
@@ -128,7 +128,7 @@
 100	P	Aa Bb Cc	B	Aaa	BBBB	90842375	[ID-1]
 101	P	Aa Bb Cc	B	Aaa	BBBB	0908-42375	[LANGNUMMER-1]
 102	P	Aa Bb Cc	B	Aaa	BBBB	09.08.42.375	[DATUM-1].375
-103	P	Aa Bb Cc	B	Aaa	BBBB	020-25476098	[TELEFOONNUMMER-1]
+103	P	Aa Bb Cc	B	Aaa	BBBB	020-25476098	[LANGNUMMER-1]
 # the records 104 upto 118 were all marked with the mask '[LEEFTIJD-N]' in Torec's version. This is proably an error. Try to find
 # out if this is the case and why this was done.
 104	P	Aa Bb Cc	B	Aaa	BBBB	7583	[LEEFTIJD-1]
@@ -136,13 +136,13 @@
 106	P	Aa Bb Cc	B	Aaa	BBBB	2/4/65	[DATUM-1]
 107	P	Aa Bb Cc	B	Aaa	BBBB	23.12.7652	[LEEFTIJD-1]
 108	P	Aa Bb Cc	B	Aaa	BBBB	06.43.53.74.98	[LEEFTIJD-1]
-109	P	Aa Bb Cc	B	Aaa	BBBB	06-568937334	[TELEFOONNUMMER-1]
+109	P	Aa Bb Cc	B	Aaa	BBBB	06-568937334	[LANGNUMMER-1]
 110	P	Aa Bb Cc	B	Aaa	BBBB	2.4.65	[DATUM-1]
 111	P	Aa Bb Cc	B	Aaa	BBBB	Geb 2 juni 1964	Geb [DATUM-1]
 112	P	Aa Bb Cc	B	Aaa	BBBB	Geb 2-6-64	Geb [DATUM-1]
 113	P	Aa Bb Cc	B	Aaa	BBBB	Tel no 0283674939	Tel no [ID-1]
-114	P	Aa Bb Cc	B	Aaa	BBBB	Tel 06 24238605	Tel [TELEFOONNUMMER-1]
-115	P	Aa Bb Cc	B	Aaa	BBBB	Tel 020 42386050	Tel [TELEFOONNUMMER-1]
+114	P	Aa Bb Cc	B	Aaa	BBBB	Tel 06 24238605	Tel [LANGNUMMER-1]
+115	P	Aa Bb Cc	B	Aaa	BBBB	Tel 020 42386050	Tel [LANGNUMMER-1]
 116	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2-3-54	Dat [DATUM-1]
 117	P	Aa Bb Cc	B	Aaa	BBBB	Dat. 6487	[LEEFTIJD-1]
 118	P	Aa Bb Cc	B	Aaa	BBBB	Dat 2 juni 2006	Dat [DATUM-1]
@@ -154,8 +154,8 @@
 124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	[NUMMERWOORD-1]
 125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	[NUMMERWOORD-1]
 126	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Zwart	[PERSOON-1]
-127	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
-128	P	Aa Bb Cc	B	Aaa	BBBB	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
+127	P	Mathijs Theodoor Anton Marietjepietje	M TH A M 	Van den Ende	BBBB	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
+128	P	Mathijs Theodoor Anton MalleMarierietje	M TH A M 	VAN DEN ENDE	BBBB	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
 129	P	Aa Bb Cc	B	Aaa	BBBB	Vrakking	[PERSOON-1]
 130	P	Aa Bb Cc	B	Aaa	BBBB	Fletchina	[PERSOON-1]
 131	P	Aa Bb Cc	B	Aaa	BBBB	MvAtten	[PERSOON-1]
@@ -222,7 +222,7 @@
 191	P	Aa Bb Cc	B	Aaa	BBBB	De Hoogstraat	[ZORGINSTELLING-1]
 192	P	Aa Bb Cc	B	Aaa	BBBB	GGZ inGeest	[ZORGINSTELLING-1]
 193	P	Aa Bb Cc	B	Aaa	BBBB	ggzingeest	[ZORGINSTELLING-1]
-194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[ZORGINSTELLING-1]
+194	P	Aa Bb Cc	B	Aaa	BBBB	hoogstraat	[LOCATIE-1]
 195	P	Aa Bb Cc	B	Aaa	BBBB	Hoogstraten	[PERSOON-1]
 196	P	Aa Bb Cc	B	Aaa	BBBB	Leids universitair medisch centrum	[ZIEKENHUIS-1]
 197	P	Aa Bb Cc	B	Aaa	BBBB	Marsepeintje kinderdagverblijf	[ZORGINSTELLING-1] kinderdagverblijf
@@ -246,10 +246,10 @@
 212	P	Aa Bb Cc	B	Aaa	BBBB	VU	[PERSOON-1]
 213	P	Aa Bb Cc	B	Aaa	BBBB	VUmc	[ZIEKENHUIS-1]
 214	P	Aa Bb Cc	B	Aaa	BBBB	Zuyderland	[ZIEKENHUIS-1]
-215	P	Aa Bb Cc	B	Aaa	BBBB	A Leloup	[PERSOON-1]
-216	P	Aa Bb Cc	B	Aaa	BBBB	A. Lel oup	[PERSOON-1]
-217	P	Aa Bb Cc	B	Aaa	BBBB	A. Leloup	[PERSOON-1]
-218	P	Aa Bb Cc	B	Aaa	BBBB	A.Leloup	[PERSOON-1]
+215	P	Aa Bb Cc	A	Leloup	BBBB	A Leloup	[PATIENT]
+216	P	Aa Bb Cc	A	Leloup	BBBB	A. Lel oup	[PERSOON-1]
+217	P	Aa Bb Cc	A	Leloup	BBBB	A. Leloup	[PATIENT]
+218	P	Aa Bb Cc	A	Leloup	BBBB	A.Leloup	[PATIENT]
 219	P	Aa Bb Cc	B	Aaa	BBBB	ABijlsma	[PERSOON-1]
 220	P	Aa Bb Cc	B	Aaa	BBBB	Blickman	[PERSOON-1]
 221	P	Aa Bb Cc	B	Aaa	BBBB	Fvos	[PERSOON-1]
@@ -389,7 +389,7 @@
 349	P	Aa Bb Cc	B	Aaa	BBBB	250/100	250/100
 350	P	Aa Bb Cc	B	Aaa	BBBB	A80.00. gevallen	A80.00. gevallen
 351	P	Aa Bb Cc	B	Aaa	BBBB	80.00	80.00
-352	P	Aa Bb Cc	B	Aaa	BBBB	A 80.00	A 80.00
+352	P	Jan Piet Klaas	B	Aaa	BBBB	A 80.00	A 80.00
 353	P	Aa Bb Cc	B	Aaa	BBBB	kan pas half jan bij pijnpoli terecht	kan pas half [PERSOON-1] bij pijnpoli terecht
 354	P	Aa Bb Cc	B	Aaa	BBBB	De urine was schoon.	De urine was schoon.
 # Failure because Qi is a (chinees) name

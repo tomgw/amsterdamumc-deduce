@@ -570,7 +570,7 @@
       "annotator_type": "docdeid.process.RegexpAnnotator",
       "group": "identifiers",
       "args": {
-        "regexp_pattern": "(?=\\d)(([[0-9\\n\\- ]){10,}(?=\\s))",
+        "regexp_pattern": "(?=\\d)(([[0-9\\n\\- ]){10,})([ ]{0,4})(?=\\b)",
         "tag": "langnummer"
       }
     },
