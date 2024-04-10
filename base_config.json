@@ -565,6 +565,15 @@
         "tag": "nummerwoord"
       }
     },
+    "longnumber": {
+      "comment": ["A regular expression which matches nummbers"],
+      "annotator_type": "docdeid.process.RegexpAnnotator",
+      "group": "identifiers",
+      "args": {
+        "regexp_pattern": "(?=\\d)(([[0-9\\n\\- ]){10,}(?=\\s))",
+        "tag": "langnummer"
+      }
+    },
     "identifier": {
       "annotator_type": "docdeid.process.RegexpAnnotator",
       "group": "identifiers",
