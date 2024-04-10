@@ -553,6 +553,18 @@
         "tag": "bsn"
       }
     },
+    "nummerwoord": {
+      "comment": ["A regular expression which matches nummbers preceeded by 3 common abbreviations for ID's in text:",
+                 "BSN: the Dutch national identification number (Burger Service Nummer)",
+                 "MDN: medical record number (Medisch Dossier Nummer)",
+                 "VNR: foreigner identification number (VreemdelingenNummeR)"],
+      "annotator_type": "docdeid.process.RegexpAnnotator",
+      "group": "identifiers",
+      "args": {
+        "regexp_pattern": "(?i)(bsn|mdn|vnr)([!\\\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ]*)((([0-9 -])+)+)",
+        "tag": "nummerwoord"
+      }
+    },
     "identifier": {
       "annotator_type": "docdeid.process.RegexpAnnotator",
       "group": "identifiers",
