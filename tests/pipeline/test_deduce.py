@@ -155,3 +155,15 @@ class TestDeduce:
         )
 
         assert doc.deidentified_text == expected_deidentified
+
+    def test_streetname_without_housenumber(self, model):
+        metadata = {"patient": Person(first_names=["Fien"], surname="Jansen")}
+        text_with_location = ("Mevrouw van der Heide-Jagers Op Akkerhuis werd opgenomen op 15 mei")
+
+        doc = model.deidentify(text_with_location, metadata=metadata)
+
+        expected_deidentified = (
+            "[PERSOON-1] werd AAopgenomen op [DATUM-1]"
+        )
+
+        assert doc.deidentified_text == expected_deidentified
