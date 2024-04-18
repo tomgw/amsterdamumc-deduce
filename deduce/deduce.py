@@ -41,7 +41,7 @@ warnings.simplefilter(action="default")
 
 class Deduce(dd.DocDeid):  # pylint: disable=R0903
     """
-    Main class for de-identifiation.
+    Main class for de-identification.
 
     Inherits from ``docdeid.DocDeid``, and as such, most information on deidentifying
     text with a Deduce object is available there.
@@ -366,7 +366,8 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             CleanAnnotationTag(
                 tag_map={
                     "straatnaam+huisnummer": "locatie",
-                    "straatnaam+huisnummer+huisnummerletter": "locatie"
+                    "straatnaam+huisnummer+huisnummerletter": "locatie",
+                    "straatnaam_bare": "locatie"
                 }
             ),
         )

@@ -240,6 +240,9 @@ class TokenPatternAnnotator(dd.process.Annotator):
             if annotation is not None:
                 annotations.append(annotation)
 
+        if len(annotations) != 0:
+            annotations.sort(key=lambda anno: anno.start_char)
+
         return annotations
 
 

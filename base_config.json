@@ -316,6 +316,16 @@
         "overlapping": true
       }
     },
+    "street_lookup_bare": {
+      "annotator_type": "docdeid.process.MultiTokenLookupAnnotator",
+      "group": "locations",
+      "args": {
+        "lookup_values": "street",
+        "overlapping": true,
+        "tag": "straatnaam_bare",
+        "priority": 1
+      }
+    },
     "placename": {
       "annotator_type": "docdeid.process.MultiTokenLookupAnnotator",
       "group": "locations",
