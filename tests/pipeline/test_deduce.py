@@ -24,7 +24,8 @@ class TestDeduce:
                     end_char=284,
                     tag="telefoonnummer",
                 ),
-                dd.Annotation(text="111222333", start_char=25, end_char=34, tag="bsn"),
+                dd.Annotation(text="bsn ", start_char=21, end_char=25, tag="nummerwoord"),
+                dd.Annotation(text="111222333", start_char=25, end_char=34, tag="bsn", priority=100),
                 dd.Annotation(
                     text="Peter de Visser", start_char=153, end_char=168, tag="persoon"
                 ),
@@ -66,7 +67,7 @@ class TestDeduce:
         doc = model.deidentify(text, metadata=metadata)
 
         expected_deidentified = (
-            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is "
             "[LEEFTIJD-1] jaar [PERSOON-1] en woonachtig in [LOCATIE-1]. Hij werd op "
             "[DATUM-1] door arts [PERSOON-2] ontslagen van de kliniek van het "
             "[ZIEKENHUIS-1]. Voor nazorg kan hij worden bereikt via [EMAILADRES-1] "
@@ -80,7 +81,7 @@ class TestDeduce:
         doc = model.deidentify(text, metadata=metadata)
 
         expected_intext_annotated = (
-            "betreft: <PATIENT>Jan Jansen</PATIENT>, bsn <BSN>111222333</BSN>, "
+            "betreft: <PATIENT>Jan Jansen</PATIENT>, <NUMMERWOORD>bsn </NUMMERWOORD><BSN>111222333</BSN>, "
             "patnr <ID>000334433</ID>. De patient <PATIENT>J. Jansen</PATIENT> is "
             "<LEEFTIJD>64</LEEFTIJD> jaar <PERSOON>oud</PERSOON> en woonachtig in <LOCATIE>Utrecht"
             "</LOCATIE>. Hij werd op <DATUM>10 oktober 2018</DATUM> door arts "
@@ -99,8 +100,8 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
 
         expected_deidentified = (
-            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
-            "[LEEFTIJD-1] jaar [PERSOON-1] en woonachtig in [LOCATIE-1], Adres Oude Turfmarkt."
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is "
+            "[LEEFTIJD-1] jaar [PERSOON-1] en woonachtig in [LOCATIE-1], Adres [LOCATIE-2]."
         )
 
         assert doc.deidentified_text == expected_deidentified
@@ -113,7 +114,7 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
 
         expected_deidentified = (
-            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is "
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is "
             "[LEEFTIJD-1] jaar [PERSOON-1] en woonachtig in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], "
             "[LOCATIE-5], Helfweg, [LOCATIE-6], [LOCATIE-7], [LOCATIE-8] (ZH)"
         )
@@ -130,9 +131,9 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
 
         expected_deidentified = (
-            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar [PERSOON-1] en "
-            "woonachtig in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], [LOCATIE-1], Amsterdamsestraatweg, "
-            "[LOCATIE-5], 1e Achterstraat, Amsterdamsestraatweg"
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar [PERSOON-1] en "
+            "woonachtig in [LOCATIE-1], [LOCATIE-2], [LOCATIE-3], [LOCATIE-4], [LOCATIE-1], [LOCATIE-5], "
+            "[LOCATIE-6], [LOCATIE-7], [LOCATIE-5]"
         )
 
         assert doc.deidentified_text == expected_deidentified
@@ -149,7 +150,7 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
 
         expected_deidentified = (
-            "betreft: [PATIENT], bsn [BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar [PERSOON-1] en"
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar [PERSOON-1] en"
             " opgenomen in [ZORGINSTELLING-1], daarna in [ZORGINSTELLING-2]. Hij haalt zijn medicatie"
             "bij [ZORGINSTELLING-3] of '[ZORGINSTELLING-3]'"
         )
@@ -163,7 +164,7 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
 
         expected_deidentified = (
-            "[PERSOON-1] werd AAopgenomen op [DATUM-1]"
+            "[PERSOON-1] werd opgenomen op [DATUM-1]"
         )
 
         assert doc.deidentified_text == expected_deidentified

@@ -27,14 +27,16 @@ def regression_test(
     failures = set()
 
     for example in examples:
-        trues = AnnotationSet(
+        expected = AnnotationSet(
             Annotation(**annotation) for annotation in example["annotations"]
         )
-        preds = model.deidentify(text=example["text"], enabled=enabled).annotations
+        actual = model.deidentify(text=example["text"], enabled=enabled).annotations
 
         try:
-            assert trues == preds
+            assert expected == actual
         except AssertionError:
+            print("Error:  expected: " + expected["text"])
+            print("        actual  : " + actual["text"])
             failures.add(example["id"])
 
     assert failures == known_failures
@@ -48,21 +50,21 @@ class TestRegression:
     def test_regression_name(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/names.json",
+            examples_file="/data/regression_cases/names.json",
             enabled=annotators_from_group(model, "names"),
         )
 
     def test_regression_location(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/locations.json",
+            examples_file="/data/regression_cases/locations.json",
             enabled=annotators_from_group(model, "locations"),
         )
 
     def test_regression_institution(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/institutions.json",
+            examples_file="/data/regression_cases/institutions.json",
             enabled=annotators_from_group(model, "institutions"),
         )
 
@@ -72,41 +74,41 @@ class TestRegression:
         enabled_annotator_names = enabled_annotator_names.union(post_processing_annotators)
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/dates.json",
+            examples_file="/data/regression_cases/dates.json",
             enabled=enabled_annotator_names,
         )
 
     def test_regression_age(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/ages.json",
+            examples_file="/data/regression_cases/ages.json",
             enabled=annotators_from_group(model, "ages"),
         )
 
     def test_regression_identifier(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/identifiers.json",
+            examples_file="/data/regression_cases/identifiers.json",
             enabled=annotators_from_group(model, "identifiers"),
         )
 
     def test_regression_phone(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/phone_numbers.json",
+            examples_file="/data/regression_cases/phone_numbers.json",
             enabled=annotators_from_group(model, "phone_numbers"),
         )
 
     def test_regression_email(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/emails.json",
+            examples_file="/data/regression_cases/emails.json",
             enabled=annotators_from_group(model, "email_addresses"),
         )
 
     def test_regression_url(self, model):
         regression_test(
             model=model,
-            examples_file="./data/regression_cases/urls.json",
+            examples_file="/data/regression_cases/urls.json",
             enabled=annotators_from_group(model, "urls"),
         )

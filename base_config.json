@@ -316,16 +316,6 @@
         "overlapping": true
       }
     },
-    "street_lookup_bare": {
-      "annotator_type": "docdeid.process.MultiTokenLookupAnnotator",
-      "group": "locations",
-      "args": {
-        "lookup_values": "street",
-        "overlapping": true,
-        "tag": "straatnaam_bare",
-        "priority": 1
-      }
-    },
     "placename": {
       "annotator_type": "docdeid.process.MultiTokenLookupAnnotator",
       "group": "locations",
@@ -358,33 +348,8 @@
         "priority": 1
       }
     },
-    "housenumber_with_minus": {
-      "annotator_type": "deduce.annotator.ContextAnnotator",
-      "priority": 1,
-      "group": "locations",
-      "args": {
-        "iterative": true,
-        "pattern": [
-          {
-            "name": "housenumber_with_minus",
-            "direction": "right",
-            "pre_tag": [
-              "straatnaam"
-            ],
-            "tag": "{tag}+huisnummer_met_minus",
-            "skip": ["-"],
-            "pattern": [
-              {
-                "re_match": "\\d{1,4}[-]\\d{1-4}$"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "housenumber": {
       "annotator_type": "deduce.annotator.ContextAnnotator",
-      "priority": 1,
       "group": "locations",
       "args": {
         "iterative": true,
@@ -508,45 +473,12 @@
         "pre_match_words": ["januari", "jan", "februari", "feb", "maart", "mrt", "april", "apr", "mei", "juni", "jun", "juli", "jul", "augustus", "aug", "september", "sep", "sept", "oktober", "okt", "november", "nov", "december", "dec"]
       }
     },
-    "date_month_year_1": {
-      "comment": [
-        "Reg-expression annotator to deal with dates only containing the month followed by year.",
-        "The month can be numerals (with an optional leading zero), abbreviated or full out (in English",
-        "or Dutch). An number of delimiters preceded or followed by whitespaces (max 4) between the month ",
-        "and year. E.g. 1-2023, 01/2023, 1 - 2023, januari 2023, jan 2023, May-1974"
-      ],
-      "annotator_type": "docdeid.process.RegexpAnnotator",
-      "priority": 10,
-      "overlapping": true,
-      "group": "dates",
-      "args": {
-        "regexp_pattern": "(?i)((((?:\\b)(0)?[1-9]|1[0,1,2]))|(januari|january|jan|februari|february|feb|maart|march|mrt|april|apr|mei|may|juni|june|jun|juli|july|jul|augustus|aug|september|sep|sept|oktober|october|okt|november|nov|december|dec))(\\s{0,4})[-/\\\\\\. ](\\s{0,4})((19|20|\\'|`)?\\d{2})(?!\\d)",
-        "tag": "datum"
-      }
-    },
-    "date_day_month_1": {
-      "comment": [
-        "Reg-expression annotator to deal with dates with the day, the month in letters and without the year.",
-        "The days can be numerals (with an optional leading zero), followed by the month either abbreviated or full",
-        "out (in English or Dutch). An number of delimiters preceded or followed by whitespaces (max 4) between",
-        "the day and month. E.g. 5 september, 5-mei, 06/juni"
-      ],
-      "annotator_type": "docdeid.process.RegexpAnnotator",
-      "priority": 10,
-      "overlapping": true,
-      "group": "dates",
-      "args": {
-        "regexp_pattern": "(?i)(\\b)(((0)?[1-9]|[1,2,3][0-9])(\\s{0,4}|[- /\\\\])(januari|january|jan|februari|february|feb|maart|march|mrt|april|apr|mei|may|juni|june|jun|juli|july|jul|augustus|aug|september|sep|sept|oktober|october|okt|november|nov|december|dec)(?=.| |$|,:.))",
-        "tag": "datum"
-      }
-    },
-
     "age": {
       "annotator_type": "deduce.annotator.RegexpPseudoAnnotator",
       "group": "ages",
       "args": {
         "regexp_pattern": "(?i)(?<![\\d,\\.])((1?\\d?\\d)([\\.,]5)?(-(1?\\d?\\d)([\\.,]5)?)?)([ -](jaar|jarig|jarige|jr))(?!\\w)",
-        "pre_pseudo": ["<", "al", "co", "controle", "de", "elke", "gedurende", "na", "nog", "ongeveer", "over", "policontrole", "sinds", "up", "vanaf", "komende"],
+        "pre_pseudo": ["<", "al", "co", "controle", "de", "elke", "gedurende", "na", "nog", "ongeveer", "over", "policontrole", "sinds", "up", "vanaf"],
         "post_pseudo": ["aanwezig", "gebruikt", "geleden", "gerookt", "gestaakt", "gestopt", "getrouwd", "na", "naar", "nadien"],
         "pre_match_words": ["jaar", "jarig", "jarige", "jr"],
         "tag": "leeftijd",
@@ -561,27 +493,6 @@
         "capture_group": 1,
         "priority": 100,
         "tag": "bsn"
-      }
-    },
-    "nummerwoord": {
-      "comment": ["A regular expression which matches nummbers preceeded by 3 common abbreviations for ID's in text:",
-                 "BSN: the Dutch national identification number (Burger Service Nummer)",
-                 "MDN: medical record number (Medisch Dossier Nummer)",
-                 "VNR: foreigner identification number (VreemdelingenNummeR)"],
-      "annotator_type": "docdeid.process.RegexpAnnotator",
-      "group": "identifiers",
-      "args": {
-        "regexp_pattern": "(?i)(bsn|mdn|vnr)([!\\\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ]*)((([0-9 -])+)+)",
-        "tag": "nummerwoord"
-      }
-    },
-    "longnumber": {
-      "comment": ["A regular expression which matches nummbers"],
-      "annotator_type": "docdeid.process.RegexpAnnotator",
-      "group": "identifiers",
-      "args": {
-        "regexp_pattern": "(?=\\d)(([[0-9\\n\\- ]){10,})([ ]{0,4})(?=\\b)",
-        "tag": "langnummer"
       }
     },
     "identifier": {

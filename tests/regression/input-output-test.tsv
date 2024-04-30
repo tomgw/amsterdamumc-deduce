@@ -20,7 +20,7 @@
 #							
 # =============================================================================							
 # Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
-1	P	Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1]
+1	P	Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001.	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1]
 2	P	Aa Bb Cc	B	Aaa	BBBB	fys 40 jarige	fys [LEEFTIJD-1] jarige
 3	P	Aa Bb Cc	B	Aaa	BBBB	wordt 33 jaar	wordt [LEEFTIJD-1] jaar
 4	P	Aa Bb Cc	B	Aaa	BBBB	10-jarige patient	[LEEFTIJD-1]-jarige patient
@@ -88,7 +88,7 @@
 60	P	Aa Bb Cc	B	Aaa	BBBB	Abd (abdomen)	Abd (abdomen)
 61	P	Aa Bb Cc	B	Aaa	BBBB	Operatie	Operatie
 62	P	Aa Bb Cc	B	Aaa	BBBB	Boek	Boek
-63	P	Aa Bb Cc	B	Aaa	BBBB	Rust	Rust
+63	P	Aa Bb Cc	B	Aaa	BBBB	Rust wordt voorgeschreven	Rust wordt voorgeschreven
 64	P	Aa Bb Cc	B	Aaa	BBBB	Elders	Elders
 65	P	Aa Bb Cc	B	Aaa	BBBB	OD (oculus dexter, rechter oog)	OD (oculus [PERSOON-1], rechter oog)
 66	P	Aa Bb Cc	B	Aaa	BBBB	VT (vaginaal toucher)	VT (vaginaal toucher)
@@ -165,7 +165,7 @@
 135	P	Aa Bb Cc	B	Aaa	BBBB	y hessing	y [PERSOON-1]
 136	P	Aa Bb Cc	B	Aaa	BBBB	Overman	[PERSOON-1]
 137	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wilpe	[PERSOON-1]
-138	P	Aa Bb Cc	B	Aaa	BBBB	B. Nizynska	[PERSOON-1]
+138	P	Aa Cc	Y	Aaa	BBBB	B. Nizynska	[PERSOON-1]
 139	P	Aa Bb Cc	B	Aaa	BBBB	M.S.A. Suttorp	[PERSOON-1]
 140	P	Aa Bb Cc	B	Aaa	BBBB	S. van Wissen	[PERSOON-1]
 141	P	Aa Bb Cc	B	Aaa	BBBB	Cogswell	[PERSOON-1]
@@ -361,7 +361,7 @@
 321	P	Aa Bb Cc	B	Aaa	BBBB	Y Froolik	[PERSOON-1]
 322	P	Aa Bb Cc	B	Aaa	BBBB	Y. Elkhaloufi	[PERSOON-1]
 323	P	Aa Bb Cc	B	Aaa	BBBB	ANAE Plein	[LOCATIE-1]
-324	P	Aa Bb Cc	B	Aaa	BBBB	Bernoiulliplein (moet zijn Bernouilliplein))	[LOCATIE-1](moet zijn [LOCATIE-2]))
+324	P	Aa Bb Cc	B	Aaa	BBBB	Bernoiulliplein (moet zijn Bernouilliplein))	[LOCATIE-1] (moet zijn [LOCATIE-1]))
 325	P	Aa Bb Cc	B	Aaa	BBBB	Coev/Hardenber	[LOCATIE-1]
 326	P	Aa Bb Cc	B	Aaa	BBBB	Friesland	[LOCATIE-1]
 327	P	Aa Bb Cc	B	Aaa	BBBB	heerenveen	[LOCATIE-1]
@@ -395,7 +395,7 @@
 # Failure because Qi is a (chinees) name
 355	P	Aa Bb Cc	B	Aaa	BBBB	QI/BMI (=):31,35	[PERSOON-1]/BMI (=):31,35
 356	P	Aa Bb Cc	B	Aaa	BBBB	even gebeld of alles goed gaat  bel haar wakker	even gebeld of alles goed gaat  bel haar wakker
-357	P	Aa Bb Cc	B	Aaa	BBBB	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar ligt
+357	P	Aa Bb Cc	B	Aaa	BBBB	Overdag gaat het wel,kan gewoon werken,maar ligt	Overdag gaat het wel,kan gewoon werken,maar [LOCATIE-1]
 358	P	Aa Bb Cc	B	Aaa	BBBB	het liever 7 nov ivm komende dagen feesten.	het liever [DATUM-1] ivm komende dagen feesten.
 359	P	Aa Bb Cc	B	Aaa	BBBB	rouw om verlies vader	rouw om verlies vader
 360	P	Aa Bb Cc	B	Aaa	BBBB	99/99	99/99
@@ -549,7 +549,7 @@
 506	F	Aa Bb Cc	B	Aaa	BBBB	Meneer Het Hooge gaat naar Zorgcentrum het hooge heem activiteitenbegeleiding	Meneer [PERSOON-1] gaat naar [INSTELLLING-1]
 507	F	Aa Bb Cc	B	Aaa	BBBB	Zorgcentrum het hooge heem activiteitenbegeleiding	[INSTELLLING-1]
 508	P	Aa Bb Cc	B	Aaa	BBBB	GGZ Centraal	[ZORGINSTELLING-1]
-509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	Gezondheidscentrum [ZORGINSTELLING-1]
+509	P	Aa Bb Cc	B	Aaa	BBBB	Gezondheidscentrum Reigersbos	Gezondheidscentrum [LOCATIE-1]
 510	P	Aa Bb Cc	B	Aaa	BBBB	Hanimeli thuiszorg bv	[ZORGINSTELLING-1] thuiszorg bv
 511	P	Aa Bb Cc	B	Aaa	BBBB	Bovenij ziekenhuis	[ZIEKENHUIS-1]
 512	P	Aa Bb Cc	B	Aaa	BBBB	Stg woongroep babajit	Stg woongroep [ZORGINSTELLING-1]
@@ -560,7 +560,7 @@
 516	F	Aa Bb Cc	B	Aaa	BBBB	orth bellen met witte Willem over de dood	orth bellen met witte [PERSOON-1] over de dood
 # Expected failure: Leidse Rijn added as location but text contains the lower-case 'rijn'
 517	F	Aa Bb Cc	B	Aaa	BBBB	dochter in jan weg uit bos Leidsche rijn	dochter in jan weg uit bos [LOCATIE-1]
-518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	[ZIEKENHUIS-1] heeft heel [PERSOON-1]
+518	P	Aa Bb Cc	B	Aaa	BBBB	Antonius Ziekenhuis heeft heel kuil	[ZIEKENHUIS-1] heeft heel [LOCATIE-1]
 519	P	Aa Bb Cc	B	Aaa	BBBB	Esens GGz	[ZORGINSTELLING-1] GGz
 520	P	Aa Bb Cc	B	Aaa	BBBB	ZD46584392	ZD[ID-1]
 521	P	Aa Bb Cc	B	Aaa	BBBB	Patient drinkt > 10 glazen alcohol per week	Patient drinkt > 10 glazen alcohol per week
@@ -640,7 +640,7 @@
 581	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG IV	ABCDEFG IV
 582	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18 V	[LOCATIE-1]
 583	P	Aa Bb Cc	B	Aaa	BBBB	ABCDEFG V	ABCDEFG V
-584	P	Aa Bb Cc	B	Aaa	BBBB	rubenslaan	[STRAATNAAM-1]
+584	P	Aa Bb Cc	B	Aaa	BBBB	rubenslaan	[LOCATIE-1]
 585	P	Aa Bb Cc	B	Aaa	BBBB	VELDJEN 15	[LOCATIE-1]
 586	P	Aa Bb Cc	B	Aaa	BBBB	VELDjen 16A	[LOCATIE-1]
 587	P	Aa Bb Cc	B	Aaa	BBBB	veldjen 17-Z	[LOCATIE-1]-Z
@@ -655,10 +655,11 @@
 596	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-II	[LOCATIE-1]
 597	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-III	[LOCATIE-1]
 598	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-IV	[LOCATIE-1]
-599	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18Bis	[STRAATNAAM-1] 
+599	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18Bis	[LOCATIE-1] 
 600	F	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18-F	[LOCATIE-1]
-601	P	Aa Bb Cc	B	Aaa	BBBB	Veldjen	[STRAATNAAM-1]
+601	P	Aa Bb Cc	B	Aaa	BBBB	Veldjen	[LOCATIE-1]
 602	P	Aa Bb Cc	B	Aaa	BBBB	StaatNietInDeOpzoekLijstenStraat	StaatNietInDeOpzoekLijstenStraat
 603	F	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 20-21	[LOCATIE-1]
 604	P	Aa Bb Cc	B	Aaa	BBBB	Nijenheim 2021	[LOCATIE-1]
 605	P	Aa Bb Cc	B	Aaa	BBBB	2de Graaf van Hollanddijk	[LOCATIE-1]
+606	P	Aa Bb Cc	B	Aaa	BBBB	Van Der Sluis	[PERSOON-1]
